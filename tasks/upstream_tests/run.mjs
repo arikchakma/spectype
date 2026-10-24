@@ -18,10 +18,11 @@ const root = path.join(here, "../..");
 const cache = path.join(here, ".ots");
 const api = path.join(root, "npm/spectype/index.js");
 const target = path.resolve(process.env.SPECTYPE_BIN ?? path.join(root, "target/release/spectype"));
+const addon = fs.readdirSync(path.join(root, "npm/spectype")).find((f) => f.endsWith(".node")) ?? "spectype.node";
 
 for (const [file, hint] of [
   [target, "cargo build --release"],
-  [path.join(root, `npm/spectype/spectype.${process.platform}-${process.arch}.node`), "npm run build --prefix npm"],
+  [path.join(root, "npm/spectype", addon), "npm run build --prefix npm"],
   [path.join(here, "node_modules/vitest"), `npm ci --prefix ${path.relative(process.cwd(), here)}`],
 ]) {
   if (!fs.existsSync(file)) {
