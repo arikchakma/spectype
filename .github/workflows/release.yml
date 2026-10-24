@@ -3,6 +3,7 @@ name: Release
 on:
   push:
     tags: ["v*"]
+  workflow_dispatch:
 
 env:
   CARGO_TERM_COLOR: always
@@ -115,17 +116,21 @@ jobs:
           cp npm/platforms/wasm32-wasip1/spectype.wasm32-wasip1.wasm dist/
       - name: Stage npm packages
         run: |
-          node npm/scripts/stage.mjs "${GITHUB_REF_NAME#v}" dist
+          version="${GITHUB_REF_NAME#v}"
+          [ "$GITHUB_REF_TYPE" = tag ] || version="$(sed -n 's/^version = "\(.*\)"/\1/p' Cargo.toml | head -1)"
+          node npm/scripts/stage.mjs "$version" dist
           node npm/scripts/check.mjs
       - name: Publish to npm
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          FLAGS: ${{ github.ref_type == 'tag' && '--provenance' || '--dry-run' }}
         run: |
           for dir in npm/platforms/*/; do
-            npm publish "$dir" --provenance --access public
+            npm publish "$dir" "$FLAGS" --access public
           done
-          npm publish npm/spectype --provenance --access public
-      - uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65 # v2.6.2
+          npm publish npm/spectype "$FLAGS" --access public
+      - if: github.ref_type == 'tag'
+        uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65 # v2.6.2
         with:
           files: dist/spectype-*
           generate_release_notes: true
