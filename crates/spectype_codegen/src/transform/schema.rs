@@ -432,22 +432,20 @@ fn collect_union(ctx: &mut Ctx, items: &[Value], key: &str, path: &JsonPointer) 
 
 fn collect_all_of(ctx: &mut Ctx, items: &[Value], required: Option<&Value>, path: &JsonPointer) -> Result<Vec<Ty>> {
     let mut parent_required = string_list(required);
-    let mut items: Vec<&Value> = items.iter().collect();
-    if ctx.opts.fix.contains(Fix::AllOfEmptyObjects) {
-        let (bare, rest): (Vec<&Value>, Vec<&Value>) = items.iter().partition(|item| bare_object(ctx, item).is_some());
-        if !rest.is_empty() {
-            for item in bare {
-                for key in string_list(bare_object(ctx, item).and_then(|o| o.get("required"))) {
-                    if !parent_required.contains(&key) {
-                        parent_required.push(key);
-                    }
-                }
+    let drop_bare =
+        ctx.opts.fix.contains(Fix::AllOfEmptyObjects) && items.iter().any(|item| bare_object(ctx, item).is_none());
+    if drop_bare {
+        for key in items.iter().filter_map(|item| bare_object(ctx, item)).flat_map(|o| string_list(o.get("required"))) {
+            if !parent_required.contains(&key) {
+                parent_required.push(key);
             }
-            items = rest;
         }
     }
     let mut out = Vec::with_capacity(items.len());
     for item in items {
+        if drop_bare && bare_object(ctx, item).is_some() {
+            continue;
+        }
         let item_ty;
         let item_ref = item.get("$ref").map(Value::js_string);
         if let Some(r) = &item_ref {
