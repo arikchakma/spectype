@@ -47,7 +47,8 @@ Options
   --generate-path-params     Generate path parameters from the URL when they are not declared
   --fix <names>              Opt-in fixes for openapi-typescript bugs (comma-separated, or \"all\"):
                              array-length, enum-values-type, root-types-names, enum-names,
-                             operation-id-refs, default-non-nullable-scope, const-items
+                             operation-id-refs, default-non-nullable-scope, const-items,
+                             allof-empty-objects
   --inject <file>            Insert the TypeScript in <file> before the generated types
 ";
 

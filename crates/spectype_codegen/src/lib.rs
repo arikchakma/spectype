@@ -64,11 +64,14 @@ pub enum Fix {
     DefaultNonNullableScope,
     /// A `const` tuple used as `items` keeps its outer array.
     ConstItems,
+    /// An `allOf` member that is an object with no properties no longer makes its siblings
+    /// `never`, and its `required` applies to them.
+    AllOfEmptyObjects,
 }
 
 impl Fix {
     /// Every fix, in the order `--help` lists them.
-    pub const ALL: [Self; 7] = [
+    pub const ALL: [Self; 8] = [
         Self::ArrayLength,
         Self::EnumValuesType,
         Self::RootTypesNames,
@@ -76,6 +79,7 @@ impl Fix {
         Self::OperationIdRefs,
         Self::DefaultNonNullableScope,
         Self::ConstItems,
+        Self::AllOfEmptyObjects,
     ];
 
     /// The name `--fix` takes.
@@ -89,10 +93,11 @@ impl Fix {
             Self::OperationIdRefs => "operation-id-refs",
             Self::DefaultNonNullableScope => "default-non-nullable-scope",
             Self::ConstItems => "const-items",
+            Self::AllOfEmptyObjects => "allof-empty-objects",
         }
     }
 
-    const fn bit(self) -> u8 {
+    const fn bit(self) -> u16 {
         1 << self as u8
     }
 }
@@ -107,7 +112,7 @@ impl std::str::FromStr for Fix {
 
 /// A set of [`Fix`]es, empty by default so output stays byte-identical.
 #[derive(Debug, Clone, Copy, Default, PartialEq, Eq)]
-pub struct Fixes(u8);
+pub struct Fixes(u16);
 
 /// A name [`Fixes::enable`] does not know, carrying that name.
 #[derive(Debug, Clone, PartialEq, Eq, thiserror::Error)]

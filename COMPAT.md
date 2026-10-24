@@ -62,6 +62,7 @@ spectype copies these bugs by default, so your file does not change. Pass `--fix
 | `operation-id-refs` | An operationId with `%xx` is decoded in one place but not the other, so the reference breaks | The operationId is used as written in both |
 | `default-non-nullable-scope` | A property with a `default` stays optional when its path merely contains `parameters` or `requestBody` | Only real parameters and request bodies are exempt |
 | `const-items` | `items: { const: [1, 2] }` gives `[1, 2]` | `[1, 2][]` |
+| `allof-empty-objects` | An `allOf` member with no properties, such as `{ type: object }` or `{ required: [id] }`, prints as `Record<string, never>`, so every sibling property becomes `never` | The member is dropped, and its `required` applies to the siblings |
 
 `--path-params-as-types` has no fix. Overlapping paths (`/a/${string}` and `/a/${string}/b`) give
 `TS2413` errors, and any type that compiles would change what `paths[url]` returns.

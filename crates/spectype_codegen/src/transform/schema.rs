@@ -2,7 +2,7 @@
 
 use std::borrow::Cow;
 
-use super::{Ctx, entries, oapi_ref, oapi_ref_with};
+use super::{Ctx, entries, oapi_ref, oapi_ref_with, resolve_ref_quiet};
 use crate::Fix;
 use crate::names::property_index;
 use crate::ts::{BOOLEAN, EnumMember, EnumValue, Member, NEVER, NUMBER, STRING, Stmt, Ty, UNKNOWN};
@@ -431,7 +431,21 @@ fn collect_union(ctx: &mut Ctx, items: &[Value], key: &str, path: &JsonPointer) 
 }
 
 fn collect_all_of(ctx: &mut Ctx, items: &[Value], required: Option<&Value>, path: &JsonPointer) -> Result<Vec<Ty>> {
-    let parent_required = string_list(required);
+    let mut parent_required = string_list(required);
+    let mut items: Vec<&Value> = items.iter().collect();
+    if ctx.opts.fix.contains(Fix::AllOfEmptyObjects) {
+        let (bare, rest): (Vec<&Value>, Vec<&Value>) = items.iter().partition(|item| bare_object(ctx, item).is_some());
+        if !rest.is_empty() {
+            for item in bare {
+                for key in string_list(bare_object(ctx, item).and_then(|o| o.get("required"))) {
+                    if !parent_required.contains(&key) {
+                        parent_required.push(key);
+                    }
+                }
+            }
+            items = rest;
+        }
+    }
     let mut out = Vec::with_capacity(items.len());
     for item in items {
         let item_ty;
@@ -473,6 +487,38 @@ fn collect_all_of(ctx: &mut Ctx, items: &[Value], required: Option<&Value>, path
         }
     }
     Ok(out)
+}
+
+/// The `allOf` member (or its `$ref` target) when it is an object with no shape of its own, which
+/// prints as `Record<string, never>` and turns every sibling property into `never`.
+fn bare_object<'a>(ctx: &Ctx<'a, '_>, item: &'a Value) -> Option<&'a Map> {
+    let mut obj = item.as_object()?;
+    if let Some(r) = obj.get("$ref") {
+        if obj.len() > 1 {
+            return None;
+        }
+        obj = resolve_ref_quiet(ctx.root, &super::js_text(r))?.as_object()?;
+    }
+    let typed = obj.get("type").is_none_or(|t| t.as_str() == Some("object"));
+    let shaped = [
+        "$ref",
+        "additionalProperties",
+        "patternProperties",
+        "$defs",
+        "allOf",
+        "anyOf",
+        "oneOf",
+        "enum",
+        "const",
+        "items",
+        "prefixItems",
+        "discriminator",
+        "nullable",
+    ]
+    .iter()
+    .any(|k| obj.contains_key(k))
+        || key_count(obj.get("properties")) > 0;
+    (typed && !shaped && (obj.contains_key("type") || obj.contains_key("required"))).then_some(obj)
 }
 
 fn read_write(ctx: &Ctx, ty: Ty, read_only: bool, write_only: bool) -> Ty {

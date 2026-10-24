@@ -706,7 +706,8 @@ export type Fix =
   | "enum-names"
   | "operation-id-refs"
   | "default-non-nullable-scope"
-  | "const-items";
+  | "const-items"
+  | "allof-empty-objects";
 
 /** Context passed to all submodules */
 export interface GlobalContext {
