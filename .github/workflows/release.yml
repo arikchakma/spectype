@@ -33,6 +33,8 @@ jobs:
           key: ${{ matrix.target }}
       - if: matrix.zig
         uses: mlugg/setup-zig@d1434d08867e3ee9daa34448df10607b98908d29 # v2.2.1
+        with:
+          version: 0.15.2
       - if: matrix.zig
         uses: taiki-e/install-action@a4d3f3f761dcd95cce1b72cb61cb6d1963438177 # v2.87.30
         with:
