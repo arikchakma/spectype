@@ -714,7 +714,8 @@ export type Fix =
   | "discriminator-declared-values"
   | "anyof-properties"
   | "defs-optional"
-  | "prefix-items";
+  | "prefix-items"
+  | "read-write-primitives";
 
 /** Context passed to all submodules */
 export interface GlobalContext {

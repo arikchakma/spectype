@@ -85,11 +85,14 @@ pub enum Fix {
     /// A `prefixItems` tuple allows the extra items that `items` describes, unless `items: false`,
     /// `unevaluatedItems: false` or `maxItems` closes it.
     PrefixItems,
+    /// `--read-write-markers`: `Readable` and `Writable` leave branded primitives such as
+    /// `string & { __brand: "Id" }` as they are.
+    ReadWritePrimitives,
 }
 
 impl Fix {
     /// Every fix, in the order `--help` lists them.
-    pub const ALL: [Self; 15] = [
+    pub const ALL: [Self; 16] = [
         Self::ArrayLength,
         Self::EnumValuesType,
         Self::RootTypesNames,
@@ -105,6 +108,7 @@ impl Fix {
         Self::AnyOfProperties,
         Self::DefsOptional,
         Self::PrefixItems,
+        Self::ReadWritePrimitives,
     ];
 
     /// The name `--fix` takes.
@@ -126,10 +130,11 @@ impl Fix {
             Self::AnyOfProperties => "anyof-properties",
             Self::DefsOptional => "defs-optional",
             Self::PrefixItems => "prefix-items",
+            Self::ReadWritePrimitives => "read-write-primitives",
         }
     }
 
-    const fn bit(self) -> u16 {
+    const fn bit(self) -> u32 {
         1 << self as u8
     }
 }
@@ -144,7 +149,7 @@ impl std::str::FromStr for Fix {
 
 /// A set of [`Fix`]es, empty by default so output stays byte-identical.
 #[derive(Debug, Clone, Copy, Default, PartialEq, Eq)]
-pub struct Fixes(u16);
+pub struct Fixes(u32);
 
 /// A name [`Fixes::enable`] does not know, carrying that name.
 #[derive(Debug, Clone, PartialEq, Eq, thiserror::Error)]
@@ -155,7 +160,13 @@ impl Fixes {
     /// Every fix turned on.
     #[must_use]
     pub const fn all() -> Self {
-        Self((1 << Fix::ALL.len()) - 1)
+        let mut bits = 0;
+        let mut i = 0;
+        while i < Fix::ALL.len() {
+            bits |= Fix::ALL[i].bit();
+            i += 1;
+        }
+        Self(bits)
     }
 
     /// Whether `fix` is turned on.
@@ -217,5 +228,16 @@ impl Default for Options {
             inject: None,
             fix: Fixes::default(),
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::{Fix, Fixes};
+
+    #[test]
+    fn all_turns_on_every_fix() {
+        let all = Fixes::all();
+        assert!(Fix::ALL.into_iter().all(|f| all.contains(f)));
     }
 }

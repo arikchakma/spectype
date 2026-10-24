@@ -1020,7 +1020,15 @@ pub fn transform_document(
     let mut alias_range = 0..0;
     if opts.read_write_markers {
         for (name, text) in READ_WRITE_HELPERS {
-            out.push(Stmt::Raw { name: name.into(), text: text.into() });
+            let text = if opts.fix.contains(Fix::ReadWritePrimitives) {
+                text.replace(
+                    " : T extends object ?",
+                    " : T extends string | number | boolean | bigint | symbol ? T : T extends object ?",
+                )
+            } else {
+                text.into()
+            };
+            out.push(Stmt::Raw { name: name.into(), text });
         }
     }
     if let Some(inject) = opts.inject.as_deref().map(js_trim).filter(|s| !s.is_empty()) {

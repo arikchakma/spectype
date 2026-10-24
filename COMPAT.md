@@ -70,6 +70,7 @@ spectype copies these bugs by default, so your file does not change. Pass `--fix
 | `anyof-properties` | `anyOf` next to `properties` or `allOf` prints a union with them (`{ name?: string } \| Email \| Phone`), so an object matching either side passes | `{ name?: string } & (Email \| Phone)`, as `oneOf` already prints |
 | `defs-optional` | A schema's `$defs` prints as a required property, so no real value matches the type | `$defs?:`, and `$ref`s into it read `NonNullable<X["$defs"]>["name"]` |
 | `prefix-items` | `prefixItems` always prints a closed tuple, so arrays with more items are rejected | `[number, string, ...unknown[]]`, or `...T[]` for `items: T`. `items: false`, `unevaluatedItems: false` and a `maxItems` within the prefix keep it closed |
+| `read-write-primitives` | `--read-write-markers`: `Readable` and `Writable` map a branded primitive (`string & { __brand: "Id" }`) as an object, so the result is no longer a `string` | Primitives pass through unchanged |
 
 `--path-params-as-types` has no fix. Overlapping paths (`/a/${string}` and `/a/${string}/b`) give
 `TS2413` errors, and any type that compiles would change what `paths[url]` returns.
