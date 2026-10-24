@@ -11,7 +11,7 @@ env:
 jobs:
   build:
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         include:
           - { target: aarch64-apple-darwin, os: macos-latest, pgo: true }
@@ -47,16 +47,17 @@ jobs:
             if [ -n "${{ matrix.zig }}" ]; then
               suffix=""
               case "${{ matrix.target }}" in *-gnu) suffix=".2.17" ;; esac
-              cargo zigbuild --release -p spectype --target "${{ matrix.target }}$suffix" "$@"
+              cargo zigbuild --release -p spectype --target "${{ matrix.target }}$suffix"
             else
-              cargo build --release -p spectype --target ${{ matrix.target }} "$@"
+              cargo build --release -p spectype --target ${{ matrix.target }}
             fi
           }
           if [ -n "${{ matrix.pgo }}" ]; then
             rustup component add llvm-tools
-            RUSTFLAGS="-Cprofile-generate=$GITHUB_WORKSPACE/target/pgo-raw" build --target-dir target/pgo
+            # zig can't link the profiler runtime, so the profile comes from a plain build for the runner's own target.
+            RUSTFLAGS="-Cprofile-generate=$GITHUB_WORKSPACE/target/pgo-raw" cargo build --release -p spectype --target-dir target/pgo
             for f in fixtures/ots/examples/*.yaml fixtures/ots/examples/*.json fixtures/ots/examples/digital-ocean-api/DigitalOcean-public.v2.yaml; do
-              "target/pgo/${{ matrix.target }}/release/spectype${{ matrix.exe }}" "$f" > /dev/null
+              "target/pgo/release/spectype${{ matrix.exe }}" "$f" > /dev/null
             done
             sysroot="$(rustc --print sysroot | tr '\\' /)"
             host="$(rustc -vV | sed -n 's/^host: //p')"
