@@ -115,7 +115,7 @@ jobs:
           merge-multiple: true
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: 22
+          node-version: 24
           registry-url: https://registry.npmjs.org
       - name: Build the WebAssembly fallback
         run: |
@@ -132,7 +132,6 @@ jobs:
           node npm/scripts/check.mjs
       - name: Publish to npm
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           FLAGS: ${{ github.ref_type == 'tag' && '--provenance' || '--dry-run' }}
         run: |
           for dir in npm/platforms/*/; do
