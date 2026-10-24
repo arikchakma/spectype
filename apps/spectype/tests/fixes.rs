@@ -89,6 +89,11 @@ fn anyof_properties() {
 }
 
 #[test]
+fn defs_optional() {
+    check("defs-optional", &[]);
+}
+
+#[test]
 fn unknown_fix_is_rejected() {
     let root = Path::new(env!("CARGO_MANIFEST_DIR")).join("../..");
     let out = Command::new(env!("CARGO_BIN_EXE_spectype"))

@@ -150,7 +150,7 @@ fn with_composition(ctx: &mut Ctx, schema: &Value, path: &JsonPointer, from_addi
     };
 
     if let Some(r) = obj.get("$ref") {
-        return oapi_ref(&super::js_text(r), path);
+        return schema_ref(ctx, &super::js_text(r), path);
     }
 
     if let Some(c) = obj.get("const").filter(|c| !matches!(c, Value::Null)) {
@@ -526,6 +526,22 @@ fn bare_object<'a>(ctx: &Ctx<'a, '_>, item: &'a Value) -> Option<&'a Map> {
     (typed && !shaped && (obj.contains_key("type") || obj.contains_key("required"))).then_some(obj)
 }
 
+fn schema_ref(ctx: &Ctx, r: &str, path: &JsonPointer) -> Result<Ty> {
+    let ty = oapi_ref(r, path)?;
+    Ok(if ctx.opts.fix.contains(Fix::DefsOptional) { non_nullable_defs(ty) } else { ty })
+}
+
+/// Wraps each `X["$defs"]` in a `$ref` type in `NonNullable`, since a schema's `$defs` is optional.
+fn non_nullable_defs(ty: Ty) -> Ty {
+    let Ty::Indexed(obj, key) = ty else { return ty };
+    let obj = non_nullable_defs(*obj);
+    let obj = match obj {
+        Ty::Indexed(_, ref k) if **k == Ty::Str("$defs".into()) => Ty::Ref("NonNullable".into(), vec![obj]),
+        obj => obj,
+    };
+    Ty::Indexed(Box::new(obj), key)
+}
+
 fn read_write(ctx: &Ctx, ty: Ty, read_only: bool, write_only: bool) -> Ty {
     if !ctx.opts.read_write_markers || (read_only && write_only) {
         return ty;
@@ -633,7 +649,8 @@ fn transform_core(ctx: &mut Ctx, schema: &Value, obj: &Map, path: &JsonPointer) 
                 let m = Member::prop(property_index(&k), false, readonly, ty);
                 def_members.push(ctx.property_hook(m, v, &create_ref(&[path.as_str(), "$defs", &k]))?);
             }
-            core.push(Member::prop(property_index("$defs"), false, false, Ty::Object(def_members)));
+            let optional = ctx.opts.fix.contains(Fix::DefsOptional);
+            core.push(Member::prop(property_index("$defs"), optional, false, Ty::Object(def_members)));
         }
 
         let ap = obj.get("additionalProperties");
@@ -736,7 +753,7 @@ fn transform_property(
         || (has_default && ctx.opts.default_non_nullable && !is_request_input(ctx, path));
     let prop_path = create_ref(&[path.as_str(), k]);
     let mut ty = match &r {
-        Some(r) => oapi_ref(r, path)?,
+        Some(r) => schema_ref(ctx, r, path)?,
         None => transform_schema(ctx, v, &prop_path, false)?,
     };
     if let Some(result) = ctx.transform_hook(v, path)? {

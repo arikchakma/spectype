@@ -80,11 +80,13 @@ pub enum Fix {
     DiscriminatorDeclaredValues,
     /// `anyOf` next to `properties` or `allOf` intersects with them, as `oneOf` does.
     AnyOfProperties,
+    /// A schema's `$defs` is an optional property, and `$ref`s into it go through `NonNullable`.
+    DefsOptional,
 }
 
 impl Fix {
     /// Every fix, in the order `--help` lists them.
-    pub const ALL: [Self; 13] = [
+    pub const ALL: [Self; 14] = [
         Self::ArrayLength,
         Self::EnumValuesType,
         Self::RootTypesNames,
@@ -98,6 +100,7 @@ impl Fix {
         Self::NestedDiscriminators,
         Self::DiscriminatorDeclaredValues,
         Self::AnyOfProperties,
+        Self::DefsOptional,
     ];
 
     /// The name `--fix` takes.
@@ -117,6 +120,7 @@ impl Fix {
             Self::NestedDiscriminators => "nested-discriminators",
             Self::DiscriminatorDeclaredValues => "discriminator-declared-values",
             Self::AnyOfProperties => "anyof-properties",
+            Self::DefsOptional => "defs-optional",
         }
     }
 
