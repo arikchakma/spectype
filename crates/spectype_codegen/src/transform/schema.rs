@@ -240,7 +240,13 @@ fn transform_enum(ctx: &mut Ctx, obj: &Map, values: &[Value], path: &JsonPointer
                 )
             })
             .collect();
-        let has_null = values.iter().any(|v| matches!(v, Value::Null));
+        let has_null = values.iter().any(|v| matches!(v, Value::Null))
+            || ctx.opts.fix.contains(Fix::EnumNames)
+                && (truthy(obj.get("nullable"))
+                    || obj
+                        .get("type")
+                        .and_then(Value::as_array)
+                        .is_some_and(|t| t.iter().any(|t| t.as_str() == Some("null"))));
         let valid: Vec<&Value> = values.iter().filter(|v| !matches!(v, Value::Null)).collect();
         let enum_name = ts_enum(ctx, &name, &valid, &metadata);
         let r = Ty::Ref(enum_name, Vec::new());

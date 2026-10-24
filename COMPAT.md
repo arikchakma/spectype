@@ -57,7 +57,7 @@ spectype copies these bugs by default, so your file does not change. Pass `--fix
 | --- | --- | --- |
 | `enum-values-type` | `--enum-values` arrays have types that don't compile on GitHub, Stripe and Octokit, and two enums can get the same name | `readonly ("a" \| "b")[]`, and duplicate names get `_2`, `_3` |
 | `root-types-names` | Names like `Foo` and `foo` collapse into one alias, invalid names print as is, and quotes aren't escaped | Every component gets a valid, unique alias |
-| `enum-names` | `--enum` member names collide (`a.b` and `a:b` both become `a_b`), and `null` falls back to a union | Unique names, and `null` gives `MyEnum \| null` |
+| `enum-names` | `--enum` member names collide (`a.b` and `a:b` both become `a_b`), `null` falls back to a union, and `nullable: true` or `type: [string, "null"]` drops `null` | Unique names, and `null`, `nullable` or a `null` type gives `MyEnum \| null` |
 | `array-length` | `--array-length` with `minItems < maxItems` gives tuples of length 0 to max−min | Tuples of length min to max |
 | `operation-id-refs` | An operationId with `%xx` is decoded in one place but not the other, so the reference breaks | The operationId is used as written in both |
 | `default-non-nullable-scope` | A property with a `default` stays optional when its path merely contains `parameters` or `requestBody` | Only real parameters and request bodies are exempt |

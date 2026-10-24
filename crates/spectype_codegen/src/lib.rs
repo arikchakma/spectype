@@ -56,7 +56,8 @@ pub enum Fix {
     EnumValuesType,
     /// `--root-types`: unique, valid alias names that do not shadow names the file uses.
     RootTypesNames,
-    /// `--enum`: unique, valid member and enum names; `null` allowed in enums.
+    /// `--enum`: unique, valid member and enum names; `null` allowed in enums, and `nullable` or
+    /// a `null` type keeps `| null`.
     EnumNames,
     /// `operations` keys and their `paths` references agree for operationIds with `%xx`.
     OperationIdRefs,

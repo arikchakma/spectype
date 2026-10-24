@@ -19,6 +19,10 @@ export interface components {
         status: Status;
         /** @enum {string} */
         Status: Status_2;
+        /** @enum {string|null} */
+        Nullable: Nullable | null;
+        /** @enum {string|null} */
+        NullType: NullType | null;
     };
     responses: never;
     parameters: never;
@@ -45,5 +49,11 @@ export enum Status {
 }
 export enum Status_2 {
     y = "y"
+}
+export enum Nullable {
+    n = "n"
+}
+export enum NullType {
+    t = "t"
 }
 export type operations = Record<string, never>;
