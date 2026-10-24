@@ -1085,7 +1085,14 @@ fn ref_base_name(r: &str) -> String {
     }
 }
 
+/// Node's `path.dirname` for Windows paths.
+#[cfg(windows)]
+fn dirname(p: &str) -> String {
+    std::path::Path::new(p).parent().map_or_else(|| ".".into(), |d| d.to_string_lossy().into_owned())
+}
+
 /// Node's `path.dirname` for POSIX paths.
+#[cfg(not(windows))]
 fn dirname(p: &str) -> String {
     let trimmed = p.trim_end_matches('/');
     if trimmed.is_empty() {
@@ -1098,7 +1105,15 @@ fn dirname(p: &str) -> String {
     }
 }
 
+/// Node's `path.resolve(base, p)` for Windows paths, with `base` already absolute.
+#[cfg(windows)]
+fn node_resolve(base: &str, p: &str) -> String {
+    let joined = std::path::Path::new(base).join(p);
+    std::path::absolute(&joined).unwrap_or(joined).to_string_lossy().into_owned()
+}
+
 /// Node's `path.resolve(base, p)` for POSIX paths, with `base` already absolute.
+#[cfg(not(windows))]
 fn node_resolve(base: &str, p: &str) -> String {
     let joined = if p.starts_with('/') { p.to_owned() } else { format!("{base}/{p}") };
     let mut out: Vec<&str> = Vec::new();
