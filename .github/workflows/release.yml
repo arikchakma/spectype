@@ -5,6 +5,12 @@ on:
     tags: ["v*"]
   workflow_dispatch:
 
+concurrency:
+  group: release-${{ github.ref }}
+
+permissions:
+  contents: read
+
 env:
   CARGO_TERM_COLOR: always
 
@@ -25,15 +31,16 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - run: |
           rustup toolchain install
           rustup target add ${{ matrix.target }}
-      - uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2.9.3
-        with:
-          key: ${{ matrix.target }}
       - if: matrix.zig
         run: |
-          curl -sSfL https://ziglang.org/download/0.15.2/zig-x86_64-linux-0.15.2.tar.xz | tar -xJ -C "$RUNNER_TEMP"
+          curl -sSfL -o "$RUNNER_TEMP/zig.tar.xz" https://ziglang.org/download/0.15.2/zig-x86_64-linux-0.15.2.tar.xz
+          echo "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239  $RUNNER_TEMP/zig.tar.xz" | sha256sum -c -
+          tar -xJf "$RUNNER_TEMP/zig.tar.xz" -C "$RUNNER_TEMP"
           echo "$RUNNER_TEMP/zig-x86_64-linux-0.15.2" >> "$GITHUB_PATH"
       - if: matrix.zig
         uses: taiki-e/install-action@1e29709c0ec63babbe8f266397a465f29a825f91 # v2.87.31
@@ -69,15 +76,14 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22
-          cache: npm
-          cache-dependency-path: npm/package-lock.json
+          package-manager-cache: false
       - name: Build the native addon
         shell: bash
         env:
           # A musl addon is loaded by Node, so it links musl's libc dynamically.
           RUSTFLAGS: ${{ contains(matrix.target, 'musl') && '-C target-feature=-crt-static' || '' }} ${{ env.PGO_RUSTFLAGS }}
         run: |
-          npm ci --prefix npm
+          npm ci --ignore-scripts --prefix npm
           case "${{ matrix.target }}" in
             *-linux-gnu)
               cargo zigbuild --release -p spectype_napi --target "${{ matrix.target }}.2.17"
@@ -108,6 +114,8 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
           pattern: build-*
@@ -117,11 +125,12 @@ jobs:
         with:
           node-version: 24
           registry-url: https://registry.npmjs.org
+          package-manager-cache: false
       - name: Build the WebAssembly fallback
         run: |
           rustup toolchain install
           rustup target add wasm32-wasip1
-          npm ci --prefix npm
+          npm ci --ignore-scripts --prefix npm
           npm run build:wasm --prefix npm
           cp npm/platforms/wasm32-wasip1/spectype.wasm32-wasip1.wasm dist/
       - name: Stage npm packages
