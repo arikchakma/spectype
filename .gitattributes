@@ -1,3 +1,5 @@
+* text=auto eol=lf
+fixtures/edge/hand/yaml.crlf-line-endings.yaml -text
 tests/golden/** linguist-generated
 fixtures/** linguist-vendored
 apps/spectype/tests/snapshots/** linguist-generated
