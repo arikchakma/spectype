@@ -135,18 +135,23 @@ jobs:
           cp npm/platforms/wasm32-wasip1/spectype.wasm32-wasip1.wasm dist/
       - name: Stage npm packages
         run: |
-          version="${GITHUB_REF_NAME#v}"
-          [ "$GITHUB_REF_TYPE" = tag ] || version="$(sed -n 's/^version = "\(.*\)"/\1/p' Cargo.toml | head -1)"
-          node npm/scripts/stage.mjs "$version" dist
           node npm/scripts/check.mjs
+          if [ "$GITHUB_REF_TYPE" = tag ]; then
+            node npm/scripts/stage.mjs "${GITHUB_REF_NAME#v}" dist
+            node npm/scripts/check.mjs
+          else
+            version="$(sed -n 's/^version = "\(.*\)"/\1/p' Cargo.toml | head -1)"
+            node npm/scripts/stage.mjs "$version-dry.$GITHUB_RUN_NUMBER" dist
+          fi
       - name: Publish to npm
         env:
           FLAGS: ${{ github.ref_type == 'tag' && '--provenance' || '--dry-run' }}
+          TAG: ${{ github.ref_type == 'tag' && 'latest' || 'dry-run' }}
         run: |
           for dir in npm/platforms/*/; do
-            npm publish "$dir" "$FLAGS" --access public
+            npm publish "$dir" "$FLAGS" --tag "$TAG" --access public
           done
-          npm publish ./npm/spectype "$FLAGS" --access public
+          npm publish ./npm/spectype "$FLAGS" --tag "$TAG" --access public
       - if: github.ref_type == 'tag'
         uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v3.0.3
         with:
