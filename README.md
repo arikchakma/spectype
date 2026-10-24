@@ -11,8 +11,8 @@ working.
 npm install --save-dev spectype
 ```
 
-Or `cargo install spectype`. npm installs a native addon on macOS, Linux and Windows, and a
-WebAssembly build everywhere else.
+npm installs a native addon on macOS, Linux and Windows, and a WebAssembly build everywhere
+else.
 
 ## CLI
 
