@@ -788,6 +788,16 @@ fn transform_array(ctx: &mut Ctx, obj: &Map, path: &JsonPointer) -> Result<Ty> {
         for item in prefix {
             elements.push(transform_schema(ctx, item, path, false)?);
         }
+        let closed = matches!(items, Some(Value::Bool(false)))
+            || matches!(obj.get("unevaluatedItems"), Some(Value::Bool(false)))
+            || matches!(obj.get("maxItems"), Some(Value::Number(n)) if *n <= f64::from(u32::try_from(prefix.len()).unwrap_or(u32::MAX)));
+        if ctx.opts.fix.contains(Fix::PrefixItems) && truthy(obj.get("prefixItems")) && !closed {
+            let rest = match items {
+                Some(items @ Value::Object(_)) => transform_schema(ctx, items, path, false)?,
+                _ => UNKNOWN,
+            };
+            elements.push(Ty::Rest(Box::new(Ty::Array(Box::new(rest)))));
+        }
         item_ty = Ty::Tuple(elements);
         built_here = true;
     } else if let Some(items) = items.filter(|i| i.truthy()) {

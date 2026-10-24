@@ -50,7 +50,7 @@ Options
                              operation-id-refs, default-non-nullable-scope, const-items,
                              allof-empty-objects, discriminator-oneof-base, allof-required,
                              nested-discriminators, discriminator-declared-values,
-                             anyof-properties, defs-optional
+                             anyof-properties, defs-optional, prefix-items
   --inject <file>            Insert the TypeScript in <file> before the generated types
 ";
 

@@ -82,11 +82,14 @@ pub enum Fix {
     AnyOfProperties,
     /// A schema's `$defs` is an optional property, and `$ref`s into it go through `NonNullable`.
     DefsOptional,
+    /// A `prefixItems` tuple allows the extra items that `items` describes, unless `items: false`,
+    /// `unevaluatedItems: false` or `maxItems` closes it.
+    PrefixItems,
 }
 
 impl Fix {
     /// Every fix, in the order `--help` lists them.
-    pub const ALL: [Self; 14] = [
+    pub const ALL: [Self; 15] = [
         Self::ArrayLength,
         Self::EnumValuesType,
         Self::RootTypesNames,
@@ -101,6 +104,7 @@ impl Fix {
         Self::DiscriminatorDeclaredValues,
         Self::AnyOfProperties,
         Self::DefsOptional,
+        Self::PrefixItems,
     ];
 
     /// The name `--fix` takes.
@@ -121,6 +125,7 @@ impl Fix {
             Self::DiscriminatorDeclaredValues => "discriminator-declared-values",
             Self::AnyOfProperties => "anyof-properties",
             Self::DefsOptional => "defs-optional",
+            Self::PrefixItems => "prefix-items",
         }
     }
 

@@ -69,6 +69,7 @@ spectype copies these bugs by default, so your file does not change. Pass `--fix
 | `discriminator-declared-values` | A `oneOf` variant with no `mapping` entry gets its schema name as the value, replacing the `enum` or `const` it declares (`commentType: "TextComment"` instead of `"text"`) | The declared values are kept |
 | `anyof-properties` | `anyOf` next to `properties` or `allOf` prints a union with them (`{ name?: string } \| Email \| Phone`), so an object matching either side passes | `{ name?: string } & (Email \| Phone)`, as `oneOf` already prints |
 | `defs-optional` | A schema's `$defs` prints as a required property, so no real value matches the type | `$defs?:`, and `$ref`s into it read `NonNullable<X["$defs"]>["name"]` |
+| `prefix-items` | `prefixItems` always prints a closed tuple, so arrays with more items are rejected | `[number, string, ...unknown[]]`, or `...T[]` for `items: T`. `items: false`, `unevaluatedItems: false` and a `maxItems` within the prefix keep it closed |
 
 `--path-params-as-types` has no fix. Overlapping paths (`/a/${string}` and `/a/${string}/b`) give
 `TS2413` errors, and any type that compiles would change what `paths[url]` returns.
