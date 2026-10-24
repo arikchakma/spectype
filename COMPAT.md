@@ -25,6 +25,9 @@ How it is checked:
 | A failing lint | Prints a stack trace | Prints only the ` ✘ ` lines |
 | `apis` mode | Runs the APIs at the same time, in any order | Runs them in config order |
 | `apis` mode with `--check` | Stops at the first up-to-date API | Checks every API |
+| A boolean flag such as `--enum` or `--array-length` right before the spec (`--enum spec.yaml`) | Takes the spec as the flag's value, then waits on stdin | Reads the spec |
+| An unknown flag such as `-i` | Waits on stdin | Warns that the flag was ignored |
+| No spec, with stdin a terminal | Waits for input | Exits with `No input given` |
 | A `$ref` under a key named `toString` or `constructor`, whose target a discriminator patches | The inlined copy gets the patch too | The inlined copy does not. Only the fuzzer has hit this. |
 
 ## Lint (`redocly.yaml`)
