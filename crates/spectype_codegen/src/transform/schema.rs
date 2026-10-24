@@ -223,6 +223,10 @@ fn with_composition(ctx: &mut Ctx, schema: &Value, path: &JsonPointer, from_addi
 }
 
 fn transform_enum(ctx: &mut Ctx, obj: &Map, values: &[Value], path: &JsonPointer, from_additional: bool) -> Result<Ty> {
+    if let Some(base) = base_enum_ref(ctx, values, path) {
+        let literals = union(values.iter().map(|v| literal(Some(v))).collect());
+        return Ok(Ty::Ref("Extract".into(), vec![oapi_ref(base, path)?, literals]));
+    }
     if should_transform_to_ts_enum(ctx, obj, values) {
         let name = parse_ref(path).join("/").replacen("components/schemas", "", 1);
         let meta = |key: &str, alt: &str, i: usize| -> Option<Value> {
@@ -430,6 +434,19 @@ fn ts_enum(ctx: &mut Ctx, name: &str, values: &[&Value], metadata: &[(Option<Str
     }
     ctx.push_footer(Stmt::Enum { name: enum_name.clone(), members });
     enum_name
+}
+
+/// With `--enum`, the `$ref` of the enum a discriminator base declares for the property at `path`,
+/// when the scan patched `path` with a narrower enum. The patch would print as a new TS enum that
+/// the base's enum doesn't accept.
+fn base_enum_ref<'a>(ctx: &Ctx<'a, '_>, values: &[Value], path: &JsonPointer) -> Option<&'a str> {
+    if !ctx.opts.enum_
+        || !ctx.opts.fix.contains(Fix::EnumDiscriminators)
+        || !should_transform_to_ts_enum(ctx, &Map::new(), values)
+    {
+        return None;
+    }
+    ctx.discriminators.enum_refs.get(path.as_str()).map(String::as_str)
 }
 
 fn collect_union(ctx: &mut Ctx, items: &[Value], key: &str, path: &JsonPointer) -> Result<Vec<Ty>> {

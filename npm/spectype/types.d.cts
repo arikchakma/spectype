@@ -718,7 +718,8 @@ export type Fix =
   | "read-write-primitives"
   | "bundled-ref-names"
   | "discriminator-cycles"
-  | "request-defaults";
+  | "request-defaults"
+  | "enum-discriminators";
 
 /** Context passed to all submodules */
 export interface GlobalContext {

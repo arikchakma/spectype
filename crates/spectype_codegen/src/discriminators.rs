@@ -15,6 +15,9 @@ pub struct Discriminators {
     pub(crate) objects: Map,
     pub(crate) refs_handled: FxHashSet<String>,
     refs_handled_list: Vec<String>,
+    /// For [`Fix::EnumDiscriminators`]: the pointer of each patched discriminator property, with
+    /// the `$ref` the base's property uses.
+    pub(crate) enum_refs: rustc_hash::FxHashMap<String, String>,
 }
 
 impl Discriminators {
@@ -31,6 +34,15 @@ impl Discriminators {
     fn handled(&mut self, r: &str) {
         self.refs_handled.insert(r.to_owned());
         self.refs_handled_list.push(r.to_owned());
+    }
+
+    fn enum_ref(&mut self, root: &Value, variant: &str, base: &str, discriminator: &Value) {
+        let Resolved::Found(base) = resolve_ref(root, base) else { return };
+        let name = property_name(discriminator);
+        let prop = base.get("properties").and_then(|p| p.get(&name));
+        if let Some(r) = prop.and_then(|p| p.get("$ref")).and_then(Value::as_str) {
+            self.enum_refs.insert(create_ref(&[variant, &name]).into_string(), r.to_owned());
+        }
     }
 }
 
@@ -276,6 +288,9 @@ pub fn scan(root: &mut Value, fixes: Fixes) -> (Discriminators, Vec<String>) {
             };
             if patch(root, mapped_ref, &values, &discriminator, &r, &mut warnings) {
                 d.handled(mapped_ref);
+                if fixes.contains(Fix::EnumDiscriminators) {
+                    d.enum_ref(root, mapped_ref, &r, &discriminator);
+                }
             }
         }
     }
@@ -299,6 +314,9 @@ pub fn scan(root: &mut Value, fixes: Fixes) -> (Discriminators, Vec<String>) {
                         .collect();
                     if !values.is_empty() && patch(root, &r, &values, &discriminator, &item_ref, &mut warnings) {
                         d.handled(&r);
+                        if fixes.contains(Fix::EnumDiscriminators) {
+                            d.enum_ref(root, &r, &item_ref, &discriminator);
+                        }
                     }
                 }
                 if fixes.contains(Fix::DiscriminatorOneOfBase) && !is_variant(root, &item_ref, &r) {

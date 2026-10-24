@@ -52,7 +52,7 @@ Options
                              nested-discriminators, discriminator-declared-values,
                              anyof-properties, defs-optional, prefix-items,
                              read-write-primitives, bundled-ref-names, discriminator-cycles,
-                             request-defaults
+                             request-defaults, enum-discriminators
   --inject <file>            Insert the TypeScript in <file> before the generated types
 ";
 

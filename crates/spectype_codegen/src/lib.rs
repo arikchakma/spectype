@@ -98,11 +98,14 @@ pub enum Fix {
     /// `--default-non-nullable` also exempts schemas that parameters and request bodies reach
     /// through `$ref`.
     RequestDefaults,
+    /// `--enum`: a discriminator value patched into a variant narrows the base's enum with
+    /// `Extract` instead of declaring a new enum.
+    EnumDiscriminators,
 }
 
 impl Fix {
     /// Every fix, in the order `--help` lists them.
-    pub const ALL: [Self; 19] = [
+    pub const ALL: [Self; 20] = [
         Self::ArrayLength,
         Self::EnumValuesType,
         Self::RootTypesNames,
@@ -122,6 +125,7 @@ impl Fix {
         Self::BundledRefNames,
         Self::DiscriminatorCycles,
         Self::RequestDefaults,
+        Self::EnumDiscriminators,
     ];
 
     /// The name `--fix` takes.
@@ -147,6 +151,7 @@ impl Fix {
             Self::BundledRefNames => "bundled-ref-names",
             Self::DiscriminatorCycles => "discriminator-cycles",
             Self::RequestDefaults => "request-defaults",
+            Self::EnumDiscriminators => "enum-discriminators",
         }
     }
 
