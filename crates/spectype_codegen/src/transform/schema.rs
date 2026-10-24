@@ -723,6 +723,14 @@ fn transform_core(ctx: &mut Ctx, schema: &Value, obj: &Map, path: &JsonPointer) 
 /// `parameters`/`requestBody`/`requestBodies` anywhere in the pointer, which also matches schema
 /// and property names; the fix checks where the schema actually sits.
 fn is_request_input(ctx: &Ctx, path: &JsonPointer) -> bool {
+    let reachable = || {
+        let p = path.as_str();
+        ctx.request_refs.contains(p) || p.match_indices('/').any(|(i, _)| ctx.request_refs.contains(&p[..i]))
+    };
+    is_request_location(ctx, path) || reachable()
+}
+
+fn is_request_location(ctx: &Ctx, path: &JsonPointer) -> bool {
     if !ctx.opts.fix.contains(Fix::DefaultNonNullableScope) {
         return path.contains("parameters") || path.contains("requestBody") || path.contains("requestBodies");
     }

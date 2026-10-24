@@ -717,7 +717,8 @@ export type Fix =
   | "prefix-items"
   | "read-write-primitives"
   | "bundled-ref-names"
-  | "discriminator-cycles";
+  | "discriminator-cycles"
+  | "request-defaults";
 
 /** Context passed to all submodules */
 export interface GlobalContext {

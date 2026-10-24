@@ -73,6 +73,7 @@ spectype copies these bugs by default, so your file does not change. Pass `--fix
 | `read-write-primitives` | `--read-write-markers`: `Readable` and `Writable` map a branded primitive (`string & { __brand: "Id" }`) as an object, so the result is no longer a `string` | Primitives pass through unchanged |
 | `bundled-ref-names` | An external `$ref` through a path with `/` (`other.yaml#/paths/~1a/…/application~1json/schema`) becomes a component named `application~1json-schema`, but the type refers to `application/json-schema`, which doesn't exist | The component is named `application/json-schema` |
 | `discriminator-cycles` | A base whose `oneOf` lists variants that extend it with `allOf` (common in Swashbuckle and springdoc output) refers to itself through `Omit`, which fails with TS2502 | Each variant gets the base's own properties inline, without the `oneOf` |
+| `request-defaults` | A property with a `default` is required in a request body or parameter that uses `$ref`, though it's optional when written inline | Schemas that a request reaches through `$ref` keep it optional. They are shared types, so it is optional in responses that use them too |
 
 `--path-params-as-types` has no fix. Overlapping paths (`/a/${string}` and `/a/${string}/b`) give
 `TS2413` errors, and any type that compiles would change what `paths[url]` returns.

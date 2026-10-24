@@ -55,6 +55,8 @@ pub struct Ctx<'a, 'h> {
     regex_state: InvalidCharsRegexState,
     enum_cache: FxHashMap<String, String>,
     warnings: Vec<String>,
+    /// The `$ref`s reachable from parameters and request bodies, for [`Fix::RequestDefaults`].
+    request_refs: FxHashSet<String>,
 }
 
 impl<'a> Ctx<'a, '_> {
@@ -980,6 +982,53 @@ fn rename_colliding_aliases(out: &mut [Stmt], aliases: &std::ops::Range<usize>) 
     }
 }
 
+/// Every `$ref` that parameters and request bodies reach, directly or through other `$ref`s.
+fn request_refs(doc: &Value) -> FxHashSet<String> {
+    fn collect(v: &Value, out: &mut Vec<String>) {
+        match v {
+            Value::Object(m) => {
+                if let Some(Value::String(r)) = m.get("$ref") {
+                    out.push(r.clone());
+                }
+                m.iter().for_each(|(_, v)| collect(v, out));
+            }
+            Value::Array(a) => a.iter().for_each(|v| collect(v, out)),
+            _ => {}
+        }
+    }
+    let mut queue = Vec::new();
+    let components = doc.get("components");
+    for kind in ["parameters", "requestBodies"] {
+        if let Some(v) = components.and_then(|c| c.get(kind)) {
+            collect(v, &mut queue);
+        }
+    }
+    let groups = [doc.get("paths"), doc.get("webhooks"), components.and_then(|c| c.get("pathItems"))];
+    for item in groups.into_iter().flatten().filter_map(Value::as_object).flat_map(|g| g.iter().map(|(_, v)| v)) {
+        let Some(item) = item.as_object() else { continue };
+        for (k, v) in item.iter() {
+            if k == "parameters" {
+                collect(v, &mut queue);
+            } else if k.parse::<HttpMethod>().is_ok() {
+                for part in ["parameters", "requestBody"] {
+                    if let Some(p) = v.get(part) {
+                        collect(p, &mut queue);
+                    }
+                }
+            }
+        }
+    }
+    let mut seen = FxHashSet::default();
+    while let Some(r) = queue.pop() {
+        if let Some(target) = resolve_ref_quiet(doc, &r)
+            && seen.insert(r)
+        {
+            collect(target, &mut queue);
+        }
+    }
+    seen
+}
+
 fn record_alias(name: &str) -> Stmt {
     Stmt::TypeAlias { name: name.into(), ty: record(STRING, NEVER) }
 }
@@ -1015,6 +1064,7 @@ pub fn transform_document(
         regex_state: InvalidCharsRegexState::default(),
         enum_cache: FxHashMap::default(),
         warnings: Vec::new(),
+        request_refs: if opts.fix.contains(Fix::RequestDefaults) { request_refs(doc) } else { FxHashSet::default() },
     };
     let mut out = Vec::new();
     let mut alias_range = 0..0;

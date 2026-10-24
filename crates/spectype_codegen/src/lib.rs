@@ -95,11 +95,14 @@ pub enum Fix {
     /// A `oneOf` variant that extends its own base with `allOf` gets the base's own properties
     /// instead of a reference back to the union.
     DiscriminatorCycles,
+    /// `--default-non-nullable` also exempts schemas that parameters and request bodies reach
+    /// through `$ref`.
+    RequestDefaults,
 }
 
 impl Fix {
     /// Every fix, in the order `--help` lists them.
-    pub const ALL: [Self; 18] = [
+    pub const ALL: [Self; 19] = [
         Self::ArrayLength,
         Self::EnumValuesType,
         Self::RootTypesNames,
@@ -118,6 +121,7 @@ impl Fix {
         Self::ReadWritePrimitives,
         Self::BundledRefNames,
         Self::DiscriminatorCycles,
+        Self::RequestDefaults,
     ];
 
     /// The name `--fix` takes.
@@ -142,6 +146,7 @@ impl Fix {
             Self::ReadWritePrimitives => "read-write-primitives",
             Self::BundledRefNames => "bundled-ref-names",
             Self::DiscriminatorCycles => "discriminator-cycles",
+            Self::RequestDefaults => "request-defaults",
         }
     }
 
