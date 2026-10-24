@@ -88,11 +88,14 @@ pub enum Fix {
     /// `--read-write-markers`: `Readable` and `Writable` leave branded primitives such as
     /// `string & { __brand: "Id" }` as they are.
     ReadWritePrimitives,
+    /// A component the bundler names from a pointer with `~1` (such as `application~1json`) gets a
+    /// key and a `$ref` that agree.
+    BundledRefNames,
 }
 
 impl Fix {
     /// Every fix, in the order `--help` lists them.
-    pub const ALL: [Self; 16] = [
+    pub const ALL: [Self; 17] = [
         Self::ArrayLength,
         Self::EnumValuesType,
         Self::RootTypesNames,
@@ -109,6 +112,7 @@ impl Fix {
         Self::DefsOptional,
         Self::PrefixItems,
         Self::ReadWritePrimitives,
+        Self::BundledRefNames,
     ];
 
     /// The name `--fix` takes.
@@ -131,6 +135,7 @@ impl Fix {
             Self::DefsOptional => "defs-optional",
             Self::PrefixItems => "prefix-items",
             Self::ReadWritePrimitives => "read-write-primitives",
+            Self::BundledRefNames => "bundled-ref-names",
         }
     }
 

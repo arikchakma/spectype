@@ -60,7 +60,7 @@ fn main() {
         let mut doc = measure(&mut out, &name, "parse", || parse_document(source, Format::Yaml).expect("parse"));
         let mut load = |r: &str| Ok(files.get(r).map(|text| LoadedDocument { text: text.clone(), mime_type: None }));
         measure(&mut out, &name, "bundle", || {
-            spectype_redocly::bundle(&mut doc, Some(&location), &mut load, &options.lint).expect("bundle")
+            spectype_redocly::bundle(&mut doc, Some(&location), &mut load, &options.lint, false).expect("bundle")
         });
         let (discriminators, _) =
             measure(&mut out, &name, "discriminators", || scan_discriminators(&mut doc, options.fix));

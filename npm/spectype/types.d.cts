@@ -715,7 +715,8 @@ export type Fix =
   | "anyof-properties"
   | "defs-optional"
   | "prefix-items"
-  | "read-write-primitives";
+  | "read-write-primitives"
+  | "bundled-ref-names";
 
 /** Context passed to all submodules */
 export interface GlobalContext {

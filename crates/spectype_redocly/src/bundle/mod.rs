@@ -20,7 +20,7 @@ use crate::lint::Problem;
 use crate::load::{Load, LoadedDocument};
 use spectype_document::oas::ComponentKind;
 use spectype_document::parse::{Format, parse_document};
-use spectype_document::pointer::{JsonPointer, unescape_pointer};
+use spectype_document::pointer::{JsonPointer, escape_pointer, unescape_pointer};
 use spectype_document::value::{JsMap, Value};
 use spectype_document::{Error, Result};
 
@@ -291,6 +291,9 @@ struct Doc {
 
 struct Bundler<'h> {
     load: &'h mut Load<'h>,
+    /// Component names decode `~0` and `~1` from the pointer they come from, and the new `$ref`
+    /// escapes them, so the two agree.
+    decode_names: bool,
     docs: Vec<Doc>,
     files: FxHashMap<String, Result<usize, ()>>,
     resolved_paths: FxHashMap<String, Result<usize, ()>>,
@@ -321,6 +324,7 @@ pub fn bundle(
     source: Option<&str>,
     load: &mut Load<'_>,
     lint: &crate::lint::Config,
+    decode_names: bool,
 ) -> Result<Vec<Problem>> {
     if !doc.is_object() {
         return Ok(Vec::new());
@@ -350,6 +354,7 @@ pub fn bundle(
         anchors_seen: false,
         unresolved: Vec::new(),
         warnings: Vec::new(),
+        decode_names,
     };
     b.resolve_all(root.clone())?;
     let (mut problems, mutated) = if lint.is_empty() { (Vec::new(), false) } else { crate::lint::run(&b, v31, lint) };
@@ -925,6 +930,9 @@ impl Bundler<'_> {
             self.dirty = true;
             group.borrow_mut().insert(name.clone(), target.clone());
         }
+        if self.decode_names {
+            return Ok(format!("#/components/{kind}/{}", escape_pointer(&name)));
+        }
         Ok(format!("#/components/{kind}/{name}"))
     }
 
@@ -941,10 +949,14 @@ impl Bundler<'_> {
         };
         let pointer = at.pointer();
         let tail: String = pointer.chars().skip(2).collect();
-        let mut parts: Vec<&str> = tail.split('/').filter(|p| !p.is_empty()).collect();
+        let mut parts: Vec<std::borrow::Cow<'_, str>> = tail
+            .split('/')
+            .filter(|p| !p.is_empty())
+            .map(|p| if self.decode_names { unescape_pointer(p) } else { p.into() })
+            .collect();
         let mut name = String::new();
         while let Some(part) = parts.pop() {
-            name = if name.is_empty() { part.to_owned() } else { format!("{part}-{name}") };
+            name = if name.is_empty() { part.into_owned() } else { format!("{part}-{name}") };
             if free(&name) {
                 return name;
             }
@@ -1171,6 +1183,7 @@ mod tests {
             Some(&dir.join("root.json").to_string_lossy()),
             &mut crate::load_file,
             &crate::lint::Config::default(),
+            false,
         )
         .unwrap();
         let _ = std::fs::remove_dir_all(&dir);
