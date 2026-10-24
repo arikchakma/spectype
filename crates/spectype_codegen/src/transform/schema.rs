@@ -459,7 +459,10 @@ fn collect_all_of(ctx: &mut Ctx, items: &[Value], required: Option<&Value>, path
         let item_ty;
         let item_ref = item.get("$ref").map(Value::js_string);
         if let Some(r) = &item_ref {
-            let mut ty = transform_schema(ctx, item, path, false)?;
+            let mut ty = match cyclic_base(ctx, r, path) {
+                Some(base) => transform_schema(ctx, &base, path, false)?,
+                None => transform_schema(ctx, item, path, false)?,
+            };
             if let Some(Value::Object(resolved)) = ctx.resolve(r)
                 && resolved.contains_key("properties")
                 && (ctx.opts.fix.contains(Fix::AllOfRequired) || !ctx.discriminators.refs_handled.contains(r))
@@ -498,6 +501,28 @@ fn collect_all_of(ctx: &mut Ctx, items: &[Value], required: Option<&Value>, path
         }
     }
     Ok(out)
+}
+
+/// The base at `r` without its `oneOf`, `anyOf` and discriminator, when that union lists `path`
+/// itself, so a variant that extends its own base doesn't refer back to the union (TS2502).
+fn cyclic_base(ctx: &Ctx, r: &str, path: &JsonPointer) -> Option<Value> {
+    if !ctx.opts.fix.contains(Fix::DiscriminatorCycles) {
+        return None;
+    }
+    let base = resolve_ref_quiet(ctx.root, r)?.as_object()?;
+    let lists_path = ["oneOf", "anyOf"]
+        .iter()
+        .filter_map(|k| base.get(k).and_then(Value::as_array))
+        .flatten()
+        .any(|v| v.get("$ref").and_then(Value::as_str) == Some(path.as_str()));
+    if !lists_path {
+        return None;
+    }
+    let mut own = Map::new();
+    for (k, v) in base.iter().filter(|(k, _)| !matches!(k.as_str(), "oneOf" | "anyOf" | "discriminator")) {
+        own.insert(k.clone(), v.clone());
+    }
+    Some(Value::Object(own))
 }
 
 /// The `allOf` member (or its `$ref` target) when it is an object with no shape of its own, which

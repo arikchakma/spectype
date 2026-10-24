@@ -51,7 +51,7 @@ Options
                              allof-empty-objects, discriminator-oneof-base, allof-required,
                              nested-discriminators, discriminator-declared-values,
                              anyof-properties, defs-optional, prefix-items,
-                             read-write-primitives, bundled-ref-names
+                             read-write-primitives, bundled-ref-names, discriminator-cycles
   --inject <file>            Insert the TypeScript in <file> before the generated types
 ";
 
