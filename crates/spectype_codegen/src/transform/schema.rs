@@ -452,7 +452,7 @@ fn collect_all_of(ctx: &mut Ctx, items: &[Value], required: Option<&Value>, path
             let mut ty = transform_schema(ctx, item, path, false)?;
             if let Some(Value::Object(resolved)) = ctx.resolve(r)
                 && resolved.contains_key("properties")
-                && !ctx.discriminators.refs_handled.contains(r)
+                && (ctx.opts.fix.contains(Fix::AllOfRequired) || !ctx.discriminators.refs_handled.contains(r))
             {
                 let props = resolved.get("properties");
                 let valid: Vec<String> = parent_required

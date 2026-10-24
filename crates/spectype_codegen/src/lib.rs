@@ -70,11 +70,14 @@ pub enum Fix {
     /// A schema that extends a `oneOf` discriminator base with `allOf`, without being one of its
     /// variants, keeps the union instead of becoming a new variant.
     DiscriminatorOneOfBase,
+    /// A parent's `required` applies to an `allOf` `$ref` even when a discriminator mapping
+    /// patched the target.
+    AllOfRequired,
 }
 
 impl Fix {
     /// Every fix, in the order `--help` lists them.
-    pub const ALL: [Self; 9] = [
+    pub const ALL: [Self; 10] = [
         Self::ArrayLength,
         Self::EnumValuesType,
         Self::RootTypesNames,
@@ -84,6 +87,7 @@ impl Fix {
         Self::ConstItems,
         Self::AllOfEmptyObjects,
         Self::DiscriminatorOneOfBase,
+        Self::AllOfRequired,
     ];
 
     /// The name `--fix` takes.
@@ -99,6 +103,7 @@ impl Fix {
             Self::ConstItems => "const-items",
             Self::AllOfEmptyObjects => "allof-empty-objects",
             Self::DiscriminatorOneOfBase => "discriminator-oneof-base",
+            Self::AllOfRequired => "allof-required",
         }
     }
 

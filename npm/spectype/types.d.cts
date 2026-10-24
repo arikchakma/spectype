@@ -708,7 +708,8 @@ export type Fix =
   | "default-non-nullable-scope"
   | "const-items"
   | "allof-empty-objects"
-  | "discriminator-oneof-base";
+  | "discriminator-oneof-base"
+  | "allof-required";
 
 /** Context passed to all submodules */
 export interface GlobalContext {
