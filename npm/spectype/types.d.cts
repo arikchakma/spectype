@@ -711,7 +711,8 @@ export type Fix =
   | "discriminator-oneof-base"
   | "allof-required"
   | "nested-discriminators"
-  | "discriminator-declared-values";
+  | "discriminator-declared-values"
+  | "anyof-properties";
 
 /** Context passed to all submodules */
 export interface GlobalContext {

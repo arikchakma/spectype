@@ -181,7 +181,11 @@ fn with_composition(ctx: &mut Ctx, schema: &Value, path: &JsonPointer, from_addi
         _ => Vec::new(),
     };
     if !any_of.is_empty() {
-        final_ty = Some(union(final_ty.into_iter().chain(any_of).collect()));
+        if ctx.opts.fix.contains(Fix::AnyOfProperties) && !any_of.iter().all(is_primitive) {
+            final_ty = Some(intersection(final_ty.into_iter().chain([union(any_of)]).collect()));
+        } else {
+            final_ty = Some(union(final_ty.into_iter().chain(any_of).collect()));
+        }
     }
 
     let one_of_items = match obj.get("oneOf") {

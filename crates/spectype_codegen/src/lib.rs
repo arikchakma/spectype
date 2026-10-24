@@ -78,11 +78,13 @@ pub enum Fix {
     /// A `oneOf` variant without a mapping entry keeps the `enum` or `const` it declares for the
     /// discriminator property instead of getting its schema name.
     DiscriminatorDeclaredValues,
+    /// `anyOf` next to `properties` or `allOf` intersects with them, as `oneOf` does.
+    AnyOfProperties,
 }
 
 impl Fix {
     /// Every fix, in the order `--help` lists them.
-    pub const ALL: [Self; 12] = [
+    pub const ALL: [Self; 13] = [
         Self::ArrayLength,
         Self::EnumValuesType,
         Self::RootTypesNames,
@@ -95,6 +97,7 @@ impl Fix {
         Self::AllOfRequired,
         Self::NestedDiscriminators,
         Self::DiscriminatorDeclaredValues,
+        Self::AnyOfProperties,
     ];
 
     /// The name `--fix` takes.
@@ -113,6 +116,7 @@ impl Fix {
             Self::AllOfRequired => "allof-required",
             Self::NestedDiscriminators => "nested-discriminators",
             Self::DiscriminatorDeclaredValues => "discriminator-declared-values",
+            Self::AnyOfProperties => "anyof-properties",
         }
     }
 
