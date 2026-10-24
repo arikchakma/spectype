@@ -48,7 +48,7 @@ Options
   --fix <names>              Opt-in fixes for openapi-typescript bugs (comma-separated, or \"all\"):
                              array-length, enum-values-type, root-types-names, enum-names,
                              operation-id-refs, default-non-nullable-scope, const-items,
-                             allof-empty-objects
+                             allof-empty-objects, discriminator-oneof-base
   --inject <file>            Insert the TypeScript in <file> before the generated types
 ";
 

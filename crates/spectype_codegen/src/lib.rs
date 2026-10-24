@@ -67,11 +67,14 @@ pub enum Fix {
     /// An `allOf` member that is an object with no properties no longer makes its siblings
     /// `never`, and its `required` applies to them.
     AllOfEmptyObjects,
+    /// A schema that extends a `oneOf` discriminator base with `allOf`, without being one of its
+    /// variants, keeps the union instead of becoming a new variant.
+    DiscriminatorOneOfBase,
 }
 
 impl Fix {
     /// Every fix, in the order `--help` lists them.
-    pub const ALL: [Self; 8] = [
+    pub const ALL: [Self; 9] = [
         Self::ArrayLength,
         Self::EnumValuesType,
         Self::RootTypesNames,
@@ -80,6 +83,7 @@ impl Fix {
         Self::DefaultNonNullableScope,
         Self::ConstItems,
         Self::AllOfEmptyObjects,
+        Self::DiscriminatorOneOfBase,
     ];
 
     /// The name `--fix` takes.
@@ -94,6 +98,7 @@ impl Fix {
             Self::DefaultNonNullableScope => "default-non-nullable-scope",
             Self::ConstItems => "const-items",
             Self::AllOfEmptyObjects => "allof-empty-objects",
+            Self::DiscriminatorOneOfBase => "discriminator-oneof-base",
         }
     }
 

@@ -64,6 +64,11 @@ fn allof_empty_objects() {
 }
 
 #[test]
+fn discriminator_oneof_base() {
+    check("discriminator-oneof-base", &[]);
+}
+
+#[test]
 fn unknown_fix_is_rejected() {
     let root = Path::new(env!("CARGO_MANIFEST_DIR")).join("../..");
     let out = Command::new(env!("CARGO_BIN_EXE_spectype"))

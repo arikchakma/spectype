@@ -707,7 +707,8 @@ export type Fix =
   | "operation-id-refs"
   | "default-non-nullable-scope"
   | "const-items"
-  | "allof-empty-objects";
+  | "allof-empty-objects"
+  | "discriminator-oneof-base";
 
 /** Context passed to all submodules */
 export interface GlobalContext {

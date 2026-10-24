@@ -6,6 +6,8 @@ use rustc_hash::FxHashSet;
 use spectype_document::pointer::{Resolved, create_ref, get_path_mut, resolve_ref, resolve_ref_path};
 use spectype_document::value::{JsMap, Map, Value};
 
+use crate::{Fix, Fixes};
+
 /// What `scanDiscriminators` found: discriminator objects by the pointer of the schema holding
 /// them, and the `$ref`s of the schemas it patched.
 #[derive(Debug, Default)]
@@ -171,6 +173,24 @@ fn patch(
     false
 }
 
+/// Whether `r` is a variant of the discriminator at `owner`: always when `owner` has no `oneOf` or
+/// `anyOf`, otherwise only when one of them or the mapping names it.
+fn is_variant(root: &Value, owner: &str, r: &str) -> bool {
+    let Resolved::Found(owner) = resolve_ref(root, owner) else { return true };
+    let unions: Vec<&Value> =
+        ["oneOf", "anyOf"].iter().filter_map(|k| owner.get(k)).filter_map(Value::as_array).flatten().collect();
+    if unions.is_empty() {
+        return true;
+    }
+    let names = |v: &Value| v.as_str() == Some(r);
+    unions.iter().any(|v| v.get("$ref").is_some_and(names))
+        || owner
+            .get("discriminator")
+            .and_then(|d| d.get("mapping"))
+            .and_then(Value::as_object)
+            .is_some_and(|m| m.values().any(names))
+}
+
 #[derive(Default)]
 struct Mapping {
     inferred: Option<String>,
@@ -178,7 +198,7 @@ struct Mapping {
 }
 
 /// Scans and patches `root`, returning what the transforms need and the warnings upstream logs.
-pub fn scan(root: &mut Value) -> (Discriminators, Vec<String>) {
+pub fn scan(root: &mut Value, fixes: Fixes) -> (Discriminators, Vec<String>) {
     let mut d = Discriminators::default();
     let mut warnings = Vec::new();
 
@@ -253,6 +273,9 @@ pub fn scan(root: &mut Value) -> (Discriminators, Vec<String>) {
                     if !values.is_empty() && patch(root, &r, &values, &discriminator, &item_ref, &mut warnings) {
                         d.handled(&r);
                     }
+                }
+                if fixes.contains(Fix::DiscriminatorOneOfBase) && !is_variant(root, &item_ref, &r) {
+                    continue;
                 }
                 d.objects.insert(r.clone(), discriminator);
             } else if let Some(disc) = own {

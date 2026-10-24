@@ -474,8 +474,11 @@ fn collect_all_of(ctx: &mut Ctx, items: &[Value], required: Option<&Value>, path
             merged.insert("required".into(), Value::Array(req));
             item_ty = transform_schema(ctx, &Value::Object(merged), path, false)?;
         }
+        let extends_only = ctx.opts.fix.contains(Fix::DiscriminatorOneOfBase)
+            && ctx.discriminators.objects.get(path.as_str()).is_none();
         let discriminator = item_ref
             .as_ref()
+            .filter(|_| !extends_only)
             .and_then(|r| ctx.discriminators.objects.get(r))
             .cloned()
             .or_else(|| item.get("discriminator").filter(|d| d.truthy()).cloned());

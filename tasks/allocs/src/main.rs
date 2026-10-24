@@ -62,7 +62,8 @@ fn main() {
         measure(&mut out, &name, "bundle", || {
             spectype_redocly::bundle(&mut doc, Some(&location), &mut load, &options.lint).expect("bundle")
         });
-        let (discriminators, _) = measure(&mut out, &name, "discriminators", || scan_discriminators(&mut doc));
+        let (discriminators, _) =
+            measure(&mut out, &name, "discriminators", || scan_discriminators(&mut doc, options.fix));
         let (stmts, _) = measure(&mut out, &name, "transform", || {
             transform_document(&doc, &options, &discriminators, &mut FsHost).expect("transform")
         });

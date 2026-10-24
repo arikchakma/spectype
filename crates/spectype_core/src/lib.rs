@@ -65,7 +65,7 @@ pub fn generate_retained(
 ) -> Result<(Output, impl Sized)> {
     parse::check_version(&document)?;
     let lint_warnings = spectype_redocly::bundle(&mut document, source, &mut |r| host.load(r), &options.lint)?;
-    let (discriminators, scan_warnings) = scan_discriminators(&mut document);
+    let (discriminators, scan_warnings) = scan_discriminators(&mut document, options.fix);
     let mut warnings: Vec<String> = lint_warnings.iter().map(ToString::to_string).collect();
     warnings.extend(scan_warnings);
     let (stmts, transform_warnings) = match transform_document(&document, options, &discriminators, host) {
