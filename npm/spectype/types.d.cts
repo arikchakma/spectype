@@ -720,7 +720,8 @@ export type Fix =
   | "discriminator-cycles"
   | "request-defaults"
   | "enum-discriminators"
-  | "lint-ignore";
+  | "lint-ignore"
+  | "ref-read-write";
 
 /** Context passed to all submodules */
 export interface GlobalContext {

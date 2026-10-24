@@ -103,11 +103,13 @@ pub enum Fix {
     EnumDiscriminators,
     /// The CLI applies `.redocly.lint-ignore.yaml` next to `redocly.yaml`.
     LintIgnore,
+    /// A property that is a `$ref` takes `readOnly` and `writeOnly` from the schema it points to.
+    RefReadWrite,
 }
 
 impl Fix {
     /// Every fix, in the order `--help` lists them.
-    pub const ALL: [Self; 21] = [
+    pub const ALL: [Self; 22] = [
         Self::ArrayLength,
         Self::EnumValuesType,
         Self::RootTypesNames,
@@ -129,6 +131,7 @@ impl Fix {
         Self::RequestDefaults,
         Self::EnumDiscriminators,
         Self::LintIgnore,
+        Self::RefReadWrite,
     ];
 
     /// The name `--fix` takes.
@@ -156,6 +159,7 @@ impl Fix {
             Self::RequestDefaults => "request-defaults",
             Self::EnumDiscriminators => "enum-discriminators",
             Self::LintIgnore => "lint-ignore",
+            Self::RefReadWrite => "ref-read-write",
         }
     }
 

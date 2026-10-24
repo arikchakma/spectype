@@ -772,7 +772,7 @@ fn transform_property(
     v: &Value,
     core: &mut Vec<Member>,
 ) -> Result<()> {
-    let (r, read_only, write_only, has_default) = match v {
+    let (r, mut read_only, mut write_only, has_default) = match v {
         Value::Object(m) => (
             m.get("$ref").filter(|r| r.truthy()).map(Value::js_string),
             truthy(m.get("readOnly")),
@@ -793,6 +793,13 @@ fn transform_property(
             ));
         }
     };
+
+    if ctx.opts.fix.contains(Fix::RefReadWrite)
+        && let Some(target) = r.as_deref().and_then(|r| resolve_ref_quiet(ctx.root, r))
+    {
+        read_only |= truthy(target.get("readOnly"));
+        write_only |= truthy(target.get("writeOnly"));
+    }
 
     if ctx.opts.exclude_deprecated {
         let deprecated = match &r {
