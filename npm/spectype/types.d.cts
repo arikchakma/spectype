@@ -719,7 +719,8 @@ export type Fix =
   | "bundled-ref-names"
   | "discriminator-cycles"
   | "request-defaults"
-  | "enum-discriminators";
+  | "enum-discriminators"
+  | "lint-ignore";
 
 /** Context passed to all submodules */
 export interface GlobalContext {

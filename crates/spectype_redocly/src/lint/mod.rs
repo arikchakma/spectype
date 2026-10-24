@@ -31,6 +31,9 @@ pub struct Config {
     pub oas3_0: Map,
     /// Rules for `OpenAPI` 3.1 documents.
     pub oas3_1: Map,
+    /// Problems `.redocly.lint-ignore.yaml` silences: the canonical file path, the rule id and the
+    /// `#/...` pointer.
+    pub ignore: std::collections::BTreeSet<(String, String, String)>,
 }
 
 impl Config {
@@ -244,6 +247,7 @@ pub(crate) struct Cx<'w> {
     pub v31: bool,
     docs: &'w dyn Docs,
     sink: &'w mut Vec<Problem>,
+    ignore: &'w std::collections::BTreeSet<(String, String, String)>,
     rule: &'w Active,
     ignored: Option<&'w mut bool>,
     mutated: &'w std::cell::Cell<bool>,
@@ -260,6 +264,14 @@ impl<'w> Cx<'w> {
             Some(custom) => custom.replacen("{{message}}", message, 1),
             None => message.to_owned(),
         };
+        if !self.ignore.is_empty() {
+            let source = self.docs.source(at.doc);
+            let file =
+                std::fs::canonicalize(source).map_or_else(|_| source.to_owned(), |p| p.to_string_lossy().into_owned());
+            if self.ignore.contains(&(file, self.rule.id.clone(), at.pointer().to_string())) {
+                return;
+            }
+        }
         self.sink.push(Problem {
             rule: self.rule.id.clone(),
             error: self.rule.error,
@@ -366,6 +378,7 @@ pub(crate) fn run(docs: &dyn Docs, v31: bool, config: &Config) -> (Vec<Problem>,
     }
     let mut w = Walker {
         docs,
+        ignore: &config.ignore,
         v31,
         rules: active,
         ctxs: Vec::new(),
@@ -389,6 +402,7 @@ pub(crate) fn run(docs: &dyn Docs, v31: bool, config: &Config) -> (Vec<Problem>,
 
 struct Walker<'a> {
     docs: &'a dyn Docs,
+    ignore: &'a std::collections::BTreeSet<(String, String, String)>,
     v31: bool,
     rules: Vec<Active>,
     ctxs: Vec<Context>,
@@ -518,7 +532,7 @@ impl Walker<'_> {
         let Some(id) = e.visit else { return };
         let parent_locations = self.parent_locations(e.ctx);
         let rule = self.ctxs[e.ctx].rule;
-        let Walker { rules, problems, docs, v31, mutated, .. } = self;
+        let Walker { rules, problems, docs, v31, mutated, ignore, .. } = self;
         let Active { rule: imp, .. } = &mut rules[rule];
         let mut imp = std::mem::replace(imp, Box::new(Nop));
         let mut cx = Cx {
@@ -530,6 +544,7 @@ impl Walker<'_> {
             v31: *v31,
             docs: *docs,
             sink: problems,
+            ignore,
             rule: &rules[rule],
             ignored: Some(ignored),
             mutated,
@@ -541,7 +556,7 @@ impl Walker<'_> {
     fn call_ref(&mut self, e: Entry, node: &Node, ty: Ty, loc: &Loc, key: &Key, resolved: Option<&(Node, Loc)>) {
         let Some(id) = e.visit else { return };
         let rule = self.ctxs[e.ctx].rule;
-        let Walker { rules, problems, docs, v31, mutated, .. } = self;
+        let Walker { rules, problems, docs, v31, mutated, ignore, .. } = self;
         let mut imp = std::mem::replace(&mut rules[rule].rule, Box::new(Nop));
         let mut cx = Cx {
             ty,
@@ -552,6 +567,7 @@ impl Walker<'_> {
             v31: *v31,
             docs: *docs,
             sink: problems,
+            ignore,
             rule: &rules[rule],
             ignored: None,
             mutated,

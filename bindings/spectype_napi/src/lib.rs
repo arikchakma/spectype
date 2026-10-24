@@ -312,7 +312,7 @@ fn lint_config(value: &serde_json::Value) -> LintConfig {
             Ok(Value::Object(map)) => map,
             _ => spectype_core::value::Map::new(),
         };
-    LintConfig { oas3_0: rules("oas3_0"), oas3_1: rules("oas3_1") }
+    LintConfig { oas3_0: rules("oas3_0"), oas3_1: rules("oas3_1"), ..LintConfig::default() }
 }
 
 /// A schema as JS receives it: its index in the document the JS side parsed, or its JSON when it

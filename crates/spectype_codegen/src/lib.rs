@@ -101,11 +101,13 @@ pub enum Fix {
     /// `--enum`: a discriminator value patched into a variant narrows the base's enum with
     /// `Extract` instead of declaring a new enum.
     EnumDiscriminators,
+    /// The CLI applies `.redocly.lint-ignore.yaml` next to `redocly.yaml`.
+    LintIgnore,
 }
 
 impl Fix {
     /// Every fix, in the order `--help` lists them.
-    pub const ALL: [Self; 20] = [
+    pub const ALL: [Self; 21] = [
         Self::ArrayLength,
         Self::EnumValuesType,
         Self::RootTypesNames,
@@ -126,6 +128,7 @@ impl Fix {
         Self::DiscriminatorCycles,
         Self::RequestDefaults,
         Self::EnumDiscriminators,
+        Self::LintIgnore,
     ];
 
     /// The name `--fix` takes.
@@ -152,6 +155,7 @@ impl Fix {
             Self::DiscriminatorCycles => "discriminator-cycles",
             Self::RequestDefaults => "request-defaults",
             Self::EnumDiscriminators => "enum-discriminators",
+            Self::LintIgnore => "lint-ignore",
         }
     }
 

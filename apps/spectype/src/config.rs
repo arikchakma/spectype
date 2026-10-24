@@ -90,7 +90,26 @@ pub fn load(flag: Option<&str>) -> Result<Redocly, String> {
         }
     }
     let headers = headers_of(raw.get("resolve"));
-    Ok(Redocly { lint: merged.finish(), apis, file: Some(path), plugins, headers })
+    let mut lint = merged.finish();
+    lint.ignore = lint_ignore(&path);
+    Ok(Redocly { lint, apis, file: Some(path), plugins, headers })
+}
+
+/// `.redocly.lint-ignore.yaml` next to the config: file → rule → pointers, files relative to it.
+fn lint_ignore(config: &Path) -> std::collections::BTreeSet<(String, String, String)> {
+    let mut out = std::collections::BTreeSet::new();
+    let dir = config.parent().unwrap_or_else(|| Path::new(""));
+    let Ok(files) = read_config(&dir.join(".redocly.lint-ignore.yaml")) else { return out };
+    for (file, rules) in files.iter() {
+        let path = dir.join(file);
+        let path = std::fs::canonicalize(&path).unwrap_or(path).to_string_lossy().into_owned();
+        for (rule, pointers) in rules.as_object().into_iter().flat_map(Map::iter) {
+            for pointer in pointers.as_array().into_iter().flatten().filter_map(Value::as_str) {
+                out.insert((path.clone(), rule.clone(), pointer.to_owned()));
+            }
+        }
+    }
+    out
 }
 
 /// `findConfig(dir)`.
@@ -167,7 +186,7 @@ impl Merged {
             }
             out
         };
-        LintConfig { oas3_0: combine(&self.oas3_0), oas3_1: combine(&self.oas3_1) }
+        LintConfig { oas3_0: combine(&self.oas3_0), oas3_1: combine(&self.oas3_1), ..LintConfig::default() }
     }
 }
 

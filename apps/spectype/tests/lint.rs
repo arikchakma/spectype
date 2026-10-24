@@ -143,3 +143,25 @@ fn no_config_runs_no_rules() {
     assert_eq!(lint_lines(&out.stderr), "");
     let _ = std::fs::remove_dir_all(&dir);
 }
+
+#[test]
+fn lint_ignore_file_with_fix() {
+    let dir = temp_dir("ignore");
+    std::fs::write(dir.join("redocly.yaml"), "rules:\n  operation-operationId: error\n").unwrap();
+    std::fs::write(
+        dir.join("spec.yaml"),
+        "openapi: 3.0.0\ninfo: {title: t, version: '1'}\npaths:\n  /x:\n    get:\n      responses:\n        '200': {description: ok}\n",
+    )
+    .unwrap();
+    std::fs::write(
+        dir.join(".redocly.lint-ignore.yaml"),
+        "spec.yaml:\n  operation-operationId:\n    - '#/paths/~1x/get/operationId'\n",
+    )
+    .unwrap();
+    let plain = run_cli(&dir, &["spec.yaml", "-o", "out.ts"]);
+    assert!(!plain.status.success());
+    let fixed = run_cli(&dir, &["spec.yaml", "-o", "out.ts", "--fix=lint-ignore"]);
+    assert!(fixed.status.success(), "{}", String::from_utf8_lossy(&fixed.stderr));
+    assert_eq!(lint_lines(&fixed.stderr), "");
+    let _ = std::fs::remove_dir_all(&dir);
+}

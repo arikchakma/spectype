@@ -6,7 +6,7 @@ use std::io::{IsTerminal, Read, Write};
 use std::path::PathBuf;
 use std::time::Instant;
 
-use spectype_core::{Error, Format, Host, Options, generate_retained, parse_document};
+use spectype_core::{Error, Fix, Format, Host, Options, generate_retained, parse_document};
 
 mod config;
 mod remote;
@@ -52,7 +52,7 @@ Options
                              nested-discriminators, discriminator-declared-values,
                              anyof-properties, defs-optional, prefix-items,
                              read-write-primitives, bundled-ref-names, discriminator-cycles,
-                             request-defaults, enum-discriminators
+                             request-defaults, enum-discriminators, lint-ignore
   --inject <file>            Insert the TypeScript in <file> before the generated types
 ";
 
@@ -203,6 +203,9 @@ fn run(program: &str, raw: Vec<String>, mut host: remote::CliHost) -> Result<(),
         eprintln!("warning: Redocly plugins are not supported by spectype and were ignored");
     }
     args.options.lint = redocly.lint.clone();
+    if !args.options.fix.contains(Fix::LintIgnore) {
+        args.options.lint.ignore.clear();
+    }
     host.headers.clone_from(&redocly.headers);
     if args.output.is_some() {
         eprintln!("✨ spectype {}", env!("CARGO_PKG_VERSION"));
