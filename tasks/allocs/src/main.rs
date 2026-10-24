@@ -38,11 +38,7 @@ fn measure<T>(out: &mut String, fixture: &str, phase: &str, f: impl FnOnce() -> 
     let region = Region::new(GLOBAL);
     let value = f();
     let s = region.change();
-    let _ = writeln!(
-        out,
-        "{fixture:<34} | {phase:<14} | {:>10} | {:>10} | {:>12}",
-        s.allocations, s.reallocations, s.bytes_allocated
-    );
+    let _ = writeln!(out, "{fixture:<34} | {phase:<14} | {:>10} | {:>10}", s.allocations, s.reallocations);
     value
 }
 
@@ -55,8 +51,7 @@ fn main() {
     }
     std::env::set_current_dir("/").expect("chdir /");
 
-    let mut out =
-        format!("{:<34} | {:<14} | {:>10} | {:>10} | {:>12}\n", "fixture", "phase", "allocs", "reallocs", "bytes");
+    let mut out = format!("{:<34} | {:<14} | {:>10} | {:>10}\n", "fixture", "phase", "allocs", "reallocs");
     let options = Options::default();
     for fixture in FIXTURES {
         let name = Path::new(fixture).file_name().unwrap_or_default().to_string_lossy();
