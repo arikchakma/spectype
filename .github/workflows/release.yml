@@ -77,9 +77,16 @@ jobs:
           RUSTFLAGS: ${{ contains(matrix.target, 'musl') && '-C target-feature=-crt-static' || '' }} ${{ env.PGO_RUSTFLAGS }}
         run: |
           npm ci --prefix npm
-          cross=""
-          case "${{ matrix.target }}" in *-linux-gnu) cross="--use-napi-cross" ;; *-linux-musl) cross="-x" ;; esac
-          npm run build --prefix npm -- --target "${{ matrix.target }}" $cross
+          case "${{ matrix.target }}" in
+            *-linux-gnu)
+              cargo zigbuild --release -p spectype_napi --target "${{ matrix.target }}.2.17"
+              arch=x64
+              case "${{ matrix.target }}" in aarch64-*) arch=arm64 ;; esac
+              cp "target/${{ matrix.target }}/release/libspectype_napi.so" "npm/spectype/spectype.linux-$arch-gnu.node"
+              ;;
+            *-linux-musl) npm run build --prefix npm -- --target "${{ matrix.target }}" -x ;;
+            *) npm run build --prefix npm -- --target "${{ matrix.target }}" ;;
+          esac
       - name: Collect artifacts
         shell: bash
         run: |
