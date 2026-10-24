@@ -191,6 +191,14 @@ fn is_variant(root: &Value, owner: &str, r: &str) -> bool {
             .is_some_and(|m| m.values().any(names))
 }
 
+/// Whether the schema at `path` declares its own discriminator.
+fn own_discriminator(root: &Value, path: &[String]) -> bool {
+    node_at(root, path)
+        .and_then(|n| n.get("discriminator"))
+        .and_then(|d| d.get("propertyName"))
+        .is_some_and(Value::truthy)
+}
+
 #[derive(Default)]
 struct Mapping {
     inferred: Option<String>,
@@ -275,6 +283,9 @@ pub fn scan(root: &mut Value, fixes: Fixes) -> (Discriminators, Vec<String>) {
                     }
                 }
                 if fixes.contains(Fix::DiscriminatorOneOfBase) && !is_variant(root, &item_ref, &r) {
+                    continue;
+                }
+                if fixes.contains(Fix::NestedDiscriminators) && own_discriminator(root, &path) {
                     continue;
                 }
                 d.objects.insert(r.clone(), discriminator);

@@ -73,11 +73,13 @@ pub enum Fix {
     /// A parent's `required` applies to an `allOf` `$ref` even when a discriminator mapping
     /// patched the target.
     AllOfRequired,
+    /// A schema with its own discriminator keeps it when it extends another discriminator base.
+    NestedDiscriminators,
 }
 
 impl Fix {
     /// Every fix, in the order `--help` lists them.
-    pub const ALL: [Self; 10] = [
+    pub const ALL: [Self; 11] = [
         Self::ArrayLength,
         Self::EnumValuesType,
         Self::RootTypesNames,
@@ -88,6 +90,7 @@ impl Fix {
         Self::AllOfEmptyObjects,
         Self::DiscriminatorOneOfBase,
         Self::AllOfRequired,
+        Self::NestedDiscriminators,
     ];
 
     /// The name `--fix` takes.
@@ -104,6 +107,7 @@ impl Fix {
             Self::AllOfEmptyObjects => "allof-empty-objects",
             Self::DiscriminatorOneOfBase => "discriminator-oneof-base",
             Self::AllOfRequired => "allof-required",
+            Self::NestedDiscriminators => "nested-discriminators",
         }
     }
 

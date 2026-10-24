@@ -65,6 +65,7 @@ spectype copies these bugs by default, so your file does not change. Pass `--fix
 | `allof-empty-objects` | An `allOf` member with no properties, such as `{ type: object }` or `{ required: [id] }`, prints as `Record<string, never>`, so every sibling property becomes `never` | The member is dropped, and its `required` applies to the siblings |
 | `discriminator-oneof-base` | A schema with `allOf: [$ref Base]`, where `Base` has a discriminator and a `oneOf`, becomes a new variant named after itself, and `Omit<Base, …>` collapses the union | It stays `Base`, or `Base & {…}`, unless `Base` lists it as a variant |
 | `allof-required` | `required: [a]` next to `allOf: [$ref A]` is dropped when a discriminator mapping names `A` | `WithRequired<A, "a">` |
+| `nested-discriminators` | A base with its own discriminator mapping that also extends another discriminator base loses its mapping, so variants listed after the base get their schema name as the value | Every mapped variant gets its mapped value |
 
 `--path-params-as-types` has no fix. Overlapping paths (`/a/${string}` and `/a/${string}/b`) give
 `TS2413` errors, and any type that compiles would change what `paths[url]` returns.
