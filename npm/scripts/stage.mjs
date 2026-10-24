@@ -21,6 +21,7 @@ for (const platform of platforms) {
   copyFileSync(join(addons, addon), join(npm, "platforms", platform, addon));
   writeVersion(join(npm, "platforms", platform, "package.json"));
 }
+for (const file of ["README.md", "LICENSE"]) copyFileSync(join(npm, "..", file), join(npm, "spectype", file));
 writeVersion(join(npm, "spectype", "package.json"), (pkg) => {
   pkg.optionalDependencies = Object.fromEntries(platforms.map((p) => [`@spectype/binding-${p}`, version]));
 });
