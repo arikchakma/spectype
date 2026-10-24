@@ -1,0 +1,7 @@
+exit 0
+ ⚠  Paths must have unique `name` + `in` parameters.
+ ⚠  Path parameter `unused` is not used in the path `/pets/{petId}/{other}`. at #/paths/~1pets~1{petId}~1{other}/parameters/2/name
+ ⚠  Operations must have unique `name` + `in` parameters. Repeats of `in:query` + `name:q`. at #/paths/~1pets~1{petId}~1{other}/get/parameters/1
+ ⚠  Path parameter `stray` is not used in the path `/pets/{petId}/{other}`. at #/paths/~1pets~1{petId}~1{other}/get/parameters/2/name
+ ⚠  The operation does not define the path parameter `{other}` expected by path `/pets/{petId}/{other}`. at #/paths/~1pets~1{petId}~1{other}/get/parameters
+ ⚠  Every operation should have security defined on it or on the root level. at #/paths/~1pets~1{petId}~1{other}/get

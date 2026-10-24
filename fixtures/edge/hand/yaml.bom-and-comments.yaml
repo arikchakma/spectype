@@ -1,0 +1,7 @@
+﻿# leading comment
+openapi: 3.0.3 # trailing
+info: {title: bom, version: '1'}
+paths: {}
+components:
+  schemas:
+    Test: {type: string, description: "#not a comment"}

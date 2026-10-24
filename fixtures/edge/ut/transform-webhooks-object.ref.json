@@ -1,0 +1,65 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "test",
+    "version": "1.0.0"
+  },
+  "webhooks": {
+    "user-created": {
+      "parameters": [
+        {
+          "in": "query",
+          "name": "signature",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        },
+        {
+          "$ref": "#/components/parameters/utm_source"
+        },
+        {
+          "$ref": "#/components/parameters/utm_email"
+        },
+        {
+          "$ref": "#/components/parameters/utm_campaign"
+        },
+        {
+          "$ref": "#/components/parameters/version"
+        }
+      ]
+    }
+  },
+  "components": {
+    "parameters": {
+      "utm_source": {
+        "name": "utm_source",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "utm_email": {
+        "name": "utm_email",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "utm_campaign": {
+        "name": "utm_campaign",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "version": {
+        "name": "version",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

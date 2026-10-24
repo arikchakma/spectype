@@ -1,0 +1,6 @@
+exit 0
+ ⚠  Property `extra` is not expected here. at #/Pet/extra
+ ⚠  Example value must conform to the schema: `id` property type must be integer. at #/paths/~1a/get/responses/200/content/application~1json/example/id
+ ⚠  The field `description` must be present on this level. at #/NotFound
+ ⚠  Component: "version" is never used. at #/components/schemas/version
+ ⚠  Every operation should have security defined on it or on the root level. at #/paths/~1a/get

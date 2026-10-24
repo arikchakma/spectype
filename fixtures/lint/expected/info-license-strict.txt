@@ -1,0 +1,2 @@
+exit 0
+ ⚠  License object should contain `url` field. at #/info/license/url

@@ -1,0 +1,83 @@
+{
+  "openapi": "3.0",
+  "info": {
+    "title": "Test",
+    "version": "1.0"
+  },
+  "paths": {
+    "/post/{id}": {
+      "get": {
+        "operationId": "getPost",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/post_id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Post"
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "revision",
+          "in": "query",
+          "schema": {
+            "type": "number"
+          }
+        }
+      ]
+    }
+  },
+  "components": {
+    "schemas": {
+      "Post": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "title": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "published_at": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "body"
+        ]
+      }
+    },
+    "parameters": {
+      "post_id": {
+        "name": "post_id",
+        "in": "path",
+        "schema": {
+          "type": "string"
+        },
+        "required": true
+      }
+    }
+  }
+}

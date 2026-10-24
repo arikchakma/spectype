@@ -1,0 +1,78 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "S": {
+        "const": "str"
+      },
+      "N": {
+        "const": 1.5
+      },
+      "I": {
+        "type": "integer",
+        "const": 0
+      },
+      "B": {
+        "const": true
+      },
+      "F": {
+        "const": false
+      },
+      "Z": {
+        "const": null
+      },
+      "O": {
+        "const": {
+          "a": 1,
+          "b": [
+            2
+          ]
+        }
+      },
+      "A": {
+        "const": [
+          1,
+          "two",
+          null
+        ]
+      },
+      "E": {
+        "const": ""
+      },
+      "Q": {
+        "const": "quo\"te"
+      },
+      "U": {
+        "const": "😀"
+      },
+      "Typed": {
+        "type": "string",
+        "const": "x"
+      },
+      "WithEnum": {
+        "type": "string",
+        "const": "x",
+        "enum": [
+          "x",
+          "y"
+        ]
+      },
+      "Test": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "const": "k"
+          }
+        },
+        "required": [
+          "kind"
+        ]
+      }
+    }
+  }
+}

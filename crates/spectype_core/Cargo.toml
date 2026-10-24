@@ -1,0 +1,19 @@
+[package]
+name = "spectype_core"
+description = "OpenAPI 3.x to TypeScript types, output-compatible with openapi-typescript"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[dependencies]
+spectype_codegen.workspace = true
+spectype_document.workspace = true
+spectype_redocly.workspace = true
+
+[lints]
+workspace = true

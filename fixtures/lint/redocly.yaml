@@ -1,0 +1,32 @@
+# Every rule spectype implements, as warnings so each fixture reports all of its problems.
+rules:
+  struct: warn
+  info-license: warn
+  info-license-strict: warn
+  operation-2xx-response: warn
+  operation-4xx-response: warn
+  operation-operationId-unique: warn
+  operation-parameters-unique: warn
+  no-example-value-and-externalValue: warn
+  no-enum-type-mismatch: warn
+  no-path-trailing-slash: warn
+  no-empty-servers: warn
+  path-declaration-must-exist: warn
+  operation-operationId-url-safe: warn
+  operation-operationId: warn
+  operation-summary: warn
+  no-server-example.com: warn
+  no-server-trailing-slash: warn
+  tag-description: warn
+  no-unused-components: warn
+  path-not-include-query: warn
+  path-parameters-defined: warn
+  security-defined: warn
+  no-unresolved-refs: warn
+  no-invalid-media-type-examples: warn
+  no-identical-paths: warn
+  no-ambiguous-paths: warn
+  no-undefined-server-variable: warn
+  no-server-variables-empty-enum: warn
+  spec-components-invalid-map-name: warn
+  no-schema-type-mismatch: warn

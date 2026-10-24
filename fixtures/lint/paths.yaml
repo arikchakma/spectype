@@ -1,0 +1,20 @@
+openapi: 3.0.0
+info: { title: t, version: "1", license: { name: MIT, url: https://x } }
+servers: [{ url: https://api.x.io }]
+paths:
+  /pets/:
+    get: { summary: s, operationId: a, responses: { "200": { description: ok }, "404": { description: no } } }
+  /pets/{id}:
+    get: { summary: s, operationId: b, parameters: [{ name: id, in: path, required: true, schema: { type: string } }], responses: { "200": { description: ok }, "404": { description: no } } }
+  /pets/{name}:
+    get: { summary: s, operationId: c, parameters: [{ name: name, in: path, required: true, schema: { type: string } }], responses: { "200": { description: ok }, "404": { description: no } } }
+  /{kind}/mine:
+    get: { summary: s, operationId: d, parameters: [{ name: kind, in: path, required: true, schema: { type: string } }], responses: { "200": { description: ok }, "404": { description: no } } }
+  /pets/mine:
+    get: { summary: s, operationId: e, responses: { "200": { description: ok }, "404": { description: no } } }
+  /search?q=1:
+    get: { summary: s, operationId: f, responses: { "200": { description: ok }, "404": { description: no } } }
+  /things/{}:
+    get: { summary: s, operationId: g, responses: { "200": { description: ok }, "404": { description: no } } }
+  /:
+    get: { summary: s, operationId: h, responses: { "200": { description: ok }, "404": { description: no } } }

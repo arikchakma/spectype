@@ -1,0 +1,30 @@
+[package]
+name = "spectype_napi"
+description = "Node-API addon behind the spectype npm package: its CLI and its Node API"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+napi.workspace = true
+napi-derive.workspace = true
+spectype.workspace = true
+spectype_core.workspace = true
+rustc-hash.workspace = true
+serde_json.workspace = true
+
+[target.'cfg(not(target_family = "wasm"))'.dependencies]
+# A `.node` file is loaded with `dlopen`, where mimalloc's default static TLS can fail on Linux.
+mimalloc = { workspace = true, features = ["local_dynamic_tls"] }
+
+[build-dependencies]
+napi-build.workspace = true
+
+[lints]
+workspace = true

@@ -1,0 +1,1 @@
+{"openapi":"3.1.0","info":{"title":"fix","version":"1"},"components":{"schemas":{"Foo":{"type":"string"},"foo":{"type":"number"},"FOO":{"type":"boolean"},"0":{"type":"string"},"Record":{"type":"string"},"paths":{"type":"string"},"__proto__":{"type":"string"},"it's":{"type":"string"},"package":{"type":"string"},"😀":{"type":"string"}}}}

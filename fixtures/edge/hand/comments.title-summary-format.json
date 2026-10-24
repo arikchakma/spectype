@@ -1,0 +1,65 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Test": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "string",
+            "title": "Title A",
+            "format": "date-time"
+          },
+          "b": {
+            "type": "string",
+            "title": "T",
+            "description": "D",
+            "format": "uuid",
+            "deprecated": true
+          },
+          "c": {
+            "type": "integer",
+            "format": "int64",
+            "minimum": 0,
+            "maximum": 10,
+            "title": "",
+            "description": ""
+          },
+          "d": {
+            "type": "string",
+            "format": "binary"
+          },
+          "e": {
+            "type": "string",
+            "format": "byte"
+          },
+          "f": {
+            "type": "number",
+            "format": "float",
+            "multipleOf": 0.01
+          },
+          "g": {
+            "type": "string",
+            "pattern": "^[a-z]+$",
+            "minLength": 1,
+            "maxLength": 5
+          },
+          "h": {
+            "type": "string",
+            "contentMediaType": "image/png",
+            "contentEncoding": "base64"
+          },
+          "i": {
+            "type": "string",
+            "summary": "summary on schema"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "test",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/get-item": {
+      "get": {
+        "description": "Get a user",
+        "operationId": "getUser",
+        "responses": {
+          "200": {
+            "description": "Get User",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string"
+                    },
+                    "content-type": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "url"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

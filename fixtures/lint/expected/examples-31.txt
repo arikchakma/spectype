@@ -1,0 +1,19 @@
+exit 0
+ ⚠  Example value must conform to the schema: `radius` property type must be number. at #/paths/~1a/get/responses/200/content/application~1json/examples/circle/value/radius
+ ⚠  Example value must conform to the schema: value of tag "kind" must be in oneOf or anyOf. at #/paths/~1a/get/responses/200/content/application~1json/examples/unknown/value
+ ⚠  Example value must conform to the schema: tag "kind" must be string. at #/paths/~1a/get/responses/200/content/application~1json/examples/untagged/value
+ ⚠  Example value must conform to the schema: `0` property type must be string. at #/paths/~1a/get/responses/200/content/application~1x-list/example/0
+ ⚠  Example value must conform to the schema: `1` property must be equal to constant. at #/paths/~1a/get/responses/200/content/application~1x-list/example/1
+ ⚠  Example value must conform to the schema: must NOT have more than 2 items. at #/paths/~1a/get/responses/200/content/application~1x-list/example
+ ⚠  Example value must conform to the schema: must have required property 'c'. at #/paths/~1a/get/responses/200/content/application~1x-cond/examples/then/value
+ ⚠  Example value must conform to the schema: must match "else" schema. at #/paths/~1a/get/responses/200/content/application~1x-cond/examples/then/value
+ ⚠  Example value must conform to the schema: `x-y` property type must be boolean. at #/paths/~1a/get/responses/200/content/application~1x-cond/examples/then/value/x-y
+ ⚠  Example value must conform to the schema: must have properties d, e when property a is present. at #/paths/~1a/get/responses/200/content/application~1x-cond/examples/then/value
+ ⚠  Example value must conform to the schema: must have properties d, e when property a is present. at #/paths/~1a/get/responses/200/content/application~1x-cond/examples/then/value
+ ⚠  Example value must conform to the schema: `z` property type must be integer. at #/paths/~1a/get/responses/200/content/application~1x-cond/examples/then/value/z
+ ⚠  Example value must conform to the schema: must have required property 'c'. at #/paths/~1a/get/responses/200/content/application~1x-cond/examples/else/value
+ ⚠  Example value must conform to the schema: must match "else" schema. at #/paths/~1a/get/responses/200/content/application~1x-cond/examples/else/value
+ ⚠  Example value must conform to the schema: must have properties d, e when property a is present. at #/paths/~1a/get/responses/200/content/application~1x-cond/examples/else/value
+ ⚠  Example value must conform to the schema: must have properties d, e when property a is present. at #/paths/~1a/get/responses/200/content/application~1x-cond/examples/else/value
+ ⚠  Example validation errored: discriminator: "properties/kind" must have "const" or "enum". at #/paths/~1a/get/responses/200/content/application~1x-mapping/schema
+ ⚠  Every operation should have security defined on it or on the root level. at #/paths/~1a/get

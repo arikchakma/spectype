@@ -1,0 +1,1 @@
+Can't resolve $ref: ENOENT: no such file or directory '<root>/fixtures/edge/hand/does-not-exist.yaml' at #/components/schemas/A

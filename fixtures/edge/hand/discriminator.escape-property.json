@@ -1,0 +1,40 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Base": {
+        "type": "object",
+        "required": [
+          "@type"
+        ],
+        "properties": {
+          "@type": {
+            "type": "string"
+          }
+        },
+        "discriminator": {
+          "propertyName": "@type"
+        }
+      },
+      "Child": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Base"
+          }
+        ]
+      },
+      "Child-Two": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Base"
+          }
+        ]
+      }
+    }
+  }
+}

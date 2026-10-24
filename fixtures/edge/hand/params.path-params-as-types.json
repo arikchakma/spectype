@@ -1,0 +1,231 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/a/{str}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "str",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/b/{num}/c/{bool}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "num",
+            "in": "path",
+            "schema": {
+              "type": "number"
+            },
+            "required": true
+          },
+          {
+            "name": "bool",
+            "in": "path",
+            "schema": {
+              "type": "boolean"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/c/{int}.json": {
+      "get": {
+        "parameters": [
+          {
+            "name": "int",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/d/{undeclared}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/e/{enum}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "enum",
+            "in": "path",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "x",
+                "y"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/f/{a}{b}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "a",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "b",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/g/{ref}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/RefP"
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/h/{x}/{x}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "x",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "root"
+          }
+        }
+      }
+    },
+    "/i/{nonreq}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "nonreq",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/j/{oneof}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "oneof",
+            "in": "path",
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "RefP": {
+        "name": "ref",
+        "in": "path",
+        "schema": {
+          "type": "integer"
+        },
+        "required": true
+      }
+    }
+  }
+}

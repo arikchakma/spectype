@@ -1,0 +1,26 @@
+{
+  "openapi": "3.1",
+  "info": {
+    "title": "Test",
+    "version": "1.0"
+  },
+  "paths": {
+    "/accounts": {
+      "get": {
+        "operationId": "Accounts#List",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

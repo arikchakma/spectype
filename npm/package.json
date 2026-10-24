@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "description": "Test dependencies for npm/spectype; the published package has none.",
+  "scripts": {
+    "build": "napi build --platform --release --manifest-path ../bindings/spectype_napi/Cargo.toml --package-json-path spectype/package.json --output-dir spectype --js binding.cjs --dts binding.d.cts --no-dts-header",
+    "build:wasm": "napi build --platform --release --manifest-path ../bindings/spectype_napi/Cargo.toml --package-json-path spectype/package.json --target wasm32-wasip1 --output-dir platforms/wasm32-wasip1 --no-js --dts ../../spectype/binding.d.cts --no-dts-header && cd platforms/wasm32-wasip1 && rm -f browser.js *-browser.js *-deferred.* *.d.cts *.debug.wasm"
+  },
+  "devDependencies": {
+    "@emnapi/core": "2.0.0-alpha.6",
+    "@emnapi/runtime": "2.0.0-alpha.6",
+    "@napi-rs/cli": "3.10.9",
+    "@napi-rs/wasm-runtime": "1.2.5",
+    "emnapi": "2.0.0-alpha.6",
+    "typescript": "6.0.3"
+  }
+}

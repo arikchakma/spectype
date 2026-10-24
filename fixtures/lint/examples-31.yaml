@@ -1,0 +1,59 @@
+openapi: 3.1.0
+info: { title: t, version: "1", license: { name: MIT, identifier: MIT } }
+servers: [{ url: https://api.x.io }]
+paths:
+  /a:
+    get:
+      summary: s
+      operationId: a
+      responses:
+        "404": { description: no }
+        "200":
+          description: ok
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Shape" }
+              examples:
+                circle: { value: { kind: circle, radius: big } }
+                unknown: { value: { kind: hexagon } }
+                untagged: { value: { radius: 1 } }
+            application/x-list:
+              schema:
+                type: array
+                prefixItems: [{ type: string }, { const: 2 }]
+                items: false
+                contains: { type: boolean }
+              example: [1, 3, true, false]
+            application/x-cond:
+              schema:
+                type: object
+                properties: { a: { type: [string, "null"] } }
+                if: { properties: { a: { const: x } } }
+                then: { required: [b] }
+                else: { required: [c] }
+                dependentRequired: { a: [d, e] }
+                unevaluatedProperties: { type: integer }
+                patternProperties: { "^x-": { type: boolean } }
+              examples:
+                then: { value: { a: x, x-y: 1, z: nope } }
+                else: { value: { a: null } }
+            application/x-mapping:
+              schema:
+                oneOf: [{ $ref: "#/components/schemas/Circle" }]
+                discriminator: { propertyName: kind }
+              example: { kind: circle }
+components:
+  schemas:
+    Shape:
+      oneOf: [{ $ref: "#/components/schemas/Circle" }, { $ref: "#/components/schemas/Square" }]
+      discriminator:
+        propertyName: kind
+        mapping: { circle: "#/components/schemas/Circle", square: "#/components/schemas/Square" }
+    Circle:
+      type: object
+      required: [kind]
+      properties: { kind: { type: string }, radius: { type: number } }
+    Square:
+      type: object
+      required: [kind]
+      properties: { kind: { type: string }, side: { type: number } }

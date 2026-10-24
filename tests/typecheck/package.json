@@ -1,0 +1,13 @@
+{
+  "name": "spectype-typecheck",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node run.mjs"
+  },
+  "devDependencies": {
+    "openapi-fetch": "0.17.0",
+    "ts6": "npm:typescript@6.0.3",
+    "ts7": "npm:typescript@7.0.2"
+  }
+}

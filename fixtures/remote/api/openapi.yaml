@@ -1,0 +1,26 @@
+openapi: 3.1.0
+info:
+  title: Remote
+  version: "1"
+paths:
+  /pets:
+    get:
+      parameters:
+        - $ref: "./params.json#/limit"
+      responses:
+        "200":
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "./schemas/pet.yaml"
+        default:
+          $ref: "../shared/errors.yaml#/components/responses/Error"
+components:
+  schemas:
+    Owner:
+      $ref: "moved/owner.yaml"
+    Tag:
+      $ref: "./tag"

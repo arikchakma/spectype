@@ -1,0 +1,1 @@
+{"openapi":"3.1.0","info":{"title":"t","version":"1"},"paths":{"/a":{"get":{"parameters":[{"in":"query","schema":{"type":"string","enum":["x"]}},{"in":"query","name":"ok"}],"responses":{}}}}}

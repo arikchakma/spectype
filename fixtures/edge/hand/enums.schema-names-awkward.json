@@ -1,0 +1,72 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "1Status": {
+        "type": "string",
+        "enum": [
+          "a"
+        ]
+      },
+      "status-code": {
+        "type": "string",
+        "enum": [
+          "a"
+        ]
+      },
+      "status-": {
+        "type": "string",
+        "enum": [
+          "a"
+        ]
+      },
+      "Status%20Code": {
+        "type": "string",
+        "enum": [
+          "a"
+        ]
+      },
+      "Státus": {
+        "type": "string",
+        "enum": [
+          "a"
+        ]
+      },
+      "status code": {
+        "type": "string",
+        "enum": [
+          "a"
+        ]
+      },
+      "status.code": {
+        "type": "string",
+        "enum": [
+          "a"
+        ]
+      },
+      "status_code": {
+        "type": "string",
+        "enum": [
+          "a"
+        ]
+      },
+      "StatusCode": {
+        "type": "string",
+        "enum": [
+          "b"
+        ]
+      },
+      "statusCode": {
+        "type": "string",
+        "enum": [
+          "c"
+        ]
+      }
+    }
+  }
+}

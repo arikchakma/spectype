@@ -1,0 +1,49 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "A": {
+        "oneOf": [
+          {
+            "type": "string",
+            "enum": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "type": "integer",
+            "enum": [
+              1,
+              2
+            ]
+          }
+        ]
+      },
+      "B": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/C"
+          },
+          {
+            "type": "string",
+            "enum": [
+              "z"
+            ]
+          }
+        ]
+      },
+      "C": {
+        "type": "string",
+        "enum": [
+          "c"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Test": {
+        "type": "object",
+        "x-internal": true,
+        "x-nullable": true,
+        "x-go-type": "Foo",
+        "properties": {
+          "a": {
+            "type": "string",
+            "x-order": 1,
+            "x-nullable": true
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "test",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "headers": {
+      "Test": {
+        "description": "Auth",
+        "schema": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

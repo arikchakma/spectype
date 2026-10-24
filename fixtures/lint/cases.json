@@ -1,0 +1,164 @@
+[
+  {
+    "name": "enum-mismatch",
+    "input": "fixtures/lint/enum-mismatch.yaml",
+    "config": "fixtures/lint/redocly.yaml"
+  },
+  {
+    "name": "examples-31",
+    "input": "fixtures/lint/examples-31.yaml",
+    "config": "fixtures/lint/redocly.yaml"
+  },
+  {
+    "name": "examples",
+    "input": "fixtures/lint/examples.yaml",
+    "config": "fixtures/lint/redocly.yaml"
+  },
+  {
+    "name": "info-license-strict-31",
+    "input": "fixtures/lint/info-license-strict-31.yaml",
+    "config": "fixtures/lint/redocly.yaml"
+  },
+  {
+    "name": "info-license-strict",
+    "input": "fixtures/lint/info-license-strict.yaml",
+    "config": "fixtures/lint/redocly.yaml"
+  },
+  {
+    "name": "info-license",
+    "input": "fixtures/lint/info-license.yaml",
+    "config": "fixtures/lint/redocly.yaml"
+  },
+  {
+    "name": "map-names",
+    "input": "fixtures/lint/map-names.yaml",
+    "config": "fixtures/lint/redocly.yaml"
+  },
+  {
+    "name": "multi-file",
+    "input": "fixtures/lint/multi-file.yaml",
+    "config": "fixtures/lint/redocly.yaml"
+  },
+  {
+    "name": "operation-ids",
+    "input": "fixtures/lint/operation-ids.yaml",
+    "config": "fixtures/lint/redocly.yaml"
+  },
+  {
+    "name": "parameters",
+    "input": "fixtures/lint/parameters.yaml",
+    "config": "fixtures/lint/redocly.yaml"
+  },
+  {
+    "name": "paths",
+    "input": "fixtures/lint/paths.yaml",
+    "config": "fixtures/lint/redocly.yaml"
+  },
+  {
+    "name": "response-codes",
+    "input": "fixtures/lint/response-codes.yaml",
+    "config": "fixtures/lint/redocly.yaml"
+  },
+  {
+    "name": "security",
+    "input": "fixtures/lint/security.yaml",
+    "config": "fixtures/lint/redocly.yaml"
+  },
+  {
+    "name": "servers-empty",
+    "input": "fixtures/lint/servers-empty.yaml",
+    "config": "fixtures/lint/redocly.yaml"
+  },
+  {
+    "name": "servers-missing",
+    "input": "fixtures/lint/servers-missing.yaml",
+    "config": "fixtures/lint/redocly.yaml"
+  },
+  {
+    "name": "servers",
+    "input": "fixtures/lint/servers.yaml",
+    "config": "fixtures/lint/redocly.yaml"
+  },
+  {
+    "name": "struct-31",
+    "input": "fixtures/lint/struct-31.yaml",
+    "config": "fixtures/lint/redocly.yaml"
+  },
+  {
+    "name": "struct",
+    "input": "fixtures/lint/struct.yaml",
+    "config": "fixtures/lint/redocly.yaml"
+  },
+  {
+    "name": "tags",
+    "input": "fixtures/lint/tags.yaml",
+    "config": "fixtures/lint/redocly.yaml"
+  },
+  {
+    "name": "unresolved",
+    "input": "fixtures/lint/unresolved.yaml",
+    "config": "fixtures/lint/redocly.yaml"
+  },
+  {
+    "name": "unused-components",
+    "input": "fixtures/lint/unused-components.yaml",
+    "config": "fixtures/lint/redocly.yaml"
+  },
+  {
+    "name": "struct.recommended",
+    "input": "fixtures/lint/struct.yaml",
+    "config": "fixtures/lint/recommended.yaml"
+  },
+  {
+    "name": "servers.recommended",
+    "input": "fixtures/lint/servers.yaml",
+    "config": "fixtures/lint/recommended.yaml"
+  },
+  {
+    "name": "security.recommended",
+    "input": "fixtures/lint/security.yaml",
+    "config": "fixtures/lint/recommended.yaml"
+  },
+  {
+    "name": "unresolved.recommended",
+    "input": "fixtures/lint/unresolved.yaml",
+    "config": "fixtures/lint/recommended.yaml"
+  },
+  {
+    "name": "examples.recommended",
+    "input": "fixtures/lint/examples.yaml",
+    "config": "fixtures/lint/recommended.yaml"
+  },
+  {
+    "name": "paths.recommended",
+    "input": "fixtures/lint/paths.yaml",
+    "config": "fixtures/lint/recommended.yaml"
+  },
+  {
+    "name": "examples.minimal",
+    "input": "fixtures/lint/examples.yaml",
+    "config": "fixtures/lint/minimal.yaml"
+  },
+  {
+    "name": "response-codes.minimal",
+    "input": "fixtures/lint/response-codes.yaml",
+    "config": "fixtures/lint/minimal.yaml"
+  },
+  {
+    "name": "servers-missing.minimal",
+    "input": "fixtures/lint/servers-missing.yaml",
+    "config": "fixtures/lint/minimal.yaml"
+  },
+  {
+    "name": "struct.recommended.stdout",
+    "input": "fixtures/lint/struct.yaml",
+    "config": "fixtures/lint/recommended.yaml",
+    "stdout": true
+  },
+  {
+    "name": "examples.stdout",
+    "input": "fixtures/lint/examples.yaml",
+    "config": "fixtures/lint/redocly.yaml",
+    "stdout": true
+  }
+]

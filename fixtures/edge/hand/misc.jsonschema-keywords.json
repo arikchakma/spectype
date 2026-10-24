@@ -1,0 +1,42 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Test": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "urn:test",
+        "$anchor": "t",
+        "$comment": "comment */",
+        "type": "object",
+        "dependentRequired": {
+          "a": [
+            "b"
+          ]
+        },
+        "dependentSchemas": {
+          "a": {
+            "required": [
+              "c"
+            ]
+          }
+        },
+        "properties": {
+          "a": {
+            "type": "string"
+          },
+          "b": {
+            "type": "string"
+          },
+          "c": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

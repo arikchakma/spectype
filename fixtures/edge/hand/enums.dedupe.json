@@ -1,0 +1,86 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/x": {
+      "get": {
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "x",
+                "y"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "x",
+                    "y"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "A": {
+        "type": "string",
+        "enum": [
+          "x",
+          "y"
+        ]
+      },
+      "B": {
+        "type": "string",
+        "enum": [
+          "x",
+          "y"
+        ]
+      },
+      "C": {
+        "type": "string",
+        "enum": [
+          "y",
+          "x"
+        ]
+      },
+      "Test": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "string",
+            "enum": [
+              "x",
+              "y"
+            ]
+          },
+          "b": {
+            "type": "string",
+            "enum": [
+              "x",
+              "y"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

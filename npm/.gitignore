@@ -1,0 +1,3 @@
+spectype/*.node
+platforms/*/*.node
+platforms/*/*.wasm

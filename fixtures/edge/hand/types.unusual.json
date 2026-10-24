@@ -1,0 +1,54 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Int": {
+        "type": "integer"
+      },
+      "NumInt": {
+        "type": "number",
+        "format": "int32"
+      },
+      "Unknown": {
+        "type": "foo"
+      },
+      "NoTypeEnum": {
+        "enum": [
+          "a"
+        ]
+      },
+      "NoTypeItems": {
+        "items": {
+          "type": "string"
+        }
+      },
+      "NoTypeMin": {
+        "minimum": 1
+      },
+      "NumberConst": {
+        "type": "number",
+        "const": 3
+      },
+      "Date": {
+        "type": "string",
+        "format": "date"
+      },
+      "Any": {
+        "type": [
+          "string",
+          "number",
+          "integer",
+          "boolean",
+          "object",
+          "array",
+          "null"
+        ]
+      }
+    }
+  }
+}

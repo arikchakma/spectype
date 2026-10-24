@@ -1,0 +1,157 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Example API",
+    "description": "A made-up API for the openapi-fetch type-check test.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/v1/projects/{project_id}": {
+      "patch": {
+        "tags": ["projects"],
+        "summary": "Update a project",
+        "operationId": "update_project",
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": false,
+            "schema": { "type": ["string", "null"] }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": { "schema": { "$ref": "#/components/schemas/ProjectBody" } }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The updated project",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/Project" } }
+            }
+          },
+          "4XX": { "$ref": "#/components/responses/Error" }
+        }
+      }
+    },
+    "/v1/teams/{team_id}/members": {
+      "get": {
+        "tags": ["teams"],
+        "summary": "List team members",
+        "operationId": "list_team_members",
+        "parameters": [
+          {
+            "name": "team_id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "required": false,
+            "schema": { "type": ["integer", "null"], "format": "int32", "minimum": 1, "maximum": 100 }
+          },
+          {
+            "name": "after",
+            "in": "query",
+            "description": "Cursor from the previous page.",
+            "required": false,
+            "schema": { "type": ["string", "null"] }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "One page of members",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/MemberPage" } }
+            }
+          },
+          "4XX": { "$ref": "#/components/responses/Error" }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ProjectBody": {
+        "type": "object",
+        "required": ["name", "settings"],
+        "properties": {
+          "name": { "type": "string" },
+          "notes": { "type": ["string", "null"] },
+          "settings": { "$ref": "#/components/schemas/Settings" }
+        }
+      },
+      "Settings": {
+        "type": "object",
+        "required": ["labels"],
+        "properties": {
+          "labels": { "type": "array", "items": { "type": "string" } }
+        }
+      },
+      "Project": {
+        "type": "object",
+        "required": ["id", "name", "teams"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "teams": { "type": "array", "items": { "$ref": "#/components/schemas/TeamRef" } }
+        }
+      },
+      "TeamRef": {
+        "type": "object",
+        "required": ["id", "name"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" }
+        }
+      },
+      "MemberPage": {
+        "type": "object",
+        "required": ["data"],
+        "properties": {
+          "data": { "type": "array", "items": { "$ref": "#/components/schemas/Member" } },
+          "next": { "type": ["string", "null"] }
+        }
+      },
+      "Member": {
+        "type": "object",
+        "required": ["id", "role"],
+        "properties": {
+          "id": { "type": "string" },
+          "role": { "type": "string", "enum": ["owner", "editor", "viewer"] }
+        }
+      },
+      "ErrorName": {
+        "type": "string",
+        "enum": ["validation_error", "not_found", "rate_limited", "internal_error"]
+      },
+      "ErrorBody": {
+        "type": "object",
+        "required": ["name", "status", "message"],
+        "properties": {
+          "name": { "$ref": "#/components/schemas/ErrorName" },
+          "status": { "type": "integer", "format": "int32" },
+          "message": { "type": "string" }
+        }
+      }
+    },
+    "responses": {
+      "Error": {
+        "description": "An error",
+        "content": {
+          "application/json": { "schema": { "$ref": "#/components/schemas/ErrorBody" } }
+        }
+      }
+    }
+  }
+}

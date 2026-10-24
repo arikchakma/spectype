@@ -1,0 +1,10 @@
+openapi: 3.1.0
+info: { title: t, version: "1", license: { name: MIT, identifier: MIT } }
+servers: [{ url: https://api.x.io }]
+components:
+  schemas:
+    A: { type: string, enum: [a, 1, null, true, a] }
+    B: { type: integer, nullable: true, enum: [1, 1.5, null] }
+    C: { type: [string, integer], enum: [a, 1, 2.5, false, "2"] }
+    D: { type: object, items: { type: string } }
+    E: { type: array, properties: { a: {} } }

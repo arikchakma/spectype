@@ -1,0 +1,20 @@
+exit 0
+ ⚠  Example object can have either `value` or `externalValue` fields. at #/paths/~1a/get/responses/200/content/application~1json/examples/both/value
+ ⚠  Example value must conform to the schema: must have required property 'name'. at #/paths/~1a/get/responses/200/content/application~1json/examples/bad/value
+ ⚠  Example value must conform to the schema: `id` property type must be integer. at #/paths/~1a/get/responses/200/content/application~1json/examples/bad/value/id
+ ⚠  Example value must conform to the schema: `tags` property must NOT have more than 1 items. at #/paths/~1a/get/responses/200/content/application~1json/examples/bad/value/tags
+ ⚠  Example value must conform to the schema: `tags` property must NOT have duplicate items (items ## 1 and 0 are identical). at #/paths/~1a/get/responses/200/content/application~1json/examples/bad/value/tags
+ ⚠  Example value must conform to the schema: must NOT have unevaluated properties `extra`. at #/paths/~1a/get/responses/200/content/application~1json/examples/bad/value/extra
+ ⚠  Example value must conform to the schema: `name` property type must be string. at #/components/examples/Pet/value/name
+ ⚠  Example value must conform to the schema: must be equal to one of the allowed values "123", "4567". at #/paths/~1a/get/responses/200/content/text~1plain/example
+ ⚠  Example value must conform to the schema: must NOT have fewer than 3 characters. at #/paths/~1a/get/responses/200/content/text~1plain/example
+ ⚠  Example value must conform to the schema: must match pattern "^\d+$". at #/paths/~1a/get/responses/200/content/text~1plain/example
+ ⚠  The `type` field must be defined when the `nullable` field is used. at #/paths/~1a/get/responses/200/content/application~1xml/schema/nullable
+ ⚠  Example validation errored: "nullable" cannot be used without "type". at #/paths/~1a/get/responses/200/content/application~1xml/schema
+ ⚠  Example value must conform to the schema: must match exactly one schema in oneOf. at #/paths/~1a/get/responses/200/content/application~1x-one/example
+ ⚠  Example validation errored: exclusiveMinimum value must be ["number"]. at #/paths/~1a/get/responses/200/content/application~1x-bool-limit/schema
+ ⚠  Example value must conform to the schema: must have required property 'a'. at #/paths/~1a/get/responses/200/content/application~1x-any/example
+ ⚠  Example value must conform to the schema: must have required property 'b'. at #/paths/~1a/get/responses/200/content/application~1x-any/example
+ ⚠  Example value must conform to the schema: must match a schema in anyOf. at #/paths/~1a/get/responses/200/content/application~1x-any/example
+ ⚠  Example value must conform to the schema: must NOT have unevaluated properties `c`. at #/paths/~1a/get/responses/200/content/application~1x-any/example/c
+ ⚠  Every operation should have security defined on it or on the root level. at #/paths/~1a/get

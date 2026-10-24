@@ -1,0 +1,99 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Base": {
+        "type": "object",
+        "description": "base desc",
+        "properties": {
+          "a": {
+            "type": "string"
+          }
+        }
+      },
+      "Test": {
+        "type": "object",
+        "properties": {
+          "plain": {
+            "$ref": "#/components/schemas/Base"
+          },
+          "withDesc": {
+            "$ref": "#/components/schemas/Base",
+            "description": "sibling desc"
+          },
+          "withDeprecated": {
+            "$ref": "#/components/schemas/Base",
+            "deprecated": true
+          },
+          "withTitle": {
+            "$ref": "#/components/schemas/Base",
+            "title": "sibling title"
+          },
+          "withDefault": {
+            "$ref": "#/components/schemas/Base",
+            "default": {
+              "a": "x"
+            }
+          },
+          "withReadOnly": {
+            "$ref": "#/components/schemas/Base",
+            "readOnly": true
+          },
+          "withType": {
+            "$ref": "#/components/schemas/Base",
+            "type": "object",
+            "properties": {
+              "extra": {
+                "type": "string"
+              }
+            }
+          },
+          "deep": {
+            "$ref": "#/components/schemas/Base/properties/a"
+          },
+          "self": {
+            "$ref": "#/components/schemas/Test"
+          },
+          "arr": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Base",
+              "description": "item desc"
+            }
+          }
+        },
+        "required": [
+          "withDefault"
+        ]
+      },
+      "Alias": {
+        "$ref": "#/components/schemas/Base"
+      },
+      "AliasOfAlias": {
+        "$ref": "#/components/schemas/Alias"
+      },
+      "Weird Name": {
+        "type": "string"
+      },
+      "has~tilde/slash": {
+        "type": "string"
+      },
+      "UsesWeird": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "$ref": "#/components/schemas/Weird%20Name"
+          },
+          "b": {
+            "$ref": "#/components/schemas/has~0tilde~1slash"
+          }
+        }
+      }
+    }
+  }
+}

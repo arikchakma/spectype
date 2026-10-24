@@ -1,0 +1,15 @@
+openapi: 3.0.0
+info: { title: t, version: "1", license: { name: MIT, url: https://x } }
+servers: [{ url: https://api.x.io }]
+paths: {}
+components:
+  schemas:
+    "Good.Name-1_x": { type: string }
+    "bad name": { type: string }
+    "ünï": { type: string }
+  parameters:
+    "a/b": { name: x, in: query, schema: { type: string } }
+  responses:
+    "$x": { description: x }
+  securitySchemes:
+    "with space": { type: http, scheme: basic }

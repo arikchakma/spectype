@@ -1,0 +1,194 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Inner": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "Outer": {
+        "type": "object",
+        "required": [
+          "maybe",
+          "list"
+        ],
+        "properties": {
+          "maybe": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Inner"
+              }
+            ]
+          },
+          "maybeDesc": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Inner",
+                "description": "inner desc"
+              }
+            ],
+            "description": "outer desc"
+          },
+          "maybeStr": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Inner"
+            }
+          },
+          "maybeList": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/Inner"
+            }
+          },
+          "nested": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "oneOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "$ref": "#/components/schemas/Inner"
+                  }
+                ]
+              }
+            ]
+          },
+          "allOfNull": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Inner"
+              }
+            ],
+            "nullable": true
+          },
+          "anyOfNull": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Inner"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "map": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Inner"
+            },
+            "propertyNames": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Tagged": {
+        "oneOf": [
+          {
+            "type": "object",
+            "required": [
+              "A"
+            ],
+            "properties": {
+              "A": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "B"
+            ],
+            "properties": {
+              "B": {
+                "type": "integer"
+              }
+            }
+          },
+          {
+            "type": "string",
+            "enum": [
+              "Unit"
+            ]
+          }
+        ]
+      },
+      "Adjacent": {
+        "oneOf": [
+          {
+            "type": "object",
+            "required": [
+              "type",
+              "content"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "A"
+                ]
+              },
+              "content": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "B"
+                ]
+              }
+            }
+          }
+        ],
+        "discriminator": {
+          "propertyName": "type"
+        }
+      }
+    }
+  }
+}

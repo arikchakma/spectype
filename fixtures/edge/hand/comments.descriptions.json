@@ -1,0 +1,216 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Test": {
+        "type": "object",
+        "description": "Top level */ description\r\nwith CRLF",
+        "properties": {
+          "crlf": {
+            "type": "string",
+            "description": "line1\r\nline2\r\n"
+          },
+          "cr": {
+            "type": "string",
+            "description": "line1\rline2"
+          },
+          "lsep": {
+            "type": "string",
+            "description": "a b c"
+          },
+          "tab": {
+            "type": "string",
+            "description": "\tindented\twith tabs\t"
+          },
+          "lead": {
+            "type": "string",
+            "description": "   leading and trailing   "
+          },
+          "empty": {
+            "type": "string",
+            "description": ""
+          },
+          "onlyspace": {
+            "type": "string",
+            "description": "   "
+          },
+          "onlynl": {
+            "type": "string",
+            "description": "\n\n"
+          },
+          "closer": {
+            "type": "string",
+            "description": "ends a comment */ here"
+          },
+          "closer2": {
+            "type": "string",
+            "description": "*/"
+          },
+          "opener": {
+            "type": "string",
+            "description": "/** nested /* comment"
+          },
+          "star": {
+            "type": "string",
+            "description": "* bullet\n* list"
+          },
+          "backslash": {
+            "type": "string",
+            "description": "C:\\path\\to\\*/file"
+          },
+          "unicode": {
+            "type": "string",
+            "description": "naïve — “quotes” 😀"
+          },
+          "html": {
+            "type": "string",
+            "description": "<b>bold</b> & <i>it</i>"
+          },
+          "trailingnl": {
+            "type": "string",
+            "description": "text\n"
+          },
+          "md": {
+            "type": "string",
+            "description": "# Heading\n\n- a\n- b\n\n```js\nconst x = 1;\n```"
+          },
+          "atsign": {
+            "type": "string",
+            "description": "@deprecated in prose @param x"
+          },
+          "nbsp": {
+            "type": "string",
+            "description": "a b"
+          },
+          "zw": {
+            "type": "string",
+            "description": "a​b"
+          },
+          "nul": {
+            "type": "string",
+            "description": "a\u0000b"
+          },
+          "bell": {
+            "type": "string",
+            "description": "a\u0007b"
+          }
+        }
+      },
+      "Schema_crlf": {
+        "type": "string",
+        "description": "line1\r\nline2\r\n",
+        "title": "line1\r\nline2\r\n"
+      },
+      "Schema_cr": {
+        "type": "string",
+        "description": "line1\rline2",
+        "title": "line1\rline2"
+      },
+      "Schema_lsep": {
+        "type": "string",
+        "description": "a b c",
+        "title": "a b c"
+      },
+      "Schema_tab": {
+        "type": "string",
+        "description": "\tindented\twith tabs\t",
+        "title": "\tindented\twith tabs\t"
+      },
+      "Schema_lead": {
+        "type": "string",
+        "description": "   leading and trailing   ",
+        "title": "   leading and trailing   "
+      },
+      "Schema_empty": {
+        "type": "string",
+        "description": "",
+        "title": ""
+      },
+      "Schema_onlyspace": {
+        "type": "string",
+        "description": "   ",
+        "title": "   "
+      },
+      "Schema_onlynl": {
+        "type": "string",
+        "description": "\n\n",
+        "title": "\n\n"
+      },
+      "Schema_closer": {
+        "type": "string",
+        "description": "ends a comment */ here",
+        "title": "ends a comment */ here"
+      },
+      "Schema_closer2": {
+        "type": "string",
+        "description": "*/",
+        "title": "*/"
+      },
+      "Schema_opener": {
+        "type": "string",
+        "description": "/** nested /* comment",
+        "title": "/** nested /* comment"
+      },
+      "Schema_star": {
+        "type": "string",
+        "description": "* bullet\n* list",
+        "title": "* bullet\n* list"
+      },
+      "Schema_backslash": {
+        "type": "string",
+        "description": "C:\\path\\to\\*/file",
+        "title": "C:\\path\\to\\*/file"
+      },
+      "Schema_unicode": {
+        "type": "string",
+        "description": "naïve — “quotes” 😀",
+        "title": "naïve — “quotes” 😀"
+      },
+      "Schema_html": {
+        "type": "string",
+        "description": "<b>bold</b> & <i>it</i>",
+        "title": "<b>bold</b> & <i>it</i>"
+      },
+      "Schema_trailingnl": {
+        "type": "string",
+        "description": "text\n",
+        "title": "text\n"
+      },
+      "Schema_md": {
+        "type": "string",
+        "description": "# Heading\n\n- a\n- b\n\n```js\nconst x = 1;\n```",
+        "title": "# Heading\n\n- a\n- b\n\n```js\nconst x = 1;\n```"
+      },
+      "Schema_atsign": {
+        "type": "string",
+        "description": "@deprecated in prose @param x",
+        "title": "@deprecated in prose @param x"
+      },
+      "Schema_nbsp": {
+        "type": "string",
+        "description": "a b",
+        "title": "a b"
+      },
+      "Schema_zw": {
+        "type": "string",
+        "description": "a​b",
+        "title": "a​b"
+      },
+      "Schema_nul": {
+        "type": "string",
+        "description": "a\u0000b",
+        "title": "a\u0000b"
+      },
+      "Schema_bell": {
+        "type": "string",
+        "description": "a\u0007b",
+        "title": "a\u0007b"
+      }
+    }
+  }
+}

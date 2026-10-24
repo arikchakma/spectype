@@ -1,0 +1,66 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "NoProps": {
+        "type": "object"
+      },
+      "EmptyProps": {
+        "type": "object",
+        "properties": {}
+      },
+      "EmptySchema": {},
+      "TrueSchema": true,
+      "FalseSchema": false,
+      "DescOnly": {
+        "description": "just a description"
+      },
+      "RequiredOnly": {
+        "required": [
+          "a",
+          "b"
+        ]
+      },
+      "RequiredNoProps": {
+        "type": "object",
+        "required": [
+          "a"
+        ]
+      },
+      "PropsNoType": {
+        "properties": {
+          "a": {
+            "type": "string"
+          }
+        }
+      },
+      "Test": {
+        "type": "object",
+        "properties": {
+          "empty": {},
+          "t": true,
+          "f": false,
+          "obj": {
+            "type": "object"
+          },
+          "arr": {
+            "type": "array"
+          },
+          "arrEmpty": {
+            "type": "array",
+            "items": {}
+          },
+          "arrFalse": {
+            "type": "array",
+            "items": false
+          }
+        }
+      }
+    }
+  }
+}

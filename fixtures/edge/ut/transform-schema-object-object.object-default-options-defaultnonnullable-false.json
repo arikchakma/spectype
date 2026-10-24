@@ -1,0 +1,35 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "test",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Test": {
+        "type": "object",
+        "properties": {
+          "required": {
+            "type": "boolean"
+          },
+          "requiredDefault": {
+            "type": "boolean",
+            "default": false
+          },
+          "optional": {
+            "type": "boolean"
+          },
+          "optionalDefault": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "required": [
+          "required",
+          "requiredDefault"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "test",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "schema-object": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "enum": [
+          "en",
+          "es",
+          "fr",
+          "de"
+        ],
+        "default": "en"
+      }
+    }
+  }
+}

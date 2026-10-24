@@ -1,0 +1,7 @@
+type: object
+description: Served through a redirect; refs resolve against the requested URL.
+properties:
+  name:
+    type: string
+  since:
+    $ref: "./date.yaml"

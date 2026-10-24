@@ -1,0 +1,9 @@
+Pet:
+  type: object
+  properties:
+    id: { type: integer }
+    version: { $ref: "#/version" }
+  extra: true
+version: { type: integer }
+NotFound:
+  content: { application/json: { schema: { type: string } } }

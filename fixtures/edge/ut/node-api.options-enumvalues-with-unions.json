@@ -1,0 +1,117 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "API Portal",
+    "version": "1.0.0",
+    "description": "This is the **Analytics API** description"
+  },
+  "paths": {
+    "/analytics/data": {
+      "get": {
+        "operationId": "analytics.data",
+        "tags": [
+          "Analytics"
+        ],
+        "responses": {
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "enum": [
+                            "Bad request. (InvalidFilterException)"
+                          ]
+                        },
+                        "errors": {
+                          "type": "object",
+                          "properties": {
+                            "filters": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "filters"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "message",
+                        "errors"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "enum": [
+                            "Bad request. (InvalidDimensionException)"
+                          ]
+                        },
+                        "errors": {
+                          "type": "object",
+                          "properties": {
+                            "dimensions": {
+                              "type": "array",
+                              "prefixItems": [
+                                {
+                                  "type": "string"
+                                }
+                              ],
+                              "minItems": 1,
+                              "maxItems": 1,
+                              "additionalItems": false
+                            }
+                          },
+                          "required": [
+                            "dimensions"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "message",
+                        "errors"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string",
+                          "enum": [
+                            "Bad request. (InvalidMetricException)"
+                          ]
+                        },
+                        "errors": {
+                          "type": "object",
+                          "properties": {
+                            "metrics": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "metrics"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "message",
+                        "errors"
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

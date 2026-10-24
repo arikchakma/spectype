@@ -1,0 +1,57 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "A": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "enum": [
+          "a",
+          "b",
+          null
+        ]
+      },
+      "B": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "enum": [
+          "a",
+          "b"
+        ]
+      },
+      "C": {
+        "type": [
+          "string",
+          "integer"
+        ],
+        "enum": [
+          "a",
+          1
+        ]
+      },
+      "D": {
+        "oneOf": [
+          {
+            "type": "string",
+            "enum": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    }
+  }
+}

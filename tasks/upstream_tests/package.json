@@ -1,0 +1,14 @@
+{
+  "name": "spectype-upstream-tests",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node run.mjs"
+  },
+  "devDependencies": {
+    "execa": "9.6.1",
+    "strip-ansi": "7.1.2",
+    "typescript": "5.9.3",
+    "vitest": "4.0.18"
+  }
+}

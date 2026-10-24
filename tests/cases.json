@@ -1,0 +1,6006 @@
+[
+  {
+    "name": "edge.allof.flattening",
+    "input": "fixtures/edge/hand/allof.flattening.json",
+    "flags": []
+  },
+  {
+    "name": "edge.allof.flattening.alphabetize",
+    "input": "fixtures/edge/hand/allof.flattening.json",
+    "flags": [
+      "--alphabetize"
+    ]
+  },
+  {
+    "name": "edge.allof.flattening.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/allof.flattening.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.allof.flattening.immutable",
+    "input": "fixtures/edge/hand/allof.flattening.json",
+    "flags": [
+      "--immutable"
+    ]
+  },
+  {
+    "name": "edge.allof.flattening.properties-required-by-default",
+    "input": "fixtures/edge/hand/allof.flattening.json",
+    "flags": [
+      "--properties-required-by-default"
+    ]
+  },
+  {
+    "name": "edge.arrays.tuples",
+    "input": "fixtures/edge/hand/arrays.tuples.json",
+    "flags": []
+  },
+  {
+    "name": "edge.arrays.tuples.array-length",
+    "input": "fixtures/edge/hand/arrays.tuples.json",
+    "flags": [
+      "--array-length"
+    ]
+  },
+  {
+    "name": "edge.arrays.tuples.array-length+immutable",
+    "input": "fixtures/edge/hand/arrays.tuples.json",
+    "flags": [
+      "--array-length",
+      "--immutable"
+    ]
+  },
+  {
+    "name": "edge.arrays.tuples.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/arrays.tuples.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.arrays.tuples.immutable",
+    "input": "fixtures/edge/hand/arrays.tuples.json",
+    "flags": [
+      "--immutable"
+    ]
+  },
+  {
+    "name": "edge.arrays.tuples.immutable+export-type",
+    "input": "fixtures/edge/hand/arrays.tuples.json",
+    "flags": [
+      "--immutable",
+      "--export-type"
+    ]
+  },
+  {
+    "name": "edge.bodies.variants",
+    "input": "fixtures/edge/hand/bodies.variants.json",
+    "flags": []
+  },
+  {
+    "name": "edge.bodies.variants.default-non-nullable-false",
+    "input": "fixtures/edge/hand/bodies.variants.json",
+    "flags": [
+      "--default-non-nullable=false"
+    ]
+  },
+  {
+    "name": "edge.bodies.variants.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/bodies.variants.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.bodies.variants.immutable",
+    "input": "fixtures/edge/hand/bodies.variants.json",
+    "flags": [
+      "--immutable"
+    ]
+  },
+  {
+    "name": "edge.bodies.variants.read-write-markers",
+    "input": "fixtures/edge/hand/bodies.variants.json",
+    "flags": [
+      "--read-write-markers"
+    ]
+  },
+  {
+    "name": "edge.bodies.variants.root-types",
+    "input": "fixtures/edge/hand/bodies.variants.json",
+    "flags": [
+      "--root-types"
+    ]
+  },
+  {
+    "name": "edge.comments.deprecated",
+    "input": "fixtures/edge/hand/comments.deprecated.json",
+    "flags": []
+  },
+  {
+    "name": "edge.comments.deprecated.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/comments.deprecated.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.comments.deprecated.exclude-deprecated",
+    "input": "fixtures/edge/hand/comments.deprecated.json",
+    "flags": [
+      "--exclude-deprecated"
+    ]
+  },
+  {
+    "name": "edge.comments.deprecated.exclude-deprecated+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/comments.deprecated.json",
+    "flags": [
+      "--exclude-deprecated",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.comments.deprecated.exclude-deprecated+root-types",
+    "input": "fixtures/edge/hand/comments.deprecated.json",
+    "flags": [
+      "--exclude-deprecated",
+      "--root-types"
+    ]
+  },
+  {
+    "name": "edge.comments.descriptions",
+    "input": "fixtures/edge/hand/comments.descriptions.json",
+    "flags": []
+  },
+  {
+    "name": "edge.comments.descriptions.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/comments.descriptions.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.comments.examples-defaults",
+    "input": "fixtures/edge/hand/comments.examples-defaults.json",
+    "flags": []
+  },
+  {
+    "name": "edge.comments.examples-defaults.default-non-nullable-false",
+    "input": "fixtures/edge/hand/comments.examples-defaults.json",
+    "flags": [
+      "--default-non-nullable=false"
+    ]
+  },
+  {
+    "name": "edge.comments.examples-defaults.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/comments.examples-defaults.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.comments.raw-numbers",
+    "input": "fixtures/edge/hand/comments.raw-numbers.json",
+    "flags": []
+  },
+  {
+    "name": "edge.comments.raw-numbers.enum",
+    "input": "fixtures/edge/hand/comments.raw-numbers.json",
+    "flags": [
+      "--enum"
+    ]
+  },
+  {
+    "name": "edge.comments.raw-numbers.enum-values",
+    "input": "fixtures/edge/hand/comments.raw-numbers.json",
+    "flags": [
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "edge.comments.raw-numbers.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/comments.raw-numbers.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.comments.title-summary-format",
+    "input": "fixtures/edge/hand/comments.title-summary-format.json",
+    "flags": []
+  },
+  {
+    "name": "edge.comments.title-summary-format.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/comments.title-summary-format.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.components.empty-components",
+    "input": "fixtures/edge/hand/components.empty-components.json",
+    "flags": []
+  },
+  {
+    "name": "edge.components.empty-components.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/components.empty-components.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.components.empty-doc",
+    "input": "fixtures/edge/hand/components.empty-doc.json",
+    "flags": []
+  },
+  {
+    "name": "edge.components.empty-doc.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/components.empty-doc.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.components.empty-doc.make-paths-enum",
+    "input": "fixtures/edge/hand/components.empty-doc.json",
+    "flags": [
+      "--make-paths-enum"
+    ]
+  },
+  {
+    "name": "edge.components.empty-doc.root-types",
+    "input": "fixtures/edge/hand/components.empty-doc.json",
+    "flags": [
+      "--root-types"
+    ]
+  },
+  {
+    "name": "edge.components.empty-sections",
+    "input": "fixtures/edge/hand/components.empty-sections.json",
+    "flags": []
+  },
+  {
+    "name": "edge.components.empty-sections.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/components.empty-sections.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.components.empty-sections.export-type",
+    "input": "fixtures/edge/hand/components.empty-sections.json",
+    "flags": [
+      "--export-type"
+    ]
+  },
+  {
+    "name": "edge.components.empty-sections.immutable",
+    "input": "fixtures/edge/hand/components.empty-sections.json",
+    "flags": [
+      "--immutable"
+    ]
+  },
+  {
+    "name": "edge.components.every-kind",
+    "input": "fixtures/edge/hand/components.every-kind.json",
+    "flags": []
+  },
+  {
+    "name": "edge.components.every-kind.alphabetize",
+    "input": "fixtures/edge/hand/components.every-kind.json",
+    "flags": [
+      "--alphabetize"
+    ]
+  },
+  {
+    "name": "edge.components.every-kind.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/components.every-kind.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.components.every-kind.export-type",
+    "input": "fixtures/edge/hand/components.every-kind.json",
+    "flags": [
+      "--export-type"
+    ]
+  },
+  {
+    "name": "edge.components.every-kind.immutable",
+    "input": "fixtures/edge/hand/components.every-kind.json",
+    "flags": [
+      "--immutable"
+    ]
+  },
+  {
+    "name": "edge.components.every-kind.root-types",
+    "input": "fixtures/edge/hand/components.every-kind.json",
+    "flags": [
+      "--root-types"
+    ]
+  },
+  {
+    "name": "edge.components.every-kind.root-types+root-types-keep-casing",
+    "input": "fixtures/edge/hand/components.every-kind.json",
+    "flags": [
+      "--root-types",
+      "--root-types-keep-casing"
+    ]
+  },
+  {
+    "name": "edge.components.every-kind.root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/components.every-kind.json",
+    "flags": [
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.components.only-schemas-no-paths",
+    "input": "fixtures/edge/hand/components.only-schemas-no-paths.json",
+    "flags": []
+  },
+  {
+    "name": "edge.components.only-schemas-no-paths.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/components.only-schemas-no-paths.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.components.webhooks-and-paths",
+    "input": "fixtures/edge/hand/components.webhooks-and-paths.json",
+    "flags": []
+  },
+  {
+    "name": "edge.components.webhooks-and-paths.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/components.webhooks-and-paths.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.components.webhooks-only",
+    "input": "fixtures/edge/hand/components.webhooks-only.json",
+    "flags": []
+  },
+  {
+    "name": "edge.components.webhooks-only.alphabetize",
+    "input": "fixtures/edge/hand/components.webhooks-only.json",
+    "flags": [
+      "--alphabetize"
+    ]
+  },
+  {
+    "name": "edge.components.webhooks-only.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/components.webhooks-only.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.components.webhooks-only.root-types",
+    "input": "fixtures/edge/hand/components.webhooks-only.json",
+    "flags": [
+      "--root-types"
+    ]
+  },
+  {
+    "name": "edge.composition.enum-in-oneof",
+    "input": "fixtures/edge/hand/composition.enum-in-oneof.json",
+    "flags": []
+  },
+  {
+    "name": "edge.composition.enum-in-oneof.enum",
+    "input": "fixtures/edge/hand/composition.enum-in-oneof.json",
+    "flags": [
+      "--enum"
+    ]
+  },
+  {
+    "name": "edge.composition.enum-in-oneof.enum-values",
+    "input": "fixtures/edge/hand/composition.enum-in-oneof.json",
+    "flags": [
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "edge.composition.enum-in-oneof.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/composition.enum-in-oneof.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.composition.oneof-anyof",
+    "input": "fixtures/edge/hand/composition.oneof-anyof.json",
+    "flags": []
+  },
+  {
+    "name": "edge.composition.oneof-anyof.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/composition.oneof-anyof.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.composition.oneof-anyof.immutable",
+    "input": "fixtures/edge/hand/composition.oneof-anyof.json",
+    "flags": [
+      "--immutable"
+    ]
+  },
+  {
+    "name": "edge.const.all-types",
+    "input": "fixtures/edge/hand/const.all-types.json",
+    "flags": []
+  },
+  {
+    "name": "edge.const.all-types.enum",
+    "input": "fixtures/edge/hand/const.all-types.json",
+    "flags": [
+      "--enum"
+    ]
+  },
+  {
+    "name": "edge.const.all-types.enum-values",
+    "input": "fixtures/edge/hand/const.all-types.json",
+    "flags": [
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "edge.const.all-types.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/const.all-types.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.discriminator.30-nullable",
+    "input": "fixtures/edge/hand/discriminator.30-nullable.json",
+    "flags": []
+  },
+  {
+    "name": "edge.discriminator.30-nullable.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/discriminator.30-nullable.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.discriminator.allof-inheritance",
+    "input": "fixtures/edge/hand/discriminator.allof-inheritance.json",
+    "flags": []
+  },
+  {
+    "name": "edge.discriminator.allof-inheritance.alphabetize",
+    "input": "fixtures/edge/hand/discriminator.allof-inheritance.json",
+    "flags": [
+      "--alphabetize"
+    ]
+  },
+  {
+    "name": "edge.discriminator.allof-inheritance.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/discriminator.allof-inheritance.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.discriminator.allof-inheritance.immutable",
+    "input": "fixtures/edge/hand/discriminator.allof-inheritance.json",
+    "flags": [
+      "--immutable"
+    ]
+  },
+  {
+    "name": "edge.discriminator.allof-inheritance.root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/discriminator.allof-inheritance.json",
+    "flags": [
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.discriminator.allof-no-mapping",
+    "input": "fixtures/edge/hand/discriminator.allof-no-mapping.json",
+    "flags": []
+  },
+  {
+    "name": "edge.discriminator.allof-no-mapping.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/discriminator.allof-no-mapping.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.discriminator.enum-property",
+    "input": "fixtures/edge/hand/discriminator.enum-property.json",
+    "flags": []
+  },
+  {
+    "name": "edge.discriminator.enum-property.enum",
+    "input": "fixtures/edge/hand/discriminator.enum-property.json",
+    "flags": [
+      "--enum"
+    ]
+  },
+  {
+    "name": "edge.discriminator.enum-property.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/discriminator.enum-property.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.discriminator.escape-property",
+    "input": "fixtures/edge/hand/discriminator.escape-property.json",
+    "flags": []
+  },
+  {
+    "name": "edge.discriminator.escape-property.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/discriminator.escape-property.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.discriminator.oneof-mapping-by-name",
+    "input": "fixtures/edge/hand/discriminator.oneof-mapping-by-name.json",
+    "flags": []
+  },
+  {
+    "name": "edge.discriminator.oneof-mapping-by-name.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/discriminator.oneof-mapping-by-name.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.discriminator.oneof-mapping-by-ref",
+    "input": "fixtures/edge/hand/discriminator.oneof-mapping-by-ref.json",
+    "flags": []
+  },
+  {
+    "name": "edge.discriminator.oneof-mapping-by-ref.enum",
+    "input": "fixtures/edge/hand/discriminator.oneof-mapping-by-ref.json",
+    "flags": [
+      "--enum"
+    ]
+  },
+  {
+    "name": "edge.discriminator.oneof-mapping-by-ref.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/discriminator.oneof-mapping-by-ref.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.discriminator.oneof-mapping-by-ref.root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/discriminator.oneof-mapping-by-ref.json",
+    "flags": [
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.discriminator.oneof-no-mapping",
+    "input": "fixtures/edge/hand/discriminator.oneof-no-mapping.json",
+    "flags": []
+  },
+  {
+    "name": "edge.discriminator.oneof-no-mapping.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/discriminator.oneof-no-mapping.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.discriminator.property-not-defined",
+    "input": "fixtures/edge/hand/discriminator.property-not-defined.json",
+    "flags": []
+  },
+  {
+    "name": "edge.discriminator.property-not-defined.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/discriminator.property-not-defined.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.enums.awkward-names",
+    "input": "fixtures/edge/hand/enums.awkward-names.json",
+    "flags": []
+  },
+  {
+    "name": "edge.enums.awkward-names.enum",
+    "input": "fixtures/edge/hand/enums.awkward-names.json",
+    "flags": [
+      "--enum"
+    ]
+  },
+  {
+    "name": "edge.enums.awkward-names.enum+dedupe-enums",
+    "input": "fixtures/edge/hand/enums.awkward-names.json",
+    "flags": [
+      "--enum",
+      "--dedupe-enums"
+    ]
+  },
+  {
+    "name": "edge.enums.awkward-names.enum+enum-values",
+    "input": "fixtures/edge/hand/enums.awkward-names.json",
+    "flags": [
+      "--enum",
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "edge.enums.awkward-names.enum+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/enums.awkward-names.json",
+    "flags": [
+      "--enum",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.enums.awkward-names.enum+root-types+root-types-no-schema-prefix+root-types-keep-casing",
+    "input": "fixtures/edge/hand/enums.awkward-names.json",
+    "flags": [
+      "--enum",
+      "--root-types",
+      "--root-types-no-schema-prefix",
+      "--root-types-keep-casing"
+    ]
+  },
+  {
+    "name": "edge.enums.awkward-names.enum-values",
+    "input": "fixtures/edge/hand/enums.awkward-names.json",
+    "flags": [
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "edge.enums.awkward-names.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/enums.awkward-names.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.enums.basic",
+    "input": "fixtures/edge/hand/enums.basic.json",
+    "flags": []
+  },
+  {
+    "name": "edge.enums.basic.enum",
+    "input": "fixtures/edge/hand/enums.basic.json",
+    "flags": [
+      "--enum"
+    ]
+  },
+  {
+    "name": "edge.enums.basic.enum+conditional-enums",
+    "input": "fixtures/edge/hand/enums.basic.json",
+    "flags": [
+      "--enum",
+      "--conditional-enums"
+    ]
+  },
+  {
+    "name": "edge.enums.basic.enum+dedupe-enums",
+    "input": "fixtures/edge/hand/enums.basic.json",
+    "flags": [
+      "--enum",
+      "--dedupe-enums"
+    ]
+  },
+  {
+    "name": "edge.enums.basic.enum+enum-values",
+    "input": "fixtures/edge/hand/enums.basic.json",
+    "flags": [
+      "--enum",
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "edge.enums.basic.enum+export-type",
+    "input": "fixtures/edge/hand/enums.basic.json",
+    "flags": [
+      "--enum",
+      "--export-type"
+    ]
+  },
+  {
+    "name": "edge.enums.basic.enum+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/enums.basic.json",
+    "flags": [
+      "--enum",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.enums.basic.enum-values",
+    "input": "fixtures/edge/hand/enums.basic.json",
+    "flags": [
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "edge.enums.basic.enum-values+export-type",
+    "input": "fixtures/edge/hand/enums.basic.json",
+    "flags": [
+      "--enum-values",
+      "--export-type"
+    ]
+  },
+  {
+    "name": "edge.enums.basic.enum-values+immutable",
+    "input": "fixtures/edge/hand/enums.basic.json",
+    "flags": [
+      "--enum-values",
+      "--immutable"
+    ]
+  },
+  {
+    "name": "edge.enums.basic.enum-values+root-types",
+    "input": "fixtures/edge/hand/enums.basic.json",
+    "flags": [
+      "--enum-values",
+      "--root-types"
+    ]
+  },
+  {
+    "name": "edge.enums.basic.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/enums.basic.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.enums.dedupe",
+    "input": "fixtures/edge/hand/enums.dedupe.json",
+    "flags": []
+  },
+  {
+    "name": "edge.enums.dedupe.enum",
+    "input": "fixtures/edge/hand/enums.dedupe.json",
+    "flags": [
+      "--enum"
+    ]
+  },
+  {
+    "name": "edge.enums.dedupe.enum+dedupe-enums",
+    "input": "fixtures/edge/hand/enums.dedupe.json",
+    "flags": [
+      "--enum",
+      "--dedupe-enums"
+    ]
+  },
+  {
+    "name": "edge.enums.dedupe.enum+dedupe-enums+enum-values",
+    "input": "fixtures/edge/hand/enums.dedupe.json",
+    "flags": [
+      "--enum",
+      "--dedupe-enums",
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "edge.enums.dedupe.enum+dedupe-enums+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/enums.dedupe.json",
+    "flags": [
+      "--enum",
+      "--dedupe-enums",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.enums.dedupe.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/enums.dedupe.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.enums.in-operations",
+    "input": "fixtures/edge/hand/enums.in-operations.json",
+    "flags": []
+  },
+  {
+    "name": "edge.enums.in-operations.enum",
+    "input": "fixtures/edge/hand/enums.in-operations.json",
+    "flags": [
+      "--enum"
+    ]
+  },
+  {
+    "name": "edge.enums.in-operations.enum+dedupe-enums",
+    "input": "fixtures/edge/hand/enums.in-operations.json",
+    "flags": [
+      "--enum",
+      "--dedupe-enums"
+    ]
+  },
+  {
+    "name": "edge.enums.in-operations.enum+enum-values",
+    "input": "fixtures/edge/hand/enums.in-operations.json",
+    "flags": [
+      "--enum",
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "edge.enums.in-operations.enum-values",
+    "input": "fixtures/edge/hand/enums.in-operations.json",
+    "flags": [
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "edge.enums.in-operations.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/enums.in-operations.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.enums.in-operations.path-params-as-types+enum",
+    "input": "fixtures/edge/hand/enums.in-operations.json",
+    "flags": [
+      "--path-params-as-types",
+      "--enum"
+    ]
+  },
+  {
+    "name": "edge.enums.nullable-30",
+    "input": "fixtures/edge/hand/enums.nullable-30.json",
+    "flags": []
+  },
+  {
+    "name": "edge.enums.nullable-30.enum",
+    "input": "fixtures/edge/hand/enums.nullable-30.json",
+    "flags": [
+      "--enum"
+    ]
+  },
+  {
+    "name": "edge.enums.nullable-30.enum+conditional-enums",
+    "input": "fixtures/edge/hand/enums.nullable-30.json",
+    "flags": [
+      "--enum",
+      "--conditional-enums"
+    ]
+  },
+  {
+    "name": "edge.enums.nullable-30.enum-values",
+    "input": "fixtures/edge/hand/enums.nullable-30.json",
+    "flags": [
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "edge.enums.nullable-30.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/enums.nullable-30.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.enums.nullable-31",
+    "input": "fixtures/edge/hand/enums.nullable-31.json",
+    "flags": []
+  },
+  {
+    "name": "edge.enums.nullable-31.enum",
+    "input": "fixtures/edge/hand/enums.nullable-31.json",
+    "flags": [
+      "--enum"
+    ]
+  },
+  {
+    "name": "edge.enums.nullable-31.enum-values",
+    "input": "fixtures/edge/hand/enums.nullable-31.json",
+    "flags": [
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "edge.enums.nullable-31.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/enums.nullable-31.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.enums.objects-arrays",
+    "input": "fixtures/edge/hand/enums.objects-arrays.json",
+    "flags": []
+  },
+  {
+    "name": "edge.enums.objects-arrays.enum",
+    "input": "fixtures/edge/hand/enums.objects-arrays.json",
+    "flags": [
+      "--enum"
+    ]
+  },
+  {
+    "name": "edge.enums.objects-arrays.enum-values",
+    "input": "fixtures/edge/hand/enums.objects-arrays.json",
+    "flags": [
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "edge.enums.objects-arrays.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/enums.objects-arrays.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.enums.schema-names-awkward",
+    "input": "fixtures/edge/hand/enums.schema-names-awkward.json",
+    "flags": []
+  },
+  {
+    "name": "edge.enums.schema-names-awkward.enum",
+    "input": "fixtures/edge/hand/enums.schema-names-awkward.json",
+    "flags": [
+      "--enum"
+    ]
+  },
+  {
+    "name": "edge.enums.schema-names-awkward.enum+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/enums.schema-names-awkward.json",
+    "flags": [
+      "--enum",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.enums.schema-names-awkward.enum+root-types",
+    "input": "fixtures/edge/hand/enums.schema-names-awkward.json",
+    "flags": [
+      "--enum",
+      "--root-types"
+    ]
+  },
+  {
+    "name": "edge.enums.schema-names-awkward.enum-values",
+    "input": "fixtures/edge/hand/enums.schema-names-awkward.json",
+    "flags": [
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "edge.enums.schema-names-awkward.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/enums.schema-names-awkward.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.enums.schema-names-awkward.root-types",
+    "input": "fixtures/edge/hand/enums.schema-names-awkward.json",
+    "flags": [
+      "--root-types"
+    ]
+  },
+  {
+    "name": "edge.enums.schema-names-awkward.root-types+root-types-keep-casing",
+    "input": "fixtures/edge/hand/enums.schema-names-awkward.json",
+    "flags": [
+      "--root-types",
+      "--root-types-keep-casing"
+    ]
+  },
+  {
+    "name": "edge.enums.schema-names-awkward.root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/enums.schema-names-awkward.json",
+    "flags": [
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.enums.x-extensions",
+    "input": "fixtures/edge/hand/enums.x-extensions.json",
+    "flags": []
+  },
+  {
+    "name": "edge.enums.x-extensions.conditional-enums",
+    "input": "fixtures/edge/hand/enums.x-extensions.json",
+    "flags": [
+      "--conditional-enums"
+    ]
+  },
+  {
+    "name": "edge.enums.x-extensions.enum",
+    "input": "fixtures/edge/hand/enums.x-extensions.json",
+    "flags": [
+      "--enum"
+    ]
+  },
+  {
+    "name": "edge.enums.x-extensions.enum+conditional-enums",
+    "input": "fixtures/edge/hand/enums.x-extensions.json",
+    "flags": [
+      "--enum",
+      "--conditional-enums"
+    ]
+  },
+  {
+    "name": "edge.enums.x-extensions.enum+conditional-enums+root-types",
+    "input": "fixtures/edge/hand/enums.x-extensions.json",
+    "flags": [
+      "--enum",
+      "--conditional-enums",
+      "--root-types"
+    ]
+  },
+  {
+    "name": "edge.enums.x-extensions.enum+dedupe-enums",
+    "input": "fixtures/edge/hand/enums.x-extensions.json",
+    "flags": [
+      "--enum",
+      "--dedupe-enums"
+    ]
+  },
+  {
+    "name": "edge.enums.x-extensions.enum-values",
+    "input": "fixtures/edge/hand/enums.x-extensions.json",
+    "flags": [
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "edge.enums.x-extensions.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/enums.x-extensions.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.immutable.everything",
+    "input": "fixtures/edge/hand/immutable.everything.json",
+    "flags": []
+  },
+  {
+    "name": "edge.immutable.everything.immutable",
+    "input": "fixtures/edge/hand/immutable.everything.json",
+    "flags": [
+      "--immutable"
+    ]
+  },
+  {
+    "name": "edge.immutable.everything.immutable+array-length",
+    "input": "fixtures/edge/hand/immutable.everything.json",
+    "flags": [
+      "--immutable",
+      "--array-length"
+    ]
+  },
+  {
+    "name": "edge.immutable.everything.immutable+enum-values",
+    "input": "fixtures/edge/hand/immutable.everything.json",
+    "flags": [
+      "--immutable",
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "edge.immutable.everything.immutable+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/immutable.everything.json",
+    "flags": [
+      "--immutable",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.immutable.everything.immutable+export-type",
+    "input": "fixtures/edge/hand/immutable.everything.json",
+    "flags": [
+      "--immutable",
+      "--export-type"
+    ]
+  },
+  {
+    "name": "edge.invalid.dangling-prefix-items-31",
+    "input": "fixtures/edge/hand/invalid.dangling-prefix-items-31.json",
+    "flags": []
+  },
+  {
+    "name": "edge.invalid.dangling-prefix-items-31.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/invalid.dangling-prefix-items-31.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.invalid.dangling-tuple-items-30",
+    "input": "fixtures/edge/hand/invalid.dangling-tuple-items-30.json",
+    "flags": []
+  },
+  {
+    "name": "edge.invalid.dangling-tuple-items-30.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/invalid.dangling-tuple-items-30.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.invalid.discriminator-mapping-missing",
+    "input": "fixtures/edge/hand/invalid.discriminator-mapping-missing.json",
+    "flags": []
+  },
+  {
+    "name": "edge.invalid.discriminator-mapping-missing.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/invalid.discriminator-mapping-missing.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.invalid.duplicate-operation-id",
+    "input": "fixtures/edge/hand/invalid.duplicate-operation-id.json",
+    "flags": []
+  },
+  {
+    "name": "edge.invalid.duplicate-operation-id.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/invalid.duplicate-operation-id.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.invalid.empty-file",
+    "input": "fixtures/edge/hand/invalid.empty-file.json",
+    "flags": []
+  },
+  {
+    "name": "edge.invalid.missing-file-ref",
+    "input": "fixtures/edge/hand/invalid.missing-file-ref.json",
+    "flags": []
+  },
+  {
+    "name": "edge.invalid.missing-info",
+    "input": "fixtures/edge/hand/invalid.missing-info.json",
+    "flags": []
+  },
+  {
+    "name": "edge.invalid.no-openapi-key",
+    "input": "fixtures/edge/hand/invalid.no-openapi-key.json",
+    "flags": []
+  },
+  {
+    "name": "edge.invalid.not-json",
+    "input": "fixtures/edge/hand/invalid.not-json.json",
+    "flags": []
+  },
+  {
+    "name": "edge.invalid.openapi2",
+    "input": "fixtures/edge/hand/invalid.openapi2.json",
+    "flags": []
+  },
+  {
+    "name": "edge.invalid.openapi4",
+    "input": "fixtures/edge/hand/invalid.openapi4.json",
+    "flags": []
+  },
+  {
+    "name": "edge.invalid.swagger2",
+    "input": "fixtures/edge/hand/invalid.swagger2.json",
+    "flags": []
+  },
+  {
+    "name": "edge.invalid.unresolved-ref",
+    "input": "fixtures/edge/hand/invalid.unresolved-ref.json",
+    "flags": []
+  },
+  {
+    "name": "edge.invalid.unresolved-ref-in-path",
+    "input": "fixtures/edge/hand/invalid.unresolved-ref-in-path.json",
+    "flags": []
+  },
+  {
+    "name": "edge.invalid.version-31-number",
+    "input": "fixtures/edge/hand/invalid.version-31-number.json",
+    "flags": []
+  },
+  {
+    "name": "edge.invalid.wrong-types",
+    "input": "fixtures/edge/hand/invalid.wrong-types.json",
+    "flags": []
+  },
+  {
+    "name": "edge.invalid.yaml-array-root",
+    "input": "fixtures/edge/hand/invalid.yaml-array-root.yaml",
+    "flags": []
+  },
+  {
+    "name": "edge.json.bom",
+    "input": "fixtures/edge/hand/json.bom.json",
+    "flags": []
+  },
+  {
+    "name": "edge.json.bom.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/json.bom.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.json.duplicate-keys",
+    "input": "fixtures/edge/hand/json.duplicate-keys.json",
+    "flags": []
+  },
+  {
+    "name": "edge.json.duplicate-keys.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/json.duplicate-keys.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.json.unicode-escapes",
+    "input": "fixtures/edge/hand/json.unicode-escapes.json",
+    "flags": []
+  },
+  {
+    "name": "edge.json.unicode-escapes.enum",
+    "input": "fixtures/edge/hand/json.unicode-escapes.json",
+    "flags": [
+      "--enum"
+    ]
+  },
+  {
+    "name": "edge.json.unicode-escapes.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/json.unicode-escapes.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.keys.alphabetize-mixed",
+    "input": "fixtures/edge/hand/keys.alphabetize-mixed.json",
+    "flags": []
+  },
+  {
+    "name": "edge.keys.alphabetize-mixed.alphabetize",
+    "input": "fixtures/edge/hand/keys.alphabetize-mixed.json",
+    "flags": [
+      "--alphabetize"
+    ]
+  },
+  {
+    "name": "edge.keys.alphabetize-mixed.alphabetize+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/keys.alphabetize-mixed.json",
+    "flags": [
+      "--alphabetize",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.keys.alphabetize-mixed.alphabetize+root-types",
+    "input": "fixtures/edge/hand/keys.alphabetize-mixed.json",
+    "flags": [
+      "--alphabetize",
+      "--root-types"
+    ]
+  },
+  {
+    "name": "edge.keys.alphabetize-paths",
+    "input": "fixtures/edge/hand/keys.alphabetize-paths.json",
+    "flags": []
+  },
+  {
+    "name": "edge.keys.alphabetize-paths.alphabetize",
+    "input": "fixtures/edge/hand/keys.alphabetize-paths.json",
+    "flags": [
+      "--alphabetize"
+    ]
+  },
+  {
+    "name": "edge.keys.alphabetize-paths.alphabetize+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/keys.alphabetize-paths.json",
+    "flags": [
+      "--alphabetize",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.keys.alphabetize-paths.alphabetize+make-paths-enum",
+    "input": "fixtures/edge/hand/keys.alphabetize-paths.json",
+    "flags": [
+      "--alphabetize",
+      "--make-paths-enum"
+    ]
+  },
+  {
+    "name": "edge.keys.alphabetize-paths.make-paths-enum",
+    "input": "fixtures/edge/hand/keys.alphabetize-paths.json",
+    "flags": [
+      "--make-paths-enum"
+    ]
+  },
+  {
+    "name": "edge.keys.integer-like-ordering",
+    "input": "fixtures/edge/hand/keys.integer-like-ordering.json",
+    "flags": []
+  },
+  {
+    "name": "edge.keys.integer-like-ordering.alphabetize",
+    "input": "fixtures/edge/hand/keys.integer-like-ordering.json",
+    "flags": [
+      "--alphabetize"
+    ]
+  },
+  {
+    "name": "edge.keys.integer-like-ordering.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/keys.integer-like-ordering.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.keys.prototype-name-crash-hasOwnProperty",
+    "input": "fixtures/edge/hand/keys.prototype-name-crash-hasOwnProperty.json",
+    "flags": []
+  },
+  {
+    "name": "edge.keys.prototype-name-crash-schema-name",
+    "input": "fixtures/edge/hand/keys.prototype-name-crash-schema-name.json",
+    "flags": []
+  },
+  {
+    "name": "edge.keys.prototype-name-crash-toLocaleString",
+    "input": "fixtures/edge/hand/keys.prototype-name-crash-toLocaleString.json",
+    "flags": []
+  },
+  {
+    "name": "edge.keys.prototype-name-crash-valueOf",
+    "input": "fixtures/edge/hand/keys.prototype-name-crash-valueOf.json",
+    "flags": []
+  },
+  {
+    "name": "edge.keys.response-codes-ordering",
+    "input": "fixtures/edge/hand/keys.response-codes-ordering.json",
+    "flags": []
+  },
+  {
+    "name": "edge.keys.response-codes-ordering.alphabetize",
+    "input": "fixtures/edge/hand/keys.response-codes-ordering.json",
+    "flags": [
+      "--alphabetize"
+    ]
+  },
+  {
+    "name": "edge.keys.response-codes-ordering.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/keys.response-codes-ordering.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.keys.weird-property-names",
+    "input": "fixtures/edge/hand/keys.weird-property-names.json",
+    "flags": []
+  },
+  {
+    "name": "edge.keys.weird-property-names.alphabetize",
+    "input": "fixtures/edge/hand/keys.weird-property-names.json",
+    "flags": [
+      "--alphabetize"
+    ]
+  },
+  {
+    "name": "edge.keys.weird-property-names.alphabetize+properties-required-by-default",
+    "input": "fixtures/edge/hand/keys.weird-property-names.json",
+    "flags": [
+      "--alphabetize",
+      "--properties-required-by-default"
+    ]
+  },
+  {
+    "name": "edge.keys.weird-property-names.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/keys.weird-property-names.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.keys.weird-property-names.immutable",
+    "input": "fixtures/edge/hand/keys.weird-property-names.json",
+    "flags": [
+      "--immutable"
+    ]
+  },
+  {
+    "name": "edge.keys.weird-property-names.properties-required-by-default",
+    "input": "fixtures/edge/hand/keys.weird-property-names.json",
+    "flags": [
+      "--properties-required-by-default"
+    ]
+  },
+  {
+    "name": "edge.keys.weird-schema-names",
+    "input": "fixtures/edge/hand/keys.weird-schema-names.json",
+    "flags": []
+  },
+  {
+    "name": "edge.keys.weird-schema-names.alphabetize",
+    "input": "fixtures/edge/hand/keys.weird-schema-names.json",
+    "flags": [
+      "--alphabetize"
+    ]
+  },
+  {
+    "name": "edge.keys.weird-schema-names.alphabetize+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/keys.weird-schema-names.json",
+    "flags": [
+      "--alphabetize",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.keys.weird-schema-names.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/keys.weird-schema-names.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.keys.weird-schema-names.export-type+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/keys.weird-schema-names.json",
+    "flags": [
+      "--export-type",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.keys.weird-schema-names.root-types",
+    "input": "fixtures/edge/hand/keys.weird-schema-names.json",
+    "flags": [
+      "--root-types"
+    ]
+  },
+  {
+    "name": "edge.keys.weird-schema-names.root-types+root-types-keep-casing",
+    "input": "fixtures/edge/hand/keys.weird-schema-names.json",
+    "flags": [
+      "--root-types",
+      "--root-types-keep-casing"
+    ]
+  },
+  {
+    "name": "edge.keys.weird-schema-names.root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/keys.weird-schema-names.json",
+    "flags": [
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.keys.weird-schema-names.root-types+root-types-no-schema-prefix+root-types-keep-casing",
+    "input": "fixtures/edge/hand/keys.weird-schema-names.json",
+    "flags": [
+      "--root-types",
+      "--root-types-no-schema-prefix",
+      "--root-types-keep-casing"
+    ]
+  },
+  {
+    "name": "edge.misc.callbacks-links-security",
+    "input": "fixtures/edge/hand/misc.callbacks-links-security.json",
+    "flags": []
+  },
+  {
+    "name": "edge.misc.callbacks-links-security.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/misc.callbacks-links-security.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.misc.export-type",
+    "input": "fixtures/edge/hand/misc.export-type.json",
+    "flags": []
+  },
+  {
+    "name": "edge.misc.export-type.export-type",
+    "input": "fixtures/edge/hand/misc.export-type.json",
+    "flags": [
+      "--export-type"
+    ]
+  },
+  {
+    "name": "edge.misc.export-type.export-type+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/misc.export-type.json",
+    "flags": [
+      "--export-type",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.misc.export-type.export-type+immutable",
+    "input": "fixtures/edge/hand/misc.export-type.json",
+    "flags": [
+      "--export-type",
+      "--immutable"
+    ]
+  },
+  {
+    "name": "edge.misc.export-type.export-type+root-types",
+    "input": "fixtures/edge/hand/misc.export-type.json",
+    "flags": [
+      "--export-type",
+      "--root-types"
+    ]
+  },
+  {
+    "name": "edge.misc.jsonschema-keywords",
+    "input": "fixtures/edge/hand/misc.jsonschema-keywords.json",
+    "flags": []
+  },
+  {
+    "name": "edge.misc.jsonschema-keywords.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/misc.jsonschema-keywords.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.misc.recursive",
+    "input": "fixtures/edge/hand/misc.recursive.json",
+    "flags": []
+  },
+  {
+    "name": "edge.misc.recursive.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/misc.recursive.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.misc.recursive.immutable",
+    "input": "fixtures/edge/hand/misc.recursive.json",
+    "flags": [
+      "--immutable"
+    ]
+  },
+  {
+    "name": "edge.misc.x-extensions-ignored",
+    "input": "fixtures/edge/hand/misc.x-extensions-ignored.json",
+    "flags": []
+  },
+  {
+    "name": "edge.misc.x-extensions-ignored.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/misc.x-extensions-ignored.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.nullable.30-combos",
+    "input": "fixtures/edge/hand/nullable.30-combos.json",
+    "flags": []
+  },
+  {
+    "name": "edge.nullable.30-combos.default-non-nullable-false",
+    "input": "fixtures/edge/hand/nullable.30-combos.json",
+    "flags": [
+      "--default-non-nullable=false"
+    ]
+  },
+  {
+    "name": "edge.nullable.30-combos.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/nullable.30-combos.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.nullable.30-combos.immutable",
+    "input": "fixtures/edge/hand/nullable.30-combos.json",
+    "flags": [
+      "--immutable"
+    ]
+  },
+  {
+    "name": "edge.nullable.30-combos.properties-required-by-default",
+    "input": "fixtures/edge/hand/nullable.30-combos.json",
+    "flags": [
+      "--properties-required-by-default"
+    ]
+  },
+  {
+    "name": "edge.nullable.31-type-arrays",
+    "input": "fixtures/edge/hand/nullable.31-type-arrays.json",
+    "flags": []
+  },
+  {
+    "name": "edge.nullable.31-type-arrays.default-non-nullable-false",
+    "input": "fixtures/edge/hand/nullable.31-type-arrays.json",
+    "flags": [
+      "--default-non-nullable=false"
+    ]
+  },
+  {
+    "name": "edge.nullable.31-type-arrays.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/nullable.31-type-arrays.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.nullable.31-type-arrays.immutable",
+    "input": "fixtures/edge/hand/nullable.31-type-arrays.json",
+    "flags": [
+      "--immutable"
+    ]
+  },
+  {
+    "name": "edge.nullable.utoipa-option",
+    "input": "fixtures/edge/hand/nullable.utoipa-option.json",
+    "flags": []
+  },
+  {
+    "name": "edge.nullable.utoipa-option.enum",
+    "input": "fixtures/edge/hand/nullable.utoipa-option.json",
+    "flags": [
+      "--enum"
+    ]
+  },
+  {
+    "name": "edge.nullable.utoipa-option.enum-values",
+    "input": "fixtures/edge/hand/nullable.utoipa-option.json",
+    "flags": [
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "edge.nullable.utoipa-option.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/nullable.utoipa-option.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.nullable.utoipa-option.immutable+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/nullable.utoipa-option.json",
+    "flags": [
+      "--immutable",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.nullable.utoipa-option.root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/nullable.utoipa-option.json",
+    "flags": [
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.nullable.utoipa-option.root-types+root-types-no-schema-prefix+root-types-keep-casing",
+    "input": "fixtures/edge/hand/nullable.utoipa-option.json",
+    "flags": [
+      "--root-types",
+      "--root-types-no-schema-prefix",
+      "--root-types-keep-casing"
+    ]
+  },
+  {
+    "name": "edge.objects.additional-properties",
+    "input": "fixtures/edge/hand/objects.additional-properties.json",
+    "flags": []
+  },
+  {
+    "name": "edge.objects.additional-properties.additional-properties",
+    "input": "fixtures/edge/hand/objects.additional-properties.json",
+    "flags": [
+      "--additional-properties"
+    ]
+  },
+  {
+    "name": "edge.objects.additional-properties.alphabetize",
+    "input": "fixtures/edge/hand/objects.additional-properties.json",
+    "flags": [
+      "--alphabetize"
+    ]
+  },
+  {
+    "name": "edge.objects.additional-properties.empty-objects-unknown",
+    "input": "fixtures/edge/hand/objects.additional-properties.json",
+    "flags": [
+      "--empty-objects-unknown"
+    ]
+  },
+  {
+    "name": "edge.objects.additional-properties.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/objects.additional-properties.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.objects.additional-properties.immutable",
+    "input": "fixtures/edge/hand/objects.additional-properties.json",
+    "flags": [
+      "--immutable"
+    ]
+  },
+  {
+    "name": "edge.objects.defs",
+    "input": "fixtures/edge/hand/objects.defs.json",
+    "flags": []
+  },
+  {
+    "name": "edge.objects.defs.enum",
+    "input": "fixtures/edge/hand/objects.defs.json",
+    "flags": [
+      "--enum"
+    ]
+  },
+  {
+    "name": "edge.objects.defs.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/objects.defs.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.objects.defs.read-write-markers",
+    "input": "fixtures/edge/hand/objects.defs.json",
+    "flags": [
+      "--read-write-markers"
+    ]
+  },
+  {
+    "name": "edge.objects.empty-and-unknown",
+    "input": "fixtures/edge/hand/objects.empty-and-unknown.json",
+    "flags": []
+  },
+  {
+    "name": "edge.objects.empty-and-unknown.additional-properties",
+    "input": "fixtures/edge/hand/objects.empty-and-unknown.json",
+    "flags": [
+      "--additional-properties"
+    ]
+  },
+  {
+    "name": "edge.objects.empty-and-unknown.empty-objects-unknown",
+    "input": "fixtures/edge/hand/objects.empty-and-unknown.json",
+    "flags": [
+      "--empty-objects-unknown"
+    ]
+  },
+  {
+    "name": "edge.objects.empty-and-unknown.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/objects.empty-and-unknown.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.objects.empty-and-unknown.immutable",
+    "input": "fixtures/edge/hand/objects.empty-and-unknown.json",
+    "flags": [
+      "--immutable"
+    ]
+  },
+  {
+    "name": "edge.objects.empty-and-unknown.properties-required-by-default",
+    "input": "fixtures/edge/hand/objects.empty-and-unknown.json",
+    "flags": [
+      "--properties-required-by-default"
+    ]
+  },
+  {
+    "name": "edge.objects.required-edge",
+    "input": "fixtures/edge/hand/objects.required-edge.json",
+    "flags": []
+  },
+  {
+    "name": "edge.objects.required-edge.default-non-nullable-false",
+    "input": "fixtures/edge/hand/objects.required-edge.json",
+    "flags": [
+      "--default-non-nullable=false"
+    ]
+  },
+  {
+    "name": "edge.objects.required-edge.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/objects.required-edge.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.objects.required-edge.properties-required-by-default",
+    "input": "fixtures/edge/hand/objects.required-edge.json",
+    "flags": [
+      "--properties-required-by-default"
+    ]
+  },
+  {
+    "name": "edge.objects.required-edge.properties-required-by-default+default-non-nullable-false",
+    "input": "fixtures/edge/hand/objects.required-edge.json",
+    "flags": [
+      "--properties-required-by-default",
+      "--default-non-nullable=false"
+    ]
+  },
+  {
+    "name": "edge.objects.root-defs",
+    "input": "fixtures/edge/hand/objects.root-defs.json",
+    "flags": []
+  },
+  {
+    "name": "edge.objects.root-defs.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/objects.root-defs.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.operations.deprecated-everything",
+    "input": "fixtures/edge/hand/operations.deprecated-everything.json",
+    "flags": []
+  },
+  {
+    "name": "edge.operations.deprecated-everything.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/operations.deprecated-everything.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.operations.deprecated-everything.exclude-deprecated",
+    "input": "fixtures/edge/hand/operations.deprecated-everything.json",
+    "flags": [
+      "--exclude-deprecated"
+    ]
+  },
+  {
+    "name": "edge.operations.deprecated-everything.exclude-deprecated+alphabetize",
+    "input": "fixtures/edge/hand/operations.deprecated-everything.json",
+    "flags": [
+      "--exclude-deprecated",
+      "--alphabetize"
+    ]
+  },
+  {
+    "name": "edge.operations.deprecated-everything.exclude-deprecated+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/operations.deprecated-everything.json",
+    "flags": [
+      "--exclude-deprecated",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.operations.deprecated-everything.exclude-deprecated+make-paths-enum",
+    "input": "fixtures/edge/hand/operations.deprecated-everything.json",
+    "flags": [
+      "--exclude-deprecated",
+      "--make-paths-enum"
+    ]
+  },
+  {
+    "name": "edge.operations.ids",
+    "input": "fixtures/edge/hand/operations.ids.json",
+    "flags": []
+  },
+  {
+    "name": "edge.operations.ids.alphabetize",
+    "input": "fixtures/edge/hand/operations.ids.json",
+    "flags": [
+      "--alphabetize"
+    ]
+  },
+  {
+    "name": "edge.operations.ids.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/operations.ids.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.operations.ids.exclude-deprecated",
+    "input": "fixtures/edge/hand/operations.ids.json",
+    "flags": [
+      "--exclude-deprecated"
+    ]
+  },
+  {
+    "name": "edge.operations.ids.export-type",
+    "input": "fixtures/edge/hand/operations.ids.json",
+    "flags": [
+      "--export-type"
+    ]
+  },
+  {
+    "name": "edge.operations.ids.immutable",
+    "input": "fixtures/edge/hand/operations.ids.json",
+    "flags": [
+      "--immutable"
+    ]
+  },
+  {
+    "name": "edge.operations.ids.make-paths-enum",
+    "input": "fixtures/edge/hand/operations.ids.json",
+    "flags": [
+      "--make-paths-enum"
+    ]
+  },
+  {
+    "name": "edge.operations.paths-enum",
+    "input": "fixtures/edge/hand/operations.paths-enum.json",
+    "flags": []
+  },
+  {
+    "name": "edge.operations.paths-enum.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/operations.paths-enum.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.operations.paths-enum.make-paths-enum",
+    "input": "fixtures/edge/hand/operations.paths-enum.json",
+    "flags": [
+      "--make-paths-enum"
+    ]
+  },
+  {
+    "name": "edge.operations.paths-enum.make-paths-enum+alphabetize",
+    "input": "fixtures/edge/hand/operations.paths-enum.json",
+    "flags": [
+      "--make-paths-enum",
+      "--alphabetize"
+    ]
+  },
+  {
+    "name": "edge.operations.paths-enum.make-paths-enum+export-type",
+    "input": "fixtures/edge/hand/operations.paths-enum.json",
+    "flags": [
+      "--make-paths-enum",
+      "--export-type"
+    ]
+  },
+  {
+    "name": "edge.operations.paths-enum.make-paths-enum+path-params-as-types",
+    "input": "fixtures/edge/hand/operations.paths-enum.json",
+    "flags": [
+      "--make-paths-enum",
+      "--path-params-as-types"
+    ]
+  },
+  {
+    "name": "edge.params.all-locations",
+    "input": "fixtures/edge/hand/params.all-locations.json",
+    "flags": []
+  },
+  {
+    "name": "edge.params.all-locations.alphabetize",
+    "input": "fixtures/edge/hand/params.all-locations.json",
+    "flags": [
+      "--alphabetize"
+    ]
+  },
+  {
+    "name": "edge.params.all-locations.default-non-nullable-false",
+    "input": "fixtures/edge/hand/params.all-locations.json",
+    "flags": [
+      "--default-non-nullable=false"
+    ]
+  },
+  {
+    "name": "edge.params.all-locations.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/params.all-locations.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.params.all-locations.exclude-deprecated",
+    "input": "fixtures/edge/hand/params.all-locations.json",
+    "flags": [
+      "--exclude-deprecated"
+    ]
+  },
+  {
+    "name": "edge.params.all-locations.generate-path-params",
+    "input": "fixtures/edge/hand/params.all-locations.json",
+    "flags": [
+      "--generate-path-params"
+    ]
+  },
+  {
+    "name": "edge.params.all-locations.immutable",
+    "input": "fixtures/edge/hand/params.all-locations.json",
+    "flags": [
+      "--immutable"
+    ]
+  },
+  {
+    "name": "edge.params.all-locations.path-params-as-types",
+    "input": "fixtures/edge/hand/params.all-locations.json",
+    "flags": [
+      "--path-params-as-types"
+    ]
+  },
+  {
+    "name": "edge.params.all-locations.root-types",
+    "input": "fixtures/edge/hand/params.all-locations.json",
+    "flags": [
+      "--root-types"
+    ]
+  },
+  {
+    "name": "edge.params.header-cookie-same-name",
+    "input": "fixtures/edge/hand/params.header-cookie-same-name.json",
+    "flags": []
+  },
+  {
+    "name": "edge.params.header-cookie-same-name.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/params.header-cookie-same-name.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.params.missing-name",
+    "input": "fixtures/edge/hand/params.missing-name.json",
+    "flags": []
+  },
+  {
+    "name": "edge.params.missing-name.enum-values",
+    "input": "fixtures/edge/hand/params.missing-name.json",
+    "flags": [
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "edge.params.path-params-as-types",
+    "input": "fixtures/edge/hand/params.path-params-as-types.json",
+    "flags": []
+  },
+  {
+    "name": "edge.params.path-params-as-types.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/params.path-params-as-types.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.params.path-params-as-types.generate-path-params",
+    "input": "fixtures/edge/hand/params.path-params-as-types.json",
+    "flags": [
+      "--generate-path-params"
+    ]
+  },
+  {
+    "name": "edge.params.path-params-as-types.make-paths-enum",
+    "input": "fixtures/edge/hand/params.path-params-as-types.json",
+    "flags": [
+      "--make-paths-enum"
+    ]
+  },
+  {
+    "name": "edge.params.path-params-as-types.path-params-as-types",
+    "input": "fixtures/edge/hand/params.path-params-as-types.json",
+    "flags": [
+      "--path-params-as-types"
+    ]
+  },
+  {
+    "name": "edge.params.path-params-as-types.path-params-as-types+alphabetize",
+    "input": "fixtures/edge/hand/params.path-params-as-types.json",
+    "flags": [
+      "--path-params-as-types",
+      "--alphabetize"
+    ]
+  },
+  {
+    "name": "edge.params.path-params-as-types.path-params-as-types+generate-path-params",
+    "input": "fixtures/edge/hand/params.path-params-as-types.json",
+    "flags": [
+      "--path-params-as-types",
+      "--generate-path-params"
+    ]
+  },
+  {
+    "name": "edge.params.path-params-as-types.path-params-as-types+make-paths-enum",
+    "input": "fixtures/edge/hand/params.path-params-as-types.json",
+    "flags": [
+      "--path-params-as-types",
+      "--make-paths-enum"
+    ]
+  },
+  {
+    "name": "edge.refs.external-file",
+    "input": "fixtures/edge/hand/refs.external-file.json",
+    "flags": []
+  },
+  {
+    "name": "edge.refs.external-file.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/refs.external-file.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.refs.external-file.root-types",
+    "input": "fixtures/edge/hand/refs.external-file.json",
+    "flags": [
+      "--root-types"
+    ]
+  },
+  {
+    "name": "edge.refs.prototype-keys",
+    "input": "fixtures/edge/hand/refs.prototype-keys.json",
+    "flags": []
+  },
+  {
+    "name": "edge.refs.prototype-keys.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/refs.prototype-keys.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.refs.prototype-pointer",
+    "input": "fixtures/edge/hand/refs.prototype-pointer.json",
+    "flags": []
+  },
+  {
+    "name": "edge.refs.prototype-pointer.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/refs.prototype-pointer.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.refs.ref-to-properties",
+    "input": "fixtures/edge/hand/refs.ref-to-properties.json",
+    "flags": []
+  },
+  {
+    "name": "edge.refs.ref-to-properties.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/refs.ref-to-properties.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.refs.scalar-position",
+    "input": "fixtures/edge/hand/refs.scalar-position.json",
+    "flags": []
+  },
+  {
+    "name": "edge.refs.scalar-position.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/refs.scalar-position.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.refs.siblings",
+    "input": "fixtures/edge/hand/refs.siblings.json",
+    "flags": []
+  },
+  {
+    "name": "edge.refs.siblings.default-non-nullable-false",
+    "input": "fixtures/edge/hand/refs.siblings.json",
+    "flags": [
+      "--default-non-nullable=false"
+    ]
+  },
+  {
+    "name": "edge.refs.siblings.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/refs.siblings.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.refs.siblings.exclude-deprecated",
+    "input": "fixtures/edge/hand/refs.siblings.json",
+    "flags": [
+      "--exclude-deprecated"
+    ]
+  },
+  {
+    "name": "edge.refs.siblings.read-write-markers",
+    "input": "fixtures/edge/hand/refs.siblings.json",
+    "flags": [
+      "--read-write-markers"
+    ]
+  },
+  {
+    "name": "edge.refs.siblings.root-types",
+    "input": "fixtures/edge/hand/refs.siblings.json",
+    "flags": [
+      "--root-types"
+    ]
+  },
+  {
+    "name": "edge.refs.unvisited-dangling",
+    "input": "fixtures/edge/hand/refs.unvisited-dangling.json",
+    "flags": []
+  },
+  {
+    "name": "edge.refs.unvisited-dangling-31",
+    "input": "fixtures/edge/hand/refs.unvisited-dangling-31.json",
+    "flags": []
+  },
+  {
+    "name": "edge.refs.unvisited-dangling-31.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/refs.unvisited-dangling-31.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.refs.unvisited-dangling.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/refs.unvisited-dangling.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.responses.variants",
+    "input": "fixtures/edge/hand/responses.variants.json",
+    "flags": []
+  },
+  {
+    "name": "edge.responses.variants.alphabetize",
+    "input": "fixtures/edge/hand/responses.variants.json",
+    "flags": [
+      "--alphabetize"
+    ]
+  },
+  {
+    "name": "edge.responses.variants.enum",
+    "input": "fixtures/edge/hand/responses.variants.json",
+    "flags": [
+      "--enum"
+    ]
+  },
+  {
+    "name": "edge.responses.variants.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/responses.variants.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.responses.variants.exclude-deprecated",
+    "input": "fixtures/edge/hand/responses.variants.json",
+    "flags": [
+      "--exclude-deprecated"
+    ]
+  },
+  {
+    "name": "edge.responses.variants.immutable",
+    "input": "fixtures/edge/hand/responses.variants.json",
+    "flags": [
+      "--immutable"
+    ]
+  },
+  {
+    "name": "edge.responses.variants.root-types",
+    "input": "fixtures/edge/hand/responses.variants.json",
+    "flags": [
+      "--root-types"
+    ]
+  },
+  {
+    "name": "edge.roottypes.collisions",
+    "input": "fixtures/edge/hand/roottypes.collisions.json",
+    "flags": []
+  },
+  {
+    "name": "edge.roottypes.collisions.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/roottypes.collisions.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.roottypes.collisions.root-types",
+    "input": "fixtures/edge/hand/roottypes.collisions.json",
+    "flags": [
+      "--root-types"
+    ]
+  },
+  {
+    "name": "edge.roottypes.collisions.root-types+export-type",
+    "input": "fixtures/edge/hand/roottypes.collisions.json",
+    "flags": [
+      "--root-types",
+      "--export-type"
+    ]
+  },
+  {
+    "name": "edge.roottypes.collisions.root-types+root-types-keep-casing",
+    "input": "fixtures/edge/hand/roottypes.collisions.json",
+    "flags": [
+      "--root-types",
+      "--root-types-keep-casing"
+    ]
+  },
+  {
+    "name": "edge.roottypes.collisions.root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/roottypes.collisions.json",
+    "flags": [
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.roottypes.collisions.root-types+root-types-no-schema-prefix+alphabetize",
+    "input": "fixtures/edge/hand/roottypes.collisions.json",
+    "flags": [
+      "--root-types",
+      "--root-types-no-schema-prefix",
+      "--alphabetize"
+    ]
+  },
+  {
+    "name": "edge.roottypes.collisions.root-types+root-types-no-schema-prefix+enum",
+    "input": "fixtures/edge/hand/roottypes.collisions.json",
+    "flags": [
+      "--root-types",
+      "--root-types-no-schema-prefix",
+      "--enum"
+    ]
+  },
+  {
+    "name": "edge.roottypes.collisions.root-types+root-types-no-schema-prefix+root-types-keep-casing",
+    "input": "fixtures/edge/hand/roottypes.collisions.json",
+    "flags": [
+      "--root-types",
+      "--root-types-no-schema-prefix",
+      "--root-types-keep-casing"
+    ]
+  },
+  {
+    "name": "edge.roottypes.cross-kind-collisions",
+    "input": "fixtures/edge/hand/roottypes.cross-kind-collisions.json",
+    "flags": []
+  },
+  {
+    "name": "edge.roottypes.cross-kind-collisions.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/roottypes.cross-kind-collisions.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.roottypes.cross-kind-collisions.root-types",
+    "input": "fixtures/edge/hand/roottypes.cross-kind-collisions.json",
+    "flags": [
+      "--root-types"
+    ]
+  },
+  {
+    "name": "edge.roottypes.cross-kind-collisions.root-types+root-types-keep-casing",
+    "input": "fixtures/edge/hand/roottypes.cross-kind-collisions.json",
+    "flags": [
+      "--root-types",
+      "--root-types-keep-casing"
+    ]
+  },
+  {
+    "name": "edge.roottypes.cross-kind-collisions.root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/roottypes.cross-kind-collisions.json",
+    "flags": [
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.roottypes.cross-kind-collisions.root-types+root-types-no-schema-prefix+root-types-keep-casing",
+    "input": "fixtures/edge/hand/roottypes.cross-kind-collisions.json",
+    "flags": [
+      "--root-types",
+      "--root-types-no-schema-prefix",
+      "--root-types-keep-casing"
+    ]
+  },
+  {
+    "name": "edge.roottypes.enum-and-values",
+    "input": "fixtures/edge/hand/roottypes.enum-and-values.json",
+    "flags": []
+  },
+  {
+    "name": "edge.roottypes.enum-and-values.enum+root-types",
+    "input": "fixtures/edge/hand/roottypes.enum-and-values.json",
+    "flags": [
+      "--enum",
+      "--root-types"
+    ]
+  },
+  {
+    "name": "edge.roottypes.enum-and-values.enum+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/roottypes.enum-and-values.json",
+    "flags": [
+      "--enum",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.roottypes.enum-and-values.enum-values+enum+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/roottypes.enum-and-values.json",
+    "flags": [
+      "--enum-values",
+      "--enum",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.roottypes.enum-and-values.enum-values+root-types",
+    "input": "fixtures/edge/hand/roottypes.enum-and-values.json",
+    "flags": [
+      "--enum-values",
+      "--root-types"
+    ]
+  },
+  {
+    "name": "edge.roottypes.enum-and-values.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/roottypes.enum-and-values.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.roottypes.enum-and-values.enum-values+root-types+root-types-no-schema-prefix+enum+dedupe-enums",
+    "input": "fixtures/edge/hand/roottypes.enum-and-values.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix",
+      "--enum",
+      "--dedupe-enums"
+    ]
+  },
+  {
+    "name": "edge.roottypes.enum-and-values.enum-values+root-types+root-types-no-schema-prefix+export-type",
+    "input": "fixtures/edge/hand/roottypes.enum-and-values.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix",
+      "--export-type"
+    ]
+  },
+  {
+    "name": "edge.roottypes.enum-and-values.enum-values+root-types+root-types-no-schema-prefix+immutable",
+    "input": "fixtures/edge/hand/roottypes.enum-and-values.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix",
+      "--immutable"
+    ]
+  },
+  {
+    "name": "edge.roottypes.enum-and-values.enum-values+root-types+root-types-no-schema-prefix+root-types+root-types-keep-casing",
+    "input": "fixtures/edge/hand/roottypes.enum-and-values.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix",
+      "--root-types",
+      "--root-types-keep-casing"
+    ]
+  },
+  {
+    "name": "edge.rw.readonly-writeonly",
+    "input": "fixtures/edge/hand/rw.readonly-writeonly.json",
+    "flags": []
+  },
+  {
+    "name": "edge.rw.readonly-writeonly.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/rw.readonly-writeonly.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.rw.readonly-writeonly.read-write-markers",
+    "input": "fixtures/edge/hand/rw.readonly-writeonly.json",
+    "flags": [
+      "--read-write-markers"
+    ]
+  },
+  {
+    "name": "edge.rw.readonly-writeonly.read-write-markers+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/rw.readonly-writeonly.json",
+    "flags": [
+      "--read-write-markers",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.rw.readonly-writeonly.read-write-markers+immutable",
+    "input": "fixtures/edge/hand/rw.readonly-writeonly.json",
+    "flags": [
+      "--read-write-markers",
+      "--immutable"
+    ]
+  },
+  {
+    "name": "edge.rw.readonly-writeonly.read-write-markers+root-types",
+    "input": "fixtures/edge/hand/rw.readonly-writeonly.json",
+    "flags": [
+      "--read-write-markers",
+      "--root-types"
+    ]
+  },
+  {
+    "name": "edge.strings.formats",
+    "input": "fixtures/edge/hand/strings.formats.json",
+    "flags": []
+  },
+  {
+    "name": "edge.strings.formats.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/strings.formats.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.types.unusual",
+    "input": "fixtures/edge/hand/types.unusual.json",
+    "flags": []
+  },
+  {
+    "name": "edge.types.unusual.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/types.unusual.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.v30.basics",
+    "input": "fixtures/edge/hand/v30.basics.json",
+    "flags": []
+  },
+  {
+    "name": "edge.v30.basics.additional-properties",
+    "input": "fixtures/edge/hand/v30.basics.json",
+    "flags": [
+      "--additional-properties"
+    ]
+  },
+  {
+    "name": "edge.v30.basics.alphabetize",
+    "input": "fixtures/edge/hand/v30.basics.json",
+    "flags": [
+      "--alphabetize"
+    ]
+  },
+  {
+    "name": "edge.v30.basics.array-length",
+    "input": "fixtures/edge/hand/v30.basics.json",
+    "flags": [
+      "--array-length"
+    ]
+  },
+  {
+    "name": "edge.v30.basics.default-non-nullable-false",
+    "input": "fixtures/edge/hand/v30.basics.json",
+    "flags": [
+      "--default-non-nullable=false"
+    ]
+  },
+  {
+    "name": "edge.v30.basics.empty-objects-unknown",
+    "input": "fixtures/edge/hand/v30.basics.json",
+    "flags": [
+      "--empty-objects-unknown"
+    ]
+  },
+  {
+    "name": "edge.v30.basics.enum",
+    "input": "fixtures/edge/hand/v30.basics.json",
+    "flags": [
+      "--enum"
+    ]
+  },
+  {
+    "name": "edge.v30.basics.enum-values",
+    "input": "fixtures/edge/hand/v30.basics.json",
+    "flags": [
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "edge.v30.basics.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/v30.basics.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.v30.basics.export-type",
+    "input": "fixtures/edge/hand/v30.basics.json",
+    "flags": [
+      "--export-type"
+    ]
+  },
+  {
+    "name": "edge.v30.basics.immutable",
+    "input": "fixtures/edge/hand/v30.basics.json",
+    "flags": [
+      "--immutable"
+    ]
+  },
+  {
+    "name": "edge.v30.basics.properties-required-by-default",
+    "input": "fixtures/edge/hand/v30.basics.json",
+    "flags": [
+      "--properties-required-by-default"
+    ]
+  },
+  {
+    "name": "edge.v30.basics.root-types",
+    "input": "fixtures/edge/hand/v30.basics.json",
+    "flags": [
+      "--root-types"
+    ]
+  },
+  {
+    "name": "edge.v30.basics.root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/v30.basics.json",
+    "flags": [
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.v30.petstore-like",
+    "input": "fixtures/edge/hand/v30.petstore-like.json",
+    "flags": []
+  },
+  {
+    "name": "edge.v30.petstore-like.additional-properties",
+    "input": "fixtures/edge/hand/v30.petstore-like.json",
+    "flags": [
+      "--additional-properties"
+    ]
+  },
+  {
+    "name": "edge.v30.petstore-like.alphabetize",
+    "input": "fixtures/edge/hand/v30.petstore-like.json",
+    "flags": [
+      "--alphabetize"
+    ]
+  },
+  {
+    "name": "edge.v30.petstore-like.alphabetize+immutable+export-type+root-types+enum+path-params-as-types+array-length+make-paths-enum",
+    "input": "fixtures/edge/hand/v30.petstore-like.json",
+    "flags": [
+      "--alphabetize",
+      "--immutable",
+      "--export-type",
+      "--root-types",
+      "--enum",
+      "--path-params-as-types",
+      "--array-length",
+      "--make-paths-enum"
+    ]
+  },
+  {
+    "name": "edge.v30.petstore-like.array-length",
+    "input": "fixtures/edge/hand/v30.petstore-like.json",
+    "flags": [
+      "--array-length"
+    ]
+  },
+  {
+    "name": "edge.v30.petstore-like.default-non-nullable-false",
+    "input": "fixtures/edge/hand/v30.petstore-like.json",
+    "flags": [
+      "--default-non-nullable=false"
+    ]
+  },
+  {
+    "name": "edge.v30.petstore-like.empty-objects-unknown",
+    "input": "fixtures/edge/hand/v30.petstore-like.json",
+    "flags": [
+      "--empty-objects-unknown"
+    ]
+  },
+  {
+    "name": "edge.v30.petstore-like.enum",
+    "input": "fixtures/edge/hand/v30.petstore-like.json",
+    "flags": [
+      "--enum"
+    ]
+  },
+  {
+    "name": "edge.v30.petstore-like.enum+conditional-enums",
+    "input": "fixtures/edge/hand/v30.petstore-like.json",
+    "flags": [
+      "--enum",
+      "--conditional-enums"
+    ]
+  },
+  {
+    "name": "edge.v30.petstore-like.enum+dedupe-enums",
+    "input": "fixtures/edge/hand/v30.petstore-like.json",
+    "flags": [
+      "--enum",
+      "--dedupe-enums"
+    ]
+  },
+  {
+    "name": "edge.v30.petstore-like.enum-values",
+    "input": "fixtures/edge/hand/v30.petstore-like.json",
+    "flags": [
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "edge.v30.petstore-like.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/v30.petstore-like.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.v30.petstore-like.exclude-deprecated",
+    "input": "fixtures/edge/hand/v30.petstore-like.json",
+    "flags": [
+      "--exclude-deprecated"
+    ]
+  },
+  {
+    "name": "edge.v30.petstore-like.export-type",
+    "input": "fixtures/edge/hand/v30.petstore-like.json",
+    "flags": [
+      "--export-type"
+    ]
+  },
+  {
+    "name": "edge.v30.petstore-like.generate-path-params",
+    "input": "fixtures/edge/hand/v30.petstore-like.json",
+    "flags": [
+      "--generate-path-params"
+    ]
+  },
+  {
+    "name": "edge.v30.petstore-like.immutable",
+    "input": "fixtures/edge/hand/v30.petstore-like.json",
+    "flags": [
+      "--immutable"
+    ]
+  },
+  {
+    "name": "edge.v30.petstore-like.make-paths-enum",
+    "input": "fixtures/edge/hand/v30.petstore-like.json",
+    "flags": [
+      "--make-paths-enum"
+    ]
+  },
+  {
+    "name": "edge.v30.petstore-like.path-params-as-types",
+    "input": "fixtures/edge/hand/v30.petstore-like.json",
+    "flags": [
+      "--path-params-as-types"
+    ]
+  },
+  {
+    "name": "edge.v30.petstore-like.properties-required-by-default",
+    "input": "fixtures/edge/hand/v30.petstore-like.json",
+    "flags": [
+      "--properties-required-by-default"
+    ]
+  },
+  {
+    "name": "edge.v30.petstore-like.read-write-markers",
+    "input": "fixtures/edge/hand/v30.petstore-like.json",
+    "flags": [
+      "--read-write-markers"
+    ]
+  },
+  {
+    "name": "edge.v30.petstore-like.root-types",
+    "input": "fixtures/edge/hand/v30.petstore-like.json",
+    "flags": [
+      "--root-types"
+    ]
+  },
+  {
+    "name": "edge.v30.petstore-like.root-types+root-types-keep-casing",
+    "input": "fixtures/edge/hand/v30.petstore-like.json",
+    "flags": [
+      "--root-types",
+      "--root-types-keep-casing"
+    ]
+  },
+  {
+    "name": "edge.v30.petstore-like.root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/v30.petstore-like.json",
+    "flags": [
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.yaml.bom-and-comments",
+    "input": "fixtures/edge/hand/yaml.bom-and-comments.yaml",
+    "flags": []
+  },
+  {
+    "name": "edge.yaml.bom-and-comments.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/yaml.bom-and-comments.yaml",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.yaml.crlf-line-endings",
+    "input": "fixtures/edge/hand/yaml.crlf-line-endings.yaml",
+    "flags": []
+  },
+  {
+    "name": "edge.yaml.crlf-line-endings.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/yaml.crlf-line-endings.yaml",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "edge.yaml.scalars",
+    "input": "fixtures/edge/hand/yaml.scalars.yaml",
+    "flags": []
+  },
+  {
+    "name": "edge.yaml.scalars.enum",
+    "input": "fixtures/edge/hand/yaml.scalars.yaml",
+    "flags": [
+      "--enum"
+    ]
+  },
+  {
+    "name": "edge.yaml.scalars.enum-values",
+    "input": "fixtures/edge/hand/yaml.scalars.yaml",
+    "flags": [
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "edge.yaml.scalars.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/hand/yaml.scalars.yaml",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "fetch",
+    "input": "fixtures/fetch/openapi.json",
+    "flags": []
+  },
+  {
+    "name": "fetch.enum",
+    "input": "fixtures/fetch/openapi.json",
+    "flags": [
+      "--enum",
+      "--root-types"
+    ]
+  },
+  {
+    "name": "fetch.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/fetch/openapi.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "fetch.immutable",
+    "input": "fixtures/fetch/openapi.json",
+    "flags": [
+      "--immutable",
+      "--export-type",
+      "--alphabetize"
+    ]
+  },
+  {
+    "name": "ots.examples-digital-ocean-api-digitalocean-public-v2",
+    "input": "fixtures/ots/examples/digital-ocean-api/DigitalOcean-public.v2.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.examples-digital-ocean-api-digitalocean-public-v2.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/ots/examples/digital-ocean-api/DigitalOcean-public.v2.yaml",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ots.examples-enum-root-types",
+    "input": "fixtures/ots/examples/enum-root-types.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.examples-enum-root-types.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/ots/examples/enum-root-types.yaml",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ots.examples-enum-root-types.root-types+root-types-no-schema-prefix+enum",
+    "input": "fixtures/ots/examples/enum-root-types.yaml",
+    "flags": [
+      "--root-types",
+      "--root-types-no-schema-prefix",
+      "--enum"
+    ]
+  },
+  {
+    "name": "ots.examples-github-api",
+    "input": "fixtures/ots/examples/github-api.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.examples-github-api-next",
+    "input": "fixtures/ots/examples/github-api-next.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.examples-github-api-next.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/ots/examples/github-api-next.yaml",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ots.examples-github-api.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/ots/examples/github-api.yaml",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ots.examples-github-api.immutable",
+    "input": "fixtures/ots/examples/github-api.yaml",
+    "flags": [
+      "--immutable"
+    ]
+  },
+  {
+    "name": "ots.examples-github-api.immutable+export-type",
+    "input": "fixtures/ots/examples/github-api.yaml",
+    "flags": [
+      "--immutable",
+      "--export-type"
+    ]
+  },
+  {
+    "name": "ots.examples-github-api.properties-required-by-default",
+    "input": "fixtures/ots/examples/github-api.yaml",
+    "flags": [
+      "--properties-required-by-default"
+    ]
+  },
+  {
+    "name": "ots.examples-github-api.root-types",
+    "input": "fixtures/ots/examples/github-api.yaml",
+    "flags": [
+      "--root-types"
+    ]
+  },
+  {
+    "name": "ots.examples-octokit-ghes-3-6-diff-to-api",
+    "input": "fixtures/ots/examples/octokit-ghes-3.6-diff-to-api.json",
+    "flags": []
+  },
+  {
+    "name": "ots.examples-octokit-ghes-3-6-diff-to-api.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/ots/examples/octokit-ghes-3.6-diff-to-api.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ots.examples-simple-example",
+    "input": "fixtures/ots/examples/simple-example.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.examples-simple-example.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/ots/examples/simple-example.yaml",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ots.examples-stripe-api",
+    "input": "fixtures/ots/examples/stripe-api.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.examples-stripe-api.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/ots/examples/stripe-api.yaml",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ots.test-fixtures-anchor-with-ref-test",
+    "input": "fixtures/ots/test/fixtures/anchor-with-ref-test.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.test-fixtures-anchor-with-ref-test-2",
+    "input": "fixtures/ots/test/fixtures/anchor-with-ref-test-2.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.test-fixtures-generate-params-test",
+    "input": "fixtures/ots/test/fixtures/generate-params-test.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.test-fixtures-generate-params-test.generate-path-params",
+    "input": "fixtures/ots/test/fixtures/generate-params-test.yaml",
+    "flags": [
+      "--generate-path-params"
+    ]
+  },
+  {
+    "name": "ots.test-fixtures-jsonschema-defs",
+    "input": "fixtures/ots/test/fixtures/jsonschema-defs.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.test-fixtures-jsonschema-remote-obj",
+    "input": "fixtures/ots/test/fixtures/_jsonschema-remote-obj.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.test-fixtures-multi-line-descriptions",
+    "input": "fixtures/ots/test/fixtures/multi-line-descriptions.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.test-fixtures-parameters-test",
+    "input": "fixtures/ots/test/fixtures/parameters-test.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.test-fixtures-parameters-test-partial",
+    "input": "fixtures/ots/test/fixtures/_parameters-test-partial.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.test-fixtures-path-item-components",
+    "input": "fixtures/ots/test/fixtures/path-item-components.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.test-fixtures-path-object-refs",
+    "input": "fixtures/ots/test/fixtures/path-object-refs.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.test-fixtures-path-object-refs-paths",
+    "input": "fixtures/ots/test/fixtures/_path-object-refs-paths.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.test-fixtures-path-object-refs.make-paths-enum",
+    "input": "fixtures/ots/test/fixtures/path-object-refs.yaml",
+    "flags": [
+      "--make-paths-enum"
+    ]
+  },
+  {
+    "name": "ots.test-fixtures-redocly-flag-openapi-a",
+    "input": "fixtures/ots/test/fixtures/redocly-flag/openapi/a.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.test-fixtures-redocly-flag-openapi-b",
+    "input": "fixtures/ots/test/fixtures/redocly-flag/openapi/b.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.test-fixtures-redocly-flag-openapi-c",
+    "input": "fixtures/ots/test/fixtures/redocly-flag/openapi/c.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.test-fixtures-redocly-lint-error-openapi-openapi",
+    "input": "fixtures/ots/test/fixtures/redocly-lint-error/openapi/openapi.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.test-fixtures-redocly-openapi-a",
+    "input": "fixtures/ots/test/fixtures/redocly/openapi/a.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.test-fixtures-redocly-openapi-b",
+    "input": "fixtures/ots/test/fixtures/redocly/openapi/b.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.test-fixtures-redocly-openapi-c",
+    "input": "fixtures/ots/test/fixtures/redocly/openapi/c.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.test-fixtures-remote-ref-full",
+    "input": "fixtures/ots/test/fixtures/_remote-ref-full.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.test-fixtures-remote-ref-partial",
+    "input": "fixtures/ots/test/fixtures/_remote-ref-partial.yaml",
+    "flags": []
+  },
+  {
+    "name": "ots.test-fixtures-yaml-merge",
+    "input": "fixtures/ots/test/fixtures/yaml-merge.yaml",
+    "flags": []
+  },
+  {
+    "name": "ut.discriminators.allof-inline-inheritance",
+    "input": "fixtures/edge/ut/discriminators.allof-inline-inheritance.json",
+    "flags": []
+  },
+  {
+    "name": "ut.discriminators.allof-inline-inheritance.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/discriminators.allof-inline-inheritance.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.discriminators.allof-mapping",
+    "input": "fixtures/edge/ut/discriminators.allof-mapping.json",
+    "flags": []
+  },
+  {
+    "name": "ut.discriminators.allof-mapping.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/discriminators.allof-mapping.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.discriminators.allof-no-mapping",
+    "input": "fixtures/edge/ut/discriminators.allof-no-mapping.json",
+    "flags": []
+  },
+  {
+    "name": "ut.discriminators.allof-no-mapping.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/discriminators.allof-no-mapping.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.discriminators.oneof-explicit-mapping-append-enum-in-allof",
+    "input": "fixtures/edge/ut/discriminators.oneof-explicit-mapping-append-enum-in-allof.json",
+    "flags": []
+  },
+  {
+    "name": "ut.discriminators.oneof-explicit-mapping-append-enum-in-allof.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/discriminators.oneof-explicit-mapping-append-enum-in-allof.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.discriminators.oneof-explicit-mapping-replace-discriminator-enum",
+    "input": "fixtures/edge/ut/discriminators.oneof-explicit-mapping-replace-discriminator-enum.json",
+    "flags": []
+  },
+  {
+    "name": "ut.discriminators.oneof-explicit-mapping-replace-discriminator-enum.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/discriminators.oneof-explicit-mapping-replace-discriminator-enum.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.discriminators.oneof-implicit-mapping",
+    "input": "fixtures/edge/ut/discriminators.oneof-implicit-mapping.json",
+    "flags": []
+  },
+  {
+    "name": "ut.discriminators.oneof-implicit-mapping.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/discriminators.oneof-implicit-mapping.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.index.does-not-mutate-original-reference",
+    "input": "fixtures/edge/ut/index.does-not-mutate-original-reference.json",
+    "flags": []
+  },
+  {
+    "name": "ut.index.does-not-mutate-original-reference.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/index.does-not-mutate-original-reference.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.index.examples-skipped",
+    "input": "fixtures/edge/ut/index.examples-skipped.json",
+    "flags": []
+  },
+  {
+    "name": "ut.index.examples-skipped.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/index.examples-skipped.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.index.nullable-3-0-syntax",
+    "input": "fixtures/edge/ut/index.nullable-3-0-syntax.json",
+    "flags": []
+  },
+  {
+    "name": "ut.index.nullable-3-0-syntax.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/index.nullable-3-0-syntax.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.index.nullable-3-1-syntax",
+    "input": "fixtures/edge/ut/index.nullable-3-1-syntax.json",
+    "flags": []
+  },
+  {
+    "name": "ut.index.nullable-3-1-syntax.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/index.nullable-3-1-syntax.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.index.operations-character-is-parsed-correctly",
+    "input": "fixtures/edge/ut/index.operations-character-is-parsed-correctly.json",
+    "flags": []
+  },
+  {
+    "name": "ut.index.operations-character-is-parsed-correctly.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/index.operations-character-is-parsed-correctly.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.index.parameters-operations-get-correct-params",
+    "input": "fixtures/edge/ut/index.parameters-operations-get-correct-params.json",
+    "flags": []
+  },
+  {
+    "name": "ut.index.parameters-operations-get-correct-params.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/index.parameters-operations-get-correct-params.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.index.refs-arbitrary-refs-are-respected",
+    "input": "fixtures/edge/ut/index.refs-arbitrary-refs-are-respected.json",
+    "flags": []
+  },
+  {
+    "name": "ut.index.refs-arbitrary-refs-are-respected.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/index.refs-arbitrary-refs-are-respected.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.index.refs-basic",
+    "input": "fixtures/edge/ut/index.refs-basic.json",
+    "flags": []
+  },
+  {
+    "name": "ut.index.refs-basic.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/index.refs-basic.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.index.typescript-withrequired-type-helper",
+    "input": "fixtures/edge/ut/index.typescript-withrequired-type-helper.json",
+    "flags": []
+  },
+  {
+    "name": "ut.index.typescript-withrequired-type-helper.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/index.typescript-withrequired-type-helper.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.node-api.input-buffer",
+    "input": "fixtures/edge/ut/node-api.input-buffer.yaml",
+    "flags": []
+  },
+  {
+    "name": "ut.node-api.input-buffer.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/node-api.input-buffer.yaml",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.node-api.input-object",
+    "input": "fixtures/edge/ut/node-api.input-object.json",
+    "flags": []
+  },
+  {
+    "name": "ut.node-api.input-object.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/node-api.input-object.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.node-api.input-string-json",
+    "input": "fixtures/edge/ut/node-api.input-string-json.json",
+    "flags": []
+  },
+  {
+    "name": "ut.node-api.input-string-json.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/node-api.input-string-json.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.node-api.input-string-yaml",
+    "input": "fixtures/edge/ut/node-api.input-string-yaml.yaml",
+    "flags": []
+  },
+  {
+    "name": "ut.node-api.input-string-yaml.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/node-api.input-string-yaml.yaml",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.node-api.options-dedupeenums.enum+dedupe-enums",
+    "input": "fixtures/edge/ut/node-api.options-dedupeenums.json",
+    "flags": [
+      "--enum",
+      "--dedupe-enums"
+    ]
+  },
+  {
+    "name": "ut.node-api.options-dedupeenums.enum+dedupe-enums+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/node-api.options-dedupeenums.json",
+    "flags": [
+      "--enum",
+      "--dedupe-enums",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.node-api.options-enum.enum",
+    "input": "fixtures/edge/ut/node-api.options-enum.json",
+    "flags": [
+      "--enum"
+    ]
+  },
+  {
+    "name": "ut.node-api.options-enum.enum+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/node-api.options-enum.json",
+    "flags": [
+      "--enum",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.node-api.options-enumvalues-with-deeply-nested-unions.enum-values",
+    "input": "fixtures/edge/ut/node-api.options-enumvalues-with-deeply-nested-unions.json",
+    "flags": [
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "ut.node-api.options-enumvalues-with-deeply-nested-unions.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/node-api.options-enumvalues-with-deeply-nested-unions.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.node-api.options-enumvalues-with-nested-union-types.enum-values",
+    "input": "fixtures/edge/ut/node-api.options-enumvalues-with-nested-union-types.json",
+    "flags": [
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "ut.node-api.options-enumvalues-with-nested-union-types.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/node-api.options-enumvalues-with-nested-union-types.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.node-api.options-enumvalues-with-record-types.enum-values",
+    "input": "fixtures/edge/ut/node-api.options-enumvalues-with-record-types.json",
+    "flags": [
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "ut.node-api.options-enumvalues-with-record-types.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/node-api.options-enumvalues-with-record-types.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.node-api.options-enumvalues-with-request-body-enum.enum-values",
+    "input": "fixtures/edge/ut/node-api.options-enumvalues-with-request-body-enum.json",
+    "flags": [
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "ut.node-api.options-enumvalues-with-request-body-enum.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/node-api.options-enumvalues-with-request-body-enum.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.node-api.options-enumvalues-with-same-property-different-inner-schemas.enum-values",
+    "input": "fixtures/edge/ut/node-api.options-enumvalues-with-same-property-different-inner-schemas.json",
+    "flags": [
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "ut.node-api.options-enumvalues-with-same-property-different-inner-schemas.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/node-api.options-enumvalues-with-same-property-different-inner-schemas.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.node-api.options-enumvalues-with-unions.enum-values",
+    "input": "fixtures/edge/ut/node-api.options-enumvalues-with-unions.json",
+    "flags": [
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "ut.node-api.options-enumvalues-with-unions.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/node-api.options-enumvalues-with-unions.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.node-api.options-enumvalues.enum-values",
+    "input": "fixtures/edge/ut/node-api.options-enumvalues.json",
+    "flags": [
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "ut.node-api.options-enumvalues.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/node-api.options-enumvalues.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.node-api.options-exporttype-false",
+    "input": "fixtures/edge/ut/node-api.options-exporttype-false.json",
+    "flags": []
+  },
+  {
+    "name": "ut.node-api.options-exporttype-false.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/node-api.options-exporttype-false.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.node-api.options-exporttype-true.export-type",
+    "input": "fixtures/edge/ut/node-api.options-exporttype-true.json",
+    "flags": [
+      "--export-type"
+    ]
+  },
+  {
+    "name": "ut.node-api.options-exporttype-true.export-type+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/node-api.options-exporttype-true.json",
+    "flags": [
+      "--export-type",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.node-api.options-pathparamsastypes-false",
+    "input": "fixtures/edge/ut/node-api.options-pathparamsastypes-false.json",
+    "flags": []
+  },
+  {
+    "name": "ut.node-api.options-pathparamsastypes-false.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/node-api.options-pathparamsastypes-false.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.node-api.options-pathparamsastypes-true.path-params-as-types",
+    "input": "fixtures/edge/ut/node-api.options-pathparamsastypes-true.json",
+    "flags": [
+      "--path-params-as-types"
+    ]
+  },
+  {
+    "name": "ut.node-api.options-pathparamsastypes-true.path-params-as-types+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/node-api.options-pathparamsastypes-true.json",
+    "flags": [
+      "--path-params-as-types",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-components-object.all-optional-parameters",
+    "input": "fixtures/edge/ut/transform-components-object.all-optional-parameters.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-components-object.all-optional-parameters.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-components-object.all-optional-parameters.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-components-object.basic",
+    "input": "fixtures/edge/ut/transform-components-object.basic.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-components-object.basic.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-components-object.basic.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-components-object.options-alphabetize-true.alphabetize",
+    "input": "fixtures/edge/ut/transform-components-object.options-alphabetize-true.json",
+    "flags": [
+      "--alphabetize"
+    ]
+  },
+  {
+    "name": "ut.transform-components-object.options-alphabetize-true.alphabetize+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-components-object.options-alphabetize-true.json",
+    "flags": [
+      "--alphabetize",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-components-object.options-excludedeprecated-true.exclude-deprecated",
+    "input": "fixtures/edge/ut/transform-components-object.options-excludedeprecated-true.json",
+    "flags": [
+      "--exclude-deprecated"
+    ]
+  },
+  {
+    "name": "ut.transform-components-object.options-excludedeprecated-true.exclude-deprecated+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-components-object.options-excludedeprecated-true.json",
+    "flags": [
+      "--exclude-deprecated",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-components-object.options-immutable-true.immutable",
+    "input": "fixtures/edge/ut/transform-components-object.options-immutable-true.json",
+    "flags": [
+      "--immutable"
+    ]
+  },
+  {
+    "name": "ut.transform-components-object.options-immutable-true.immutable+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-components-object.options-immutable-true.json",
+    "flags": [
+      "--immutable",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-components-object.options-roottypes-true-and-roottypesnoschemaprefix-true.root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-components-object.options-roottypes-true-and-roottypesnoschemaprefix-true.json",
+    "flags": [
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-components-object.options-roottypes-true-and-roottypesnoschemaprefix-true.root-types+root-types-no-schema-prefix+enum-values",
+    "input": "fixtures/edge/ut/transform-components-object.options-roottypes-true-and-roottypesnoschemaprefix-true.json",
+    "flags": [
+      "--root-types",
+      "--root-types-no-schema-prefix",
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "ut.transform-components-object.options-roottypes-true-but-keep-casing.root-types+root-types-no-schema-prefix+root-types-keep-casing",
+    "input": "fixtures/edge/ut/transform-components-object.options-roottypes-true-but-keep-casing.json",
+    "flags": [
+      "--root-types",
+      "--root-types-no-schema-prefix",
+      "--root-types-keep-casing"
+    ]
+  },
+  {
+    "name": "ut.transform-components-object.options-roottypes-true-but-keep-casing.root-types+root-types-no-schema-prefix+root-types-keep-casing+enum-values",
+    "input": "fixtures/edge/ut/transform-components-object.options-roottypes-true-but-keep-casing.json",
+    "flags": [
+      "--root-types",
+      "--root-types-no-schema-prefix",
+      "--root-types-keep-casing",
+      "--enum-values"
+    ]
+  },
+  {
+    "name": "ut.transform-components-object.options-roottypes-true.root-types",
+    "input": "fixtures/edge/ut/transform-components-object.options-roottypes-true.json",
+    "flags": [
+      "--root-types"
+    ]
+  },
+  {
+    "name": "ut.transform-components-object.options-roottypes-true.root-types+enum-values+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-components-object.options-roottypes-true.json",
+    "flags": [
+      "--root-types",
+      "--enum-values",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-components-object.ref-nested-properties",
+    "input": "fixtures/edge/ut/transform-components-object.ref-nested-properties.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-components-object.ref-nested-properties.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-components-object.ref-nested-properties.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-header-object.basic",
+    "input": "fixtures/edge/ut/transform-header-object.basic.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-header-object.basic.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-header-object.basic.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-operation-object.defaultnonnullable-parameters-aren-t-required-even-with-defaults",
+    "input": "fixtures/edge/ut/transform-operation-object.defaultnonnullable-parameters-aren-t-required-even-with-defaults.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-operation-object.defaultnonnullable-parameters-aren-t-required-even-with-defaults.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-operation-object.defaultnonnullable-parameters-aren-t-required-even-with-defaults.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-operation-object.parameters-responses-test-excludedeprecated-option.exclude-deprecated",
+    "input": "fixtures/edge/ut/transform-operation-object.parameters-responses-test-excludedeprecated-option.json",
+    "flags": [
+      "--exclude-deprecated"
+    ]
+  },
+  {
+    "name": "ut.transform-operation-object.parameters-responses-test-excludedeprecated-option.exclude-deprecated+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-operation-object.parameters-responses-test-excludedeprecated-option.json",
+    "flags": [
+      "--exclude-deprecated",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-operation-object.parameters-root-not-optional-if-any-path-params",
+    "input": "fixtures/edge/ut/transform-operation-object.parameters-root-not-optional-if-any-path-params.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-operation-object.parameters-root-not-optional-if-any-path-params.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-operation-object.parameters-root-not-optional-if-any-path-params.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-operation-object.parameters-root-optional-if-no-path-params-and-no-required-params",
+    "input": "fixtures/edge/ut/transform-operation-object.parameters-root-optional-if-no-path-params-and-no-required-params.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-operation-object.parameters-root-optional-if-no-path-params-and-no-required-params.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-operation-object.parameters-root-optional-if-no-path-params-and-no-required-params.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-operation-object.supports-xx-codes",
+    "input": "fixtures/edge/ut/transform-operation-object.supports-xx-codes.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-operation-object.supports-xx-codes.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-operation-object.supports-xx-codes.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-path-item-object.basic",
+    "input": "fixtures/edge/ut/transform-path-item-object.basic.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-path-item-object.basic.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-path-item-object.basic.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-path-item-object.operations",
+    "input": "fixtures/edge/ut/transform-path-item-object.operations.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-path-item-object.operations.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-path-item-object.operations.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-path-item-object.options-excludedeprecated-true.exclude-deprecated",
+    "input": "fixtures/edge/ut/transform-path-item-object.options-excludedeprecated-true.json",
+    "flags": [
+      "--exclude-deprecated"
+    ]
+  },
+  {
+    "name": "ut.transform-path-item-object.options-excludedeprecated-true.exclude-deprecated+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-path-item-object.options-excludedeprecated-true.json",
+    "flags": [
+      "--exclude-deprecated",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-path-item-object.parameters-header-and-cookie-have-same-name-param1",
+    "input": "fixtures/edge/ut/transform-path-item-object.parameters-header-and-cookie-have-same-name-param1.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-path-item-object.parameters-header-and-cookie-have-same-name-param1.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-path-item-object.parameters-header-and-cookie-have-same-name-param1.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-path-item-object.ref",
+    "input": "fixtures/edge/ut/transform-path-item-object.ref.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-path-item-object.ref.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-path-item-object.ref.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-paths-enum.basic-with-path-parameter.make-paths-enum",
+    "input": "fixtures/edge/ut/transform-paths-enum.basic-with-path-parameter.json",
+    "flags": [
+      "--make-paths-enum"
+    ]
+  },
+  {
+    "name": "ut.transform-paths-enum.basic-with-path-parameter.make-paths-enum+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-paths-enum.basic-with-path-parameter.json",
+    "flags": [
+      "--make-paths-enum",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-paths-enum.basic.make-paths-enum",
+    "input": "fixtures/edge/ut/transform-paths-enum.basic.json",
+    "flags": [
+      "--make-paths-enum"
+    ]
+  },
+  {
+    "name": "ut.transform-paths-enum.basic.make-paths-enum+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-paths-enum.basic.json",
+    "flags": [
+      "--make-paths-enum",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-paths-enum.invalid-method.make-paths-enum",
+    "input": "fixtures/edge/ut/transform-paths-enum.invalid-method.json",
+    "flags": [
+      "--make-paths-enum"
+    ]
+  },
+  {
+    "name": "ut.transform-paths-enum.invalid-method.make-paths-enum+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-paths-enum.invalid-method.json",
+    "flags": [
+      "--make-paths-enum",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-paths-enum.with-and-without-operationid.make-paths-enum",
+    "input": "fixtures/edge/ut/transform-paths-enum.with-and-without-operationid.json",
+    "flags": [
+      "--make-paths-enum"
+    ]
+  },
+  {
+    "name": "ut.transform-paths-enum.with-and-without-operationid.make-paths-enum+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-paths-enum.with-and-without-operationid.json",
+    "flags": [
+      "--make-paths-enum",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-paths-enum.with-operationid.make-paths-enum",
+    "input": "fixtures/edge/ut/transform-paths-enum.with-operationid.json",
+    "flags": [
+      "--make-paths-enum"
+    ]
+  },
+  {
+    "name": "ut.transform-paths-enum.with-operationid.make-paths-enum+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-paths-enum.with-operationid.json",
+    "flags": [
+      "--make-paths-enum",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-paths-object.basic",
+    "input": "fixtures/edge/ut/transform-paths-object.basic.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-paths-object.basic.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-paths-object.basic.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-paths-object.options-alphabetize-true.alphabetize",
+    "input": "fixtures/edge/ut/transform-paths-object.options-alphabetize-true.json",
+    "flags": [
+      "--alphabetize"
+    ]
+  },
+  {
+    "name": "ut.transform-paths-object.options-alphabetize-true.alphabetize+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-paths-object.options-alphabetize-true.json",
+    "flags": [
+      "--alphabetize",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-paths-object.options-pathparamsastypes-true.path-params-as-types",
+    "input": "fixtures/edge/ut/transform-paths-object.options-pathparamsastypes-true.json",
+    "flags": [
+      "--path-params-as-types"
+    ]
+  },
+  {
+    "name": "ut.transform-paths-object.options-pathparamsastypes-true.path-params-as-types+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-paths-object.options-pathparamsastypes-true.json",
+    "flags": [
+      "--path-params-as-types",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-paths-object.ref",
+    "input": "fixtures/edge/ut/transform-paths-object.ref.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-paths-object.ref.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-paths-object.ref.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-request-body-object.basic",
+    "input": "fixtures/edge/ut/transform-request-body-object.basic.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-request-body-object.basic.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-request-body-object.basic.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-request-body-object.empty",
+    "input": "fixtures/edge/ut/transform-request-body-object.empty.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-request-body-object.empty.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-request-body-object.empty.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-request-body-object.no-content",
+    "input": "fixtures/edge/ut/transform-request-body-object.no-content.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-request-body-object.no-content.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-request-body-object.no-content.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-request-body-object.post-data-with-default-values",
+    "input": "fixtures/edge/ut/transform-request-body-object.post-data-with-default-values.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-request-body-object.post-data-with-default-values.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-request-body-object.post-data-with-default-values.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-request-body-object.requestbodies-post-data-with-default-values",
+    "input": "fixtures/edge/ut/transform-request-body-object.requestbodies-post-data-with-default-values.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-request-body-object.requestbodies-post-data-with-default-values.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-request-body-object.requestbodies-post-data-with-default-values.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-response-object.basic",
+    "input": "fixtures/edge/ut/transform-response-object.basic.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-response-object.basic.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-response-object.basic.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-response-object.empty",
+    "input": "fixtures/edge/ut/transform-response-object.empty.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-response-object.empty.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-response-object.empty.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-response-object.no-content",
+    "input": "fixtures/edge/ut/transform-response-object.no-content.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-response-object.no-content.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-response-object.no-content.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-basic",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-basic.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-basic.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-basic.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-boolean-items",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-boolean-items.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-boolean-items.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-boolean-items.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-nullable",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-nullable.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-nullable-deprecated-syntax",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-nullable-deprecated-syntax.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-nullable-deprecated-syntax.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-nullable-deprecated-syntax.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-nullable-items",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-nullable-items.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-nullable-items-deprecated-syntax",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-nullable-items-deprecated-syntax.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-nullable-items-deprecated-syntax.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-nullable-items-deprecated-syntax.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-nullable-items.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-nullable-items.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-nullable.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-nullable.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-options-arraylength-true-default.array-length",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-options-arraylength-true-default.json",
+    "flags": [
+      "--array-length"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-options-arraylength-true-default.array-length+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-options-arraylength-true-default.json",
+    "flags": [
+      "--array-length",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-options-arraylength-true-maxitems-2.array-length",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-options-arraylength-true-maxitems-2.json",
+    "flags": [
+      "--array-length"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-options-arraylength-true-maxitems-2.array-length+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-options-arraylength-true-maxitems-2.json",
+    "flags": [
+      "--array-length",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-options-arraylength-true-maxitems-20.array-length",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-options-arraylength-true-maxitems-20.json",
+    "flags": [
+      "--array-length"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-options-arraylength-true-maxitems-20.array-length+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-options-arraylength-true-maxitems-20.json",
+    "flags": [
+      "--array-length",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-options-arraylength-true-minitems-1.array-length",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-options-arraylength-true-minitems-1.json",
+    "flags": [
+      "--array-length"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-options-arraylength-true-minitems-1.array-length+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-options-arraylength-true-minitems-1.json",
+    "flags": [
+      "--array-length",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-options-arraylength-true-minitems-2-maxitems-2.array-length",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-options-arraylength-true-minitems-2-maxitems-2.json",
+    "flags": [
+      "--array-length"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-options-arraylength-true-minitems-2-maxitems-2.array-length+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-options-arraylength-true-minitems-2-maxitems-2.json",
+    "flags": [
+      "--array-length",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-options-immutable-true-tuple.immutable",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-options-immutable-true-tuple.json",
+    "flags": [
+      "--immutable"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-options-immutable-true-tuple.immutable+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-options-immutable-true-tuple.json",
+    "flags": [
+      "--immutable",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-options-immutable-true.immutable",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-options-immutable-true.json",
+    "flags": [
+      "--immutable"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-options-immutable-true.immutable+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-options-immutable-true.json",
+    "flags": [
+      "--immutable",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-ref",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-ref.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-ref.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-ref.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-tuple-prefixitems",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-tuple-prefixitems.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-tuple-prefixitems.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-tuple-prefixitems.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-tuple-tuple-items",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-tuple-tuple-items.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-array.array-tuple-tuple-items.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-array.array-tuple-tuple-items.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-boolean.boolean-basic",
+    "input": "fixtures/edge/ut/transform-schema-object-boolean.boolean-basic.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-boolean.boolean-basic.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-boolean.boolean-basic.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-boolean.boolean-enum",
+    "input": "fixtures/edge/ut/transform-schema-object-boolean.boolean-enum.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-boolean.boolean-enum.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-boolean.boolean-enum.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-boolean.boolean-nullable",
+    "input": "fixtures/edge/ut/transform-schema-object-boolean.boolean-nullable.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-boolean.boolean-nullable-deprecated-syntax",
+    "input": "fixtures/edge/ut/transform-schema-object-boolean.boolean-nullable-deprecated-syntax.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-boolean.boolean-nullable-deprecated-syntax.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-boolean.boolean-nullable-deprecated-syntax.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-boolean.boolean-nullable.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-boolean.boolean-nullable.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-composition.allof-basic",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.allof-basic.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-composition.allof-basic.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.allof-basic.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-composition.allof-core-properties",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.allof-core-properties.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-composition.allof-core-properties.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.allof-core-properties.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-composition.allof-sibling-required",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.allof-sibling-required.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-composition.allof-sibling-required.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.allof-sibling-required.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-composition.anyof-basic",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.anyof-basic.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-composition.anyof-basic.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.anyof-basic.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-composition.discriminator-allof",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.discriminator-allof.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-composition.discriminator-allof.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.discriminator-allof.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-composition.discriminator-automatic-propertyname",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.discriminator-automatic-propertyname.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-composition.discriminator-automatic-propertyname.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.discriminator-automatic-propertyname.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-composition.discriminator-escape",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.discriminator-escape.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-composition.discriminator-escape.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.discriminator-escape.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-composition.discriminator-oneof",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.discriminator-oneof.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-composition.discriminator-oneof-inside-object",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.discriminator-oneof-inside-object.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-composition.discriminator-oneof-inside-object.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.discriminator-oneof-inside-object.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-composition.discriminator-oneof-null-implicit-mapping",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.discriminator-oneof-null-implicit-mapping.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-composition.discriminator-oneof-null-implicit-mapping.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.discriminator-oneof-null-implicit-mapping.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-composition.discriminator-oneof.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.discriminator-oneof.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-composition.enum-acting-as-oneof",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.enum-acting-as-oneof.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-composition.enum-acting-as-oneof.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.enum-acting-as-oneof.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-composition.oneof-nullable",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.oneof-nullable.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-composition.oneof-nullable-deprecated-syntax",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.oneof-nullable-deprecated-syntax.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-composition.oneof-nullable-deprecated-syntax.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.oneof-nullable-deprecated-syntax.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-composition.oneof-nullable.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.oneof-nullable.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-composition.oneof-number-const",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.oneof-number-const.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-composition.oneof-number-const.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.oneof-number-const.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-composition.oneof-object-with-properties",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.oneof-object-with-properties.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-composition.oneof-object-with-properties.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.oneof-object-with-properties.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-composition.oneof-object-without-properties",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.oneof-object-without-properties.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-composition.oneof-object-without-properties.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.oneof-object-without-properties.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-composition.oneof-polymorphic",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.oneof-polymorphic.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-composition.oneof-polymorphic.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.oneof-polymorphic.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-composition.oneof-primitives",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.oneof-primitives.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-composition.oneof-primitives.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.oneof-primitives.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-composition.oneof-string-const",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.oneof-string-const.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-composition.oneof-string-const.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.oneof-string-const.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-composition.polymorphic-enum-nullable",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.polymorphic-enum-nullable.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-composition.polymorphic-enum-nullable-null-missing-in-enum",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.polymorphic-enum-nullable-null-missing-in-enum.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-composition.polymorphic-enum-nullable-null-missing-in-enum-falsy-value-in-enum",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.polymorphic-enum-nullable-null-missing-in-enum-falsy-value-in-enum.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-composition.polymorphic-enum-nullable-null-missing-in-enum-falsy-value-in-enum.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.polymorphic-enum-nullable-null-missing-in-enum-falsy-value-in-enum.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-composition.polymorphic-enum-nullable-null-missing-in-enum.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.polymorphic-enum-nullable-null-missing-in-enum.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-composition.polymorphic-enum-nullable.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.polymorphic-enum-nullable.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-composition.polymorphic-nullable",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.polymorphic-nullable.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-composition.polymorphic-nullable.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-composition.polymorphic-nullable.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-empty.empty-unknown-empty-object",
+    "input": "fixtures/edge/ut/transform-schema-object-empty.empty-unknown-empty-object.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-empty.empty-unknown-empty-object.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-empty.empty-unknown-empty-object.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-empty.empty-unknown-false",
+    "input": "fixtures/edge/ut/transform-schema-object-empty.empty-unknown-false.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-empty.empty-unknown-false.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-empty.empty-unknown-false.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-empty.empty-unknown-true",
+    "input": "fixtures/edge/ut/transform-schema-object-empty.empty-unknown-true.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-empty.empty-unknown-true.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-empty.empty-unknown-true.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-enum.case-options-enum-false-and-conditionalenums-false-it-matches-the-snap",
+    "input": "fixtures/edge/ut/transform-schema-object-enum.case-options-enum-false-and-conditionalenums-false-it-matches-the-snap.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-enum.case-options-enum-false-and-conditionalenums-false-it-matches-the-snap.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-enum.case-options-enum-false-and-conditionalenums-false-it-matches-the-snap.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-enum.case-options-enum-true-and-conditionalenums-false-it-matches-the-snaps.enum",
+    "input": "fixtures/edge/ut/transform-schema-object-enum.case-options-enum-true-and-conditionalenums-false-it-matches-the-snaps.json",
+    "flags": [
+      "--enum"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-enum.case-options-enum-true-and-conditionalenums-false-it-matches-the-snaps.enum+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-enum.case-options-enum-true-and-conditionalenums-false-it-matches-the-snaps.json",
+    "flags": [
+      "--enum",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-enum.case-options-enum-true-and-conditionalenums-true-it-matches-the-snapsh.enum+conditional-enums",
+    "input": "fixtures/edge/ut/transform-schema-object-enum.case-options-enum-true-and-conditionalenums-true-it-matches-the-snapsh.json",
+    "flags": [
+      "--enum",
+      "--conditional-enums"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-enum.case-options-enum-true-and-conditionalenums-true-it-matches-the-snapsh.enum+conditional-enums+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-enum.case-options-enum-true-and-conditionalenums-true-it-matches-the-snapsh.json",
+    "flags": [
+      "--enum",
+      "--conditional-enums",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-number.number-basic",
+    "input": "fixtures/edge/ut/transform-schema-object-number.number-basic.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-number.number-basic.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-number.number-basic.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-number.number-enum",
+    "input": "fixtures/edge/ut/transform-schema-object-number.number-enum.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-number.number-enum.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-number.number-enum.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-number.number-integer",
+    "input": "fixtures/edge/ut/transform-schema-object-number.number-integer.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-number.number-integer.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-number.number-integer.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-number.number-nullable",
+    "input": "fixtures/edge/ut/transform-schema-object-number.number-nullable.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-number.number-nullable-deprecated-syntax",
+    "input": "fixtures/edge/ut/transform-schema-object-number.number-nullable-deprecated-syntax.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-number.number-nullable-deprecated-syntax.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-number.number-nullable-deprecated-syntax.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-number.number-nullable.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-number.number-nullable.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-additionalproperties-basic",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-additionalproperties-basic.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-additionalproperties-basic.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-additionalproperties-basic.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-additionalproperties-empty-object",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-additionalproperties-empty-object.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-additionalproperties-empty-object.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-additionalproperties-empty-object.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-additionalproperties-no-properties",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-additionalproperties-no-properties.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-additionalproperties-no-properties.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-additionalproperties-no-properties.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-additionalproperties-true",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-additionalproperties-true.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-additionalproperties-true.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-additionalproperties-true.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-basic",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-basic.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-basic.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-basic.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-const-number",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-const-number.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-const-number-falsy-value",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-const-number-falsy-value.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-const-number-falsy-value.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-const-number-falsy-value.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-const-number-inferred",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-const-number-inferred.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-const-number-inferred.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-const-number-inferred.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-const-number.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-const-number.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-const-string",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-const-string.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-const-string-inferred",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-const-string-inferred.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-const-string-inferred.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-const-string-inferred.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-const-string.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-const-string.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-default",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-default.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-default-options-defaultnonnullable-false.default-non-nullable-false",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-default-options-defaultnonnullable-false.json",
+    "flags": [
+      "--default-non-nullable=false"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-default-options-defaultnonnullable-false.default-non-nullable-false+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-default-options-defaultnonnullable-false.json",
+    "flags": [
+      "--default-non-nullable=false",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-default.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-default.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-empty",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-empty.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-empty.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-empty.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-jsonschema-defs",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-jsonschema-defs.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-jsonschema-defs.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-jsonschema-defs.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-nullable",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-nullable.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-nullable-deprecated-syntax",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-nullable-deprecated-syntax.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-nullable-deprecated-syntax.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-nullable-deprecated-syntax.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-nullable.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-nullable.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-additionalproperties-true.additional-properties",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-additionalproperties-true.json",
+    "flags": [
+      "--additional-properties"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-additionalproperties-true.additional-properties+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-additionalproperties-true.json",
+    "flags": [
+      "--additional-properties",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-emptyobjectsunknown-true.empty-objects-unknown",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-emptyobjectsunknown-true.json",
+    "flags": [
+      "--empty-objects-unknown"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-emptyobjectsunknown-true.empty-objects-unknown+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-emptyobjectsunknown-true.json",
+    "flags": [
+      "--empty-objects-unknown",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-excludedeprecated-true.exclude-deprecated",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-excludedeprecated-true.json",
+    "flags": [
+      "--exclude-deprecated"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-excludedeprecated-true.exclude-deprecated+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-excludedeprecated-true.json",
+    "flags": [
+      "--exclude-deprecated",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-immutable-array.immutable",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-immutable-array.json",
+    "flags": [
+      "--immutable"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-immutable-array.immutable+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-immutable-array.json",
+    "flags": [
+      "--immutable",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-immutable-string.immutable",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-immutable-string.json",
+    "flags": [
+      "--immutable"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-immutable-string.immutable+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-immutable-string.json",
+    "flags": [
+      "--immutable",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-propertiesrequiredbydefault-true-array.properties-required-by-default",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-propertiesrequiredbydefault-true-array.json",
+    "flags": [
+      "--properties-required-by-default"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-propertiesrequiredbydefault-true-array.properties-required-by-default+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-propertiesrequiredbydefault-true-array.json",
+    "flags": [
+      "--properties-required-by-default",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-propertiesrequiredbydefault-true.properties-required-by-default",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-propertiesrequiredbydefault-true.json",
+    "flags": [
+      "--properties-required-by-default"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-propertiesrequiredbydefault-true.properties-required-by-default+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-propertiesrequiredbydefault-true.json",
+    "flags": [
+      "--properties-required-by-default",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-readwritemarkers-false-default-no-markers",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-readwritemarkers-false-default-no-markers.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-readwritemarkers-false-default-no-markers.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-readwritemarkers-false-default-no-markers.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-readwritemarkers-true-both.read-write-markers",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-readwritemarkers-true-both.json",
+    "flags": [
+      "--read-write-markers"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-readwritemarkers-true-both.read-write-markers+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-readwritemarkers-true-both.json",
+    "flags": [
+      "--read-write-markers",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-readwritemarkers-true-defs.read-write-markers",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-readwritemarkers-true-defs.json",
+    "flags": [
+      "--read-write-markers"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-readwritemarkers-true-defs.read-write-markers+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-readwritemarkers-true-defs.json",
+    "flags": [
+      "--read-write-markers",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-readwritemarkers-true-readonly.read-write-markers",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-readwritemarkers-true-readonly.json",
+    "flags": [
+      "--read-write-markers"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-readwritemarkers-true-readonly.read-write-markers+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-readwritemarkers-true-readonly.json",
+    "flags": [
+      "--read-write-markers",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-readwritemarkers-true-writeonly.read-write-markers",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-readwritemarkers-true-writeonly.json",
+    "flags": [
+      "--read-write-markers"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-readwritemarkers-true-writeonly.read-write-markers+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-readwritemarkers-true-writeonly.json",
+    "flags": [
+      "--read-write-markers",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-two-dimensional-array",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-two-dimensional-array.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-options-two-dimensional-array.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-options-two-dimensional-array.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-patternproperties-additional-and-patterns",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-patternproperties-additional-and-patterns.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-patternproperties-additional-and-patterns.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-patternproperties-additional-and-patterns.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-patternproperties-additional-true-and-patterns",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-patternproperties-additional-true-and-patterns.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-patternproperties-additional-true-and-patterns.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-patternproperties-additional-true-and-patterns.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-patternproperties-basic",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-patternproperties-basic.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-patternproperties-basic.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-patternproperties-basic.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-patternproperties-empty-object",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-patternproperties-empty-object.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-patternproperties-empty-object-with-options-additionalpropertie.additional-properties",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-patternproperties-empty-object-with-options-additionalpropertie.json",
+    "flags": [
+      "--additional-properties"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-patternproperties-empty-object-with-options-additionalpropertie.additional-properties+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-patternproperties-empty-object-with-options-additionalpropertie.json",
+    "flags": [
+      "--additional-properties",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-patternproperties-empty-object.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-patternproperties-empty-object.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-patternproperties-enum",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-patternproperties-enum.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-patternproperties-enum.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-patternproperties-enum.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-patternproperties-multiple-patterns",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-patternproperties-multiple-patterns.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-patternproperties-multiple-patterns.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-patternproperties-multiple-patterns.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-patternproperties-patterns-with-options-additionalproperties-tr.additional-properties",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-patternproperties-patterns-with-options-additionalproperties-tr.json",
+    "flags": [
+      "--additional-properties"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-patternproperties-patterns-with-options-additionalproperties-tr.additional-properties+enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-patternproperties-patterns-with-options-additionalproperties-tr.json",
+    "flags": [
+      "--additional-properties",
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-property-boolean",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-property-boolean.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-property-boolean.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-property-boolean.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-x-properties-ignored",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-x-properties-ignored.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-object.object-x-properties-ignored.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-object.object-x-properties-ignored.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-basic",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-basic.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-basic.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-basic.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-default-nullable",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-default-nullable.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-default-nullable-deprecated-syntax",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-default-nullable-deprecated-syntax.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-default-nullable-deprecated-syntax.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-default-nullable-deprecated-syntax.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-default-nullable-enum",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-default-nullable-enum.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-default-nullable-enum.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-default-nullable-enum.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-default-nullable.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-default-nullable.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-enum",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-enum.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-enum-inferred",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-enum-inferred.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-enum-inferred.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-enum-inferred.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-enum-nullable",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-enum-nullable.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-enum-nullable-deprecated-syntax",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-enum-nullable-deprecated-syntax.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-enum-nullable-deprecated-syntax.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-enum-nullable-deprecated-syntax.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-enum-nullable-null-value",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-enum-nullable-null-value.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-enum-nullable-null-value.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-enum-nullable-null-value.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-enum-nullable.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-enum-nullable.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-enum-quotes",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-enum-quotes.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-enum-quotes.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-enum-quotes.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-enum-utf-8",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-enum-utf-8.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-enum-utf-8.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-enum-utf-8.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-enum-whitespace",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-enum-whitespace.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-enum-whitespace.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-enum-whitespace.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-enum.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-enum.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-nullable",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-nullable.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-nullable-deprecated-syntax",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-nullable-deprecated-syntax.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-nullable-deprecated-syntax.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-nullable-deprecated-syntax.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-schema-object-string.string-nullable.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-schema-object-string.string-nullable.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-webhooks-object.basic",
+    "input": "fixtures/edge/ut/transform-webhooks-object.basic.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-webhooks-object.basic.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-webhooks-object.basic.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  },
+  {
+    "name": "ut.transform-webhooks-object.ref",
+    "input": "fixtures/edge/ut/transform-webhooks-object.ref.json",
+    "flags": []
+  },
+  {
+    "name": "ut.transform-webhooks-object.ref.enum-values+root-types+root-types-no-schema-prefix",
+    "input": "fixtures/edge/ut/transform-webhooks-object.ref.json",
+    "flags": [
+      "--enum-values",
+      "--root-types",
+      "--root-types-no-schema-prefix"
+    ]
+  }
+]

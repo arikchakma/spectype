@@ -1,0 +1,36 @@
+{
+  "openapi": "3.1",
+  "info": {
+    "title": "Test",
+    "version": "1.0"
+  },
+  "components": {
+    "schemas": {
+      "Base": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "SchemaType": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/Base"
+          },
+          {
+            "$ref": "#/x-swagger-bake/components/schemas/Extension"
+          }
+        ]
+      }
+    }
+  },
+  "x-swagger-bake": {
+    "components": {
+      "schemas": {
+        "Extension": {
+          "additionalProperties": true
+        }
+      }
+    }
+  }
+}

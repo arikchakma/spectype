@@ -1,0 +1,42 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "test",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "schema-object": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "red": {
+                "type": "number"
+              },
+              "blue": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "red",
+              "blue"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "green": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "green"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

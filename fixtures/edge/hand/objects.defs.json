@@ -1,0 +1,53 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Test": {
+        "type": "object",
+        "$defs": {
+          "Inner": {
+            "type": "string"
+          },
+          "Num": {
+            "type": "integer",
+            "enum": [
+              1,
+              2
+            ]
+          }
+        },
+        "properties": {
+          "inner": {
+            "$ref": "#/components/schemas/Test/$defs/Inner"
+          },
+          "num": {
+            "$ref": "#/components/schemas/Test/$defs/Num"
+          }
+        }
+      },
+      "Other": {
+        "$defs": {
+          "X": {
+            "type": "object",
+            "properties": {
+              "y": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "type": "object",
+        "properties": {
+          "x": {
+            "$ref": "#/components/schemas/Other/$defs/X"
+          }
+        }
+      }
+    }
+  }
+}

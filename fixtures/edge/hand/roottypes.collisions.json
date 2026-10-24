@@ -1,0 +1,113 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/x": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Foo"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Foo": {
+        "type": "string"
+      },
+      "foo": {
+        "type": "number"
+      },
+      "Foo_Bar": {
+        "type": "string"
+      },
+      "FooBar": {
+        "type": "boolean"
+      },
+      "foo-bar": {
+        "type": "integer"
+      },
+      "Foo Bar": {
+        "type": "null"
+      },
+      "FOO": {
+        "type": "string"
+      },
+      "foo.bar": {
+        "type": "string"
+      },
+      "Schema": {
+        "type": "string"
+      },
+      "SchemaFoo": {
+        "type": "string"
+      },
+      "paths": {
+        "type": "string"
+      },
+      "components": {
+        "type": "string"
+      },
+      "operations": {
+        "type": "string"
+      },
+      "webhooks": {
+        "type": "string"
+      },
+      "$defs": {
+        "type": "string"
+      },
+      "Record": {
+        "type": "string"
+      },
+      "Array": {
+        "type": "string"
+      },
+      "Date": {
+        "type": "string"
+      },
+      "Partial": {
+        "type": "string"
+      },
+      "WithRequired": {
+        "type": "string"
+      },
+      "1Leading": {
+        "type": "string"
+      },
+      "_lead": {
+        "type": "string"
+      },
+      "ÜberType": {
+        "type": "string"
+      },
+      "user_id_v2": {
+        "type": "string"
+      },
+      "userIdV2": {
+        "type": "string"
+      },
+      "HTTPResponse": {
+        "type": "string"
+      },
+      "httpResponse": {
+        "type": "string"
+      },
+      "XMLHttp": {
+        "type": "string"
+      }
+    }
+  }
+}

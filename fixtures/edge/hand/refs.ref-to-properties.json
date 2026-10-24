@@ -1,0 +1,38 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "B": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/C"
+          },
+          "other": {
+            "$ref": "#/components/schemas/C"
+          }
+        }
+      },
+      "C": {
+        "type": "string",
+        "enum": [
+          "a",
+          "b"
+        ]
+      },
+      "A": {
+        "type": "object",
+        "properties": {
+          "props": {
+            "$ref": "#/components/schemas/B/properties"
+          }
+        }
+      }
+    }
+  }
+}

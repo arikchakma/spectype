@@ -1,0 +1,20 @@
+[package]
+name = "spectype_redocly"
+description = "Redocly-compatible OpenAPI bundling and linting for spectype"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[dependencies]
+regex.workspace = true
+rustc-hash.workspace = true
+spectype_document.workspace = true
+url.workspace = true
+
+[lints]
+workspace = true

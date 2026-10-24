@@ -1,0 +1,168 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "test",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/get-item": {
+      "get": {
+        "description": "Basic GET",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "success"
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "5xx": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "code": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "message"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "description": "Basic PUT",
+        "requestbody": {
+          "application/json": {
+            "$ref": "#/components/schemas/User"
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AllGood"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      },
+      "post": {
+        "description": "Basic POST",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "$ref": "#/components/schemas/User"
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AllGood"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      },
+      "delete": {
+        "description": "Basic DELETE",
+        "requestbody": {
+          "application/json": {
+            "$ref": "#/components/schemas/User"
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AllGood"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      },
+      "options": {
+        "description": "Basic OPTIONS",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AllGood"
+          }
+        }
+      },
+      "head": {
+        "description": "Basic HEAD",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AllGood"
+          }
+        }
+      },
+      "patch": {
+        "description": "Basic PATCH",
+        "requestbody": {
+          "application/json": {
+            "$ref": "#/components/schemas/User"
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AllGood"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      },
+      "trace": {
+        "description": "Basic TRACE",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AllGood"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "NotFound": {
+        "description": "stub"
+      },
+      "AllGood": {
+        "description": "stub"
+      }
+    },
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "openapi": "3.1",
+  "info": {
+    "title": "Test",
+    "version": "1.0"
+  },
+  "paths": {
+    "/url": {
+      "get": {
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "active",
+                "inactive"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Status": {
+        "type": "string",
+        "enum": [
+          "active",
+          "inactive"
+        ]
+      },
+      "ErrorCode": {
+        "type": "number",
+        "enum": [
+          100,
+          101,
+          102,
+          103,
+          104,
+          105
+        ]
+      },
+      "XEnumVarnames": {
+        "type": "number",
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "x-enum-varnames": [
+          "Success",
+          "Warning",
+          "Error"
+        ],
+        "x-enum-descriptions": [
+          "Used when the status of something is successful",
+          "Used when the status of something has a warning",
+          "Used when the status of something has an error"
+        ]
+      },
+      "XEnumNames": {
+        "type": "number",
+        "enum": [
+          1,
+          2,
+          3
+        ],
+        "x-enumNames": [
+          "Uno",
+          "Dos",
+          "Tres"
+        ],
+        "x-enumDescriptions": [
+          "El número uno",
+          "El número dos",
+          "El número tres"
+        ]
+      },
+      "InvalidPropertyNameChars": {
+        "type": "string",
+        "enum": [
+          "=",
+          "!=",
+          ">",
+          "~",
+          "^",
+          "TE=ST"
+        ]
+      }
+    }
+  }
+}

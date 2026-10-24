@@ -1,0 +1,17 @@
+[package]
+name = "allocs"
+version = "0.0.0"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+
+[dependencies]
+rustc-hash.workspace = true
+spectype_codegen.workspace = true
+spectype_document.workspace = true
+spectype_redocly.workspace = true
+stats_alloc = "0.1"
+
+[lints]
+workspace = true

@@ -1,0 +1,1 @@
+{"openapi":"3.1.0","info":{"title":"fix","version":"1"},"paths":{"/a":{"get":{"operationId":"list%20things","responses":{"200":{"description":"ok"}}}}}}

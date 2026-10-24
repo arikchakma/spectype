@@ -1,0 +1,15 @@
+exit 0
+ ⚠  The path already exists which differs only by path parameter name(s): `/pets/{id}` and `/pets/{name}`. at #/paths/~1pets~1{name}
+ ⚠  Paths should resolve unambiguously. Found two ambiguous paths: `/pets/{id}` and `/pets/{name}`. at #/paths/~1pets~1{name}
+ ⚠  Paths should resolve unambiguously. Found two ambiguous paths: `/pets/{id}` and `/{kind}/mine`. at #/paths/~1{kind}~1mine
+ ⚠  `/pets/` should not have a trailing slash. at #/paths/~1pets~1
+ ⚠  Don't put query string items in the path, they belong in parameters with `in: query`. at #/paths/~1search?q=1
+ ⚠  Path parameter declarations must be non-empty. `{}` is invalid. at #/paths/~1things~1{}
+ ⚠  Every operation should have security defined on it or on the root level. at #/paths/~1pets~1/get
+ ⚠  Every operation should have security defined on it or on the root level. at #/paths/~1pets~1{id}/get
+ ⚠  Every operation should have security defined on it or on the root level. at #/paths/~1pets~1{name}/get
+ ⚠  Every operation should have security defined on it or on the root level. at #/paths/~1{kind}~1mine/get
+ ⚠  Every operation should have security defined on it or on the root level. at #/paths/~1pets~1mine/get
+ ⚠  Every operation should have security defined on it or on the root level. at #/paths/~1search?q=1/get
+ ⚠  Every operation should have security defined on it or on the root level. at #/paths/~1things~1{}/get
+ ⚠  Every operation should have security defined on it or on the root level. at #/paths/~1/get

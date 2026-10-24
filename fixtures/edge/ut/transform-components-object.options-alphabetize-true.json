@@ -1,0 +1,51 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "test",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Gamma": {
+        "type": "object",
+        "properties": {
+          "1": {
+            "type": "boolean"
+          },
+          "2": {
+            "type": "boolean"
+          },
+          "10": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Beta": {
+        "type": "object",
+        "properties": {
+          "b": {
+            "type": "boolean"
+          },
+          "c": {
+            "type": "boolean"
+          },
+          "a": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Alpha": {
+        "type": "object",
+        "properties": {
+          "z": {
+            "type": "boolean"
+          },
+          "a": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

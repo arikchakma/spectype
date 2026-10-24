@@ -1,0 +1,4 @@
+[alias]
+coverage = "test -p spectype --test golden -- --nocapture"
+lint = "clippy --workspace --all-targets --all-features -- -D warnings"
+allocs = "run -p allocs --release"

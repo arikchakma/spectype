@@ -1,0 +1,89 @@
+[workspace]
+resolver = "2"
+members = ["apps/*", "bindings/*", "crates/*", "tasks/allocs"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+license = "MIT"
+repository = "https://github.com/arikchakma/spectype"
+readme = "README.md"
+keywords = ["openapi", "typescript", "codegen", "openapi-typescript", "swagger"]
+categories = ["command-line-utilities", "development-tools"]
+
+[workspace.dependencies]
+spectype = { path = "apps/spectype", version = "0.1.0" }
+spectype_codegen = { path = "crates/spectype_codegen", version = "0.1.0" }
+spectype_core = { path = "crates/spectype_core", version = "0.1.0" }
+spectype_document = { path = "crates/spectype_document", version = "0.1.0" }
+spectype_redocly = { path = "crates/spectype_redocly", version = "0.1.0" }
+hashbrown = { version = "0.15", default-features = false }
+icu_collator = "2"
+insta = "1"
+mimalloc = { version = "0.1", default-features = false }
+napi = { version = "3", default-features = false, features = ["napi4"] }
+napi-build = "2"
+napi-derive = "3"
+regex = "1"
+rustc-hash = "2"
+ryu-js = "1"
+serde = "1"
+serde_json = "1"
+similar = "2"
+thiserror = "2"
+ureq = "3"
+url = "2"
+yaml-rust2 = "0.10"
+
+[workspace.lints.rust]
+# `deny`, not `forbid`: the Node-API macros allow it in the code they generate.
+unsafe_code = "deny"
+absolute_paths_not_starting_with_crate = "warn"
+non_ascii_idents = "warn"
+unit_bindings = "warn"
+
+[workspace.lints.clippy]
+pedantic = { level = "warn", priority = -1 }
+nursery = { level = "warn", priority = -1 }
+# restriction
+allow_attributes = "warn"
+clone_on_ref_ptr = "warn"
+dbg_macro = "warn"
+exit = "warn"
+format_push_string = "warn"
+get_unwrap = "warn"
+print_stderr = "warn"
+print_stdout = "warn"
+rc_buffer = "warn"
+self_named_module_files = "warn"
+todo = "warn"
+try_err = "warn"
+unimplemented = "warn"
+unused_result_ok = "warn"
+# pedantic
+module_name_repetitions = "allow"
+too_many_lines = "allow"
+missing_errors_doc = "allow"
+struct_excessive_bools = "allow"
+fn_params_excessive_bools = "allow"
+# nursery
+# Not a const library: `const fn` would only freeze public signatures without a caller needing it.
+missing_const_for_fn = "allow"
+# `map_or_else` with two closures reads worse than `if let ... else`.
+option_if_let_else = "allow"
+
+[profile.dev.package]
+# Faster snapshot tests: https://insta.rs/docs/quickstart/#optional-faster-runs
+insta.opt-level = 3
+similar.opt-level = 3
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
+
+[profile.release-with-debug]
+inherits = "release"
+debug = true
+strip = false

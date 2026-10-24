@@ -1,0 +1,24 @@
+{
+  "openapi": "3.1.0",
+  "info": { "title": "edge", "version": "1.0.0" },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Test": {
+        "type": "object",
+        "required": ["a"],
+        "properties": {
+          "a": { "type": "number", "default": 1e21, "example": 1E-7 },
+          "b": { "type": "number", "default": -0, "example": 1.0 },
+          "c": { "type": "integer", "default": 12345678901234567890, "example": 9007199254740993 },
+          "d": { "type": "number", "default": 0.1, "example": 100.000 },
+          "e": { "type": "number", "enum": [1.0, 2.50, -0, 1e2, 1e21, 0.000001, 1e-7] },
+          "f": { "type": "number", "const": 1e400 },
+          "g": { "type": "integer", "minimum": -9223372036854775808, "maximum": 18446744073709551615 },
+          "h": { "type": "number", "examples": [1.10, 2e0] }
+        }
+      },
+      "BigEnum": { "type": "integer", "enum": [12345678901234567890, 1, -0, 1.0] }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+openapi: 3.0.0
+info: { title: t, version: "1", license: { name: MIT, url: https://x } }
+servers: [{ url: https://api.x.io }]
+paths:
+  /a:
+    get:
+      summary: s
+      operationId: a
+      responses:
+        "404": { description: no }
+        "200":
+          description: ok
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Pet" }
+              examples:
+                good: { value: { id: 1, name: n } }
+                bad: { value: { id: "1", extra: true, tags: [a, a] } }
+                both: { value: { id: 1, name: x }, externalValue: https://x.io/e.json }
+                ref: { $ref: "#/components/examples/Pet" }
+            text/plain:
+              schema: { type: string, minLength: 3, pattern: "^\\d+$", enum: ["123", "4567"] }
+              example: ab
+            application/xml:
+              schema: { nullable: true, allOf: [{ $ref: "#/components/schemas/Pet" }] }
+              example: {}
+            application/x-one:
+              schema:
+                oneOf: [{ type: integer, minimum: 2 }, { type: number, maximum: 10, multipleOf: 0.5 }]
+              example: 3
+            application/x-bool-limit:
+              schema: { type: integer, exclusiveMinimum: true }
+              example: 1
+            application/x-any:
+              schema:
+                type: object
+                anyOf: [{ required: [a] }, { required: [b] }]
+                properties: { a: {}, b: {} }
+              example: { c: 1 }
+components:
+  examples:
+    Pet: { value: { id: 2, name: [] } }
+  schemas:
+    Pet:
+      type: object
+      required: [id, name]
+      properties:
+        id: { type: integer, minimum: 1 }
+        name: { type: string, maxLength: 3 }
+        tags: { type: array, items: { type: string }, uniqueItems: true, maxItems: 1 }

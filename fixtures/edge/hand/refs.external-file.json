@@ -1,0 +1,26 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Local": {
+        "$ref": "./_shared.json#/components/schemas/Shared"
+      },
+      "UsesShared": {
+        "type": "object",
+        "properties": {
+          "s": {
+            "$ref": "_shared.json#/components/schemas/Shared"
+          },
+          "whole": {
+            "$ref": "./_schema.json"
+          }
+        }
+      }
+    }
+  }
+}

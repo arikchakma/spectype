@@ -1,0 +1,7 @@
+golden: 823/828 (99.40%)
+
+edge.invalid.wrong-types
+edge.keys.prototype-name-crash-hasOwnProperty
+edge.keys.prototype-name-crash-schema-name
+edge.keys.prototype-name-crash-toLocaleString
+edge.keys.prototype-name-crash-valueOf

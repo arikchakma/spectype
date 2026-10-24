@@ -1,0 +1,15 @@
+exit 0
+ ⚠  All values of `enum` field must be of the same type as the `type` field: expected "string" but received "integer". at #/components/schemas/A/enum/1
+ ⚠  All values of `enum` field must be of the same type as the `type` field: expected "string" but received "null". at #/components/schemas/A/enum/2
+ ⚠  All values of `enum` field must be of the same type as the `type` field: expected "string" but received "boolean". at #/components/schemas/A/enum/3
+ ⚠  Property `nullable` is not expected here. at #/components/schemas/B/nullable
+ ⚠  All values of `enum` field must be of the same type as the `type` field: expected "integer" but received "number". at #/components/schemas/B/enum/1
+ ⚠  Enum value `2.5` must be of allowed types: `string,integer`. at #/components/schemas/C/enum/-1
+ ⚠  Enum value `false` must be of allowed types: `string,integer`. at #/components/schemas/C/enum/-1
+ ⚠  Schema type mismatch: 'object' type should not contain 'items' field. at #/components/schemas/D/items
+ ⚠  Schema type mismatch: 'array' type should not contain 'properties' field. at #/components/schemas/E/properties
+ ⚠  Component: "A" is never used. at #/components/schemas/A
+ ⚠  Component: "B" is never used. at #/components/schemas/B
+ ⚠  Component: "C" is never used. at #/components/schemas/C
+ ⚠  Component: "D" is never used. at #/components/schemas/D
+ ⚠  Component: "E" is never used. at #/components/schemas/E

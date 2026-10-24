@@ -1,0 +1,58 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Color": {
+        "type": "string",
+        "enum": [
+          "red",
+          "green",
+          "blue"
+        ]
+      },
+      "Code": {
+        "type": "integer",
+        "enum": [
+          100,
+          200,
+          -1,
+          0
+        ]
+      },
+      "Flag": {
+        "type": "boolean",
+        "enum": [
+          true,
+          false
+        ]
+      },
+      "Test": {
+        "type": "object",
+        "properties": {
+          "color": {
+            "$ref": "#/components/schemas/Color"
+          },
+          "inline": {
+            "type": "string",
+            "enum": [
+              "a",
+              "b"
+            ]
+          },
+          "inlineNum": {
+            "type": "number",
+            "enum": [
+              1.5,
+              2.5
+            ]
+          }
+        }
+      }
+    }
+  }
+}

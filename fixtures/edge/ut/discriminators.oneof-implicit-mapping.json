@@ -1,0 +1,67 @@
+{
+  "openapi": "3.1",
+  "info": {
+    "title": "test",
+    "version": "1.0"
+  },
+  "components": {
+    "schemas": {
+      "Pet": {
+        "type": "object",
+        "required": [
+          "petType"
+        ],
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/Cat"
+          },
+          {
+            "$ref": "#/components/schemas/Dog"
+          },
+          {
+            "$ref": "#/components/schemas/Lizard"
+          }
+        ],
+        "discriminator": {
+          "propertyName": "petType",
+          "mapping": {
+            "dog": "#/components/schemas/Dog"
+          }
+        }
+      },
+      "Cat": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "petType"
+        ]
+      },
+      "Dog": {
+        "type": "object",
+        "properties": {
+          "bark": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "petType"
+        ]
+      },
+      "Lizard": {
+        "type": "object",
+        "properties": {
+          "lovesRocks": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "petType"
+        ]
+      }
+    }
+  }
+}

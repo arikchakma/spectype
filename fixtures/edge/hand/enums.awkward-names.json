@@ -1,0 +1,162 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "leading-digit": {
+        "enum": [
+          "1st",
+          "2nd",
+          "3rd"
+        ],
+        "type": "string"
+      },
+      "dashes": {
+        "enum": [
+          "a-b",
+          "-lead",
+          "trail-",
+          "--both--"
+        ],
+        "type": "string"
+      },
+      "spaces": {
+        "enum": [
+          "hello world",
+          " lead",
+          "trail ",
+          "%20encoded"
+        ],
+        "type": "string"
+      },
+      "unicode": {
+        "enum": [
+          "café",
+          "日本",
+          "😀",
+          "ñ"
+        ],
+        "type": "string"
+      },
+      "special": {
+        "enum": [
+          "Etc/GMT+0",
+          "Etc/GMT-1",
+          "a.b",
+          "a:b",
+          "a@b",
+          "a#b",
+          "a$b",
+          "a&b",
+          "a*b",
+          "(paren)",
+          "[br]",
+          "{cu}",
+          "a=b",
+          "a,b",
+          "a;b",
+          "a!b",
+          "a?b",
+          "a'b",
+          "a\"b",
+          "a\\b",
+          "a|b",
+          "a~b",
+          "a^b",
+          "a%b",
+          "a<b>"
+        ],
+        "type": "string"
+      },
+      "empty": {
+        "enum": [
+          "",
+          " ",
+          "x"
+        ],
+        "type": "string"
+      },
+      "keywords": {
+        "enum": [
+          "class",
+          "default",
+          "enum",
+          "null",
+          "true",
+          "constructor",
+          "__proto__",
+          "delete",
+          "new",
+          "typeof"
+        ],
+        "type": "string"
+      },
+      "case": {
+        "enum": [
+          "A",
+          "a",
+          "AB",
+          "ab",
+          "aB",
+          "Ab"
+        ],
+        "type": "string"
+      },
+      "numbers-as-strings": {
+        "enum": [
+          "0",
+          "1",
+          "-1",
+          "1.5",
+          "1e3",
+          "NaN",
+          "Infinity"
+        ],
+        "type": "string"
+      },
+      "underscores": {
+        "enum": [
+          "_",
+          "__",
+          "_a",
+          "a_",
+          "a__b"
+        ],
+        "type": "string"
+      },
+      "mixed": {
+        "enum": [
+          "ok",
+          1,
+          true,
+          null
+        ]
+      },
+      "only-null": {
+        "enum": [
+          null
+        ]
+      },
+      "neg-numbers": {
+        "enum": [
+          -1,
+          -2.5,
+          0,
+          3
+        ]
+      },
+      "dup-values": {
+        "enum": [
+          "a",
+          "a",
+          "b"
+        ],
+        "type": "string"
+      }
+    }
+  }
+}

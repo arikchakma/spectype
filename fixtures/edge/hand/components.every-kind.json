@@ -1,0 +1,126 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/x": {
+      "$ref": "#/components/pathItems/Item"
+    }
+  },
+  "components": {
+    "schemas": {
+      "S": {
+        "type": "string"
+      }
+    },
+    "responses": {
+      "R": {
+        "description": "r",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/S"
+            }
+          }
+        }
+      }
+    },
+    "parameters": {
+      "P": {
+        "name": "p",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "PP": {
+        "name": "pp",
+        "in": "path",
+        "schema": {
+          "type": "string"
+        },
+        "required": true
+      }
+    },
+    "requestBodies": {
+      "B": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/S"
+            }
+          }
+        }
+      }
+    },
+    "headers": {
+      "H": {
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    "pathItems": {
+      "Item": {
+        "get": {
+          "operationId": "itemGet",
+          "parameters": [
+            {
+              "$ref": "#/components/parameters/P"
+            }
+          ],
+          "requestBody": {
+            "$ref": "#/components/requestBodies/B"
+          },
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/R"
+            }
+          }
+        }
+      },
+      "Other": {
+        "post": {
+          "responses": {
+            "200": {
+              "description": "o"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "examples": {
+      "Ex": {
+        "value": {
+          "a": 1
+        }
+      }
+    },
+    "links": {
+      "L": {
+        "operationId": "itemGet"
+      }
+    },
+    "callbacks": {
+      "C": {
+        "{$request.body#/url}": {
+          "post": {
+            "responses": {
+              "200": {
+                "description": "cb"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "@spectype/binding-wasm32-wasip1",
+  "version": "0.1.0",
+  "description": "The WebAssembly fallback for spectype, used where no native addon fits",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arikchakma/spectype.git"
+  },
+  "main": "spectype.wasip1.cjs",
+  "files": [
+    "spectype.wasip1.cjs",
+    "spectype.wasm32-wasip1.wasm"
+  ],
+  "dependencies": {
+    "@emnapi/core": "2.0.0-alpha.6",
+    "@emnapi/runtime": "2.0.0-alpha.6",
+    "@napi-rs/wasm-runtime": "1.2.5"
+  }
+}

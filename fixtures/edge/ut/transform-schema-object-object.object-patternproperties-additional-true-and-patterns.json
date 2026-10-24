@@ -1,0 +1,21 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "test",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Test": {
+        "type": "object",
+        "additionalProperties": true,
+        "patternProperties": {
+          "^a": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

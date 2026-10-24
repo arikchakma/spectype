@@ -1,0 +1,40 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "test",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Dog": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Pet"
+          }
+        ],
+        "properties": {
+          "bark": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Pet": {
+        "type": "object",
+        "properties": {
+          "_petType": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "_petType"
+        ],
+        "discriminator": {
+          "propertyName": "_petType"
+        }
+      }
+    }
+  }
+}

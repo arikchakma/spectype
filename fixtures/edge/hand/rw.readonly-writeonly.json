@@ -1,0 +1,90 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/t": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Test"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Test"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Test": {
+        "type": "object",
+        "required": [
+          "id",
+          "password"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "readOnly": true
+          },
+          "password": {
+            "type": "string",
+            "writeOnly": true
+          },
+          "both": {
+            "type": "string",
+            "readOnly": true,
+            "writeOnly": true
+          },
+          "nested": {
+            "type": "object",
+            "readOnly": true,
+            "properties": {
+              "x": {
+                "type": "string",
+                "writeOnly": true
+              }
+            }
+          },
+          "ref": {
+            "$ref": "#/components/schemas/Other",
+            "readOnly": true
+          },
+          "arr": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "readOnly": true
+            }
+          }
+        }
+      },
+      "Other": {
+        "type": "object",
+        "readOnly": true,
+        "properties": {
+          "o": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Base": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "string"
+          }
+        }
+      },
+      "OneOf": {
+        "nullable": true,
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "integer"
+          }
+        ]
+      },
+      "AllOf": {
+        "nullable": true,
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Base"
+          }
+        ]
+      },
+      "AnyOf": {
+        "nullable": true,
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "$ref": "#/components/schemas/Base"
+          }
+        ]
+      },
+      "Ref": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Base"
+          }
+        ],
+        "nullable": true,
+        "description": "nullable ref via allOf"
+      },
+      "RefSibling": {
+        "$ref": "#/components/schemas/Base",
+        "nullable": true
+      },
+      "Arr": {
+        "type": "array",
+        "nullable": true,
+        "items": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "Obj": {
+        "type": "object",
+        "nullable": true,
+        "properties": {
+          "x": {
+            "type": "string",
+            "nullable": true
+          },
+          "y": {
+            "$ref": "#/components/schemas/Base",
+            "nullable": true,
+            "description": "ref with siblings"
+          }
+        }
+      },
+      "Bool": {
+        "type": "boolean",
+        "nullable": true
+      },
+      "NoType": {
+        "nullable": true
+      },
+      "FalseNullable": {
+        "type": "string",
+        "nullable": false
+      },
+      "AddProps": {
+        "type": "object",
+        "nullable": true,
+        "additionalProperties": {
+          "type": "string",
+          "nullable": true
+        }
+      },
+      "DefaultNull": {
+        "type": "string",
+        "nullable": true,
+        "default": null
+      },
+      "Test": {
+        "type": "object",
+        "required": [
+          "req"
+        ],
+        "properties": {
+          "req": {
+            "type": "string",
+            "nullable": true
+          },
+          "withDefault": {
+            "type": "string",
+            "nullable": true,
+            "default": "x"
+          },
+          "reqDefault": {
+            "type": "integer",
+            "default": 1
+          }
+        }
+      }
+    }
+  }
+}

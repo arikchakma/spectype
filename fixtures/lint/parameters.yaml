@@ -1,0 +1,17 @@
+openapi: 3.0.0
+info: { title: t, version: "1", license: { name: MIT, url: https://x } }
+servers: [{ url: https://api.x.io }]
+paths:
+  /pets/{petId}/{other}:
+    parameters:
+      - { name: petId, in: path, required: true, schema: { type: string } }
+      - { name: petId, in: path, required: true, schema: { type: string } }
+      - { name: unused, in: path, required: true, schema: { type: string } }
+    get:
+      summary: s
+      operationId: get
+      parameters:
+        - { name: q, in: query, schema: { type: string } }
+        - { name: q, in: query, schema: { type: string } }
+        - { name: stray, in: path, required: true, schema: { type: string } }
+      responses: { "200": { description: ok }, "404": { description: no } }

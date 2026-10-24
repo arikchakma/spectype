@@ -1,0 +1,93 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "test",
+    "version": 1
+  },
+  "paths": {
+    "/endpoint": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/simpleObject"
+                    },
+                    {
+                      "$ref": "#/components/schemas/complexObject"
+                    }
+                  ],
+                  "discriminator": {
+                    "propertyName": "type",
+                    "mapping": {
+                      "simple": "#/components/schemas/simpleObject",
+                      "complex": "#/components/schemas/complexObject",
+                      "tooComplex": "#/components/schemas/complexObject"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "baseObject": {
+        "type": "object",
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/type"
+          }
+        }
+      },
+      "simpleObject": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/baseObject"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "simple": {
+                "type": "boolean"
+              }
+            }
+          }
+        ]
+      },
+      "complexObject": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/baseObject"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "complex": {
+                "type": "boolean"
+              }
+            }
+          }
+        ]
+      },
+      "type": {
+        "type": "string",
+        "enum": [
+          "simple",
+          "complex",
+          "tooComplex"
+        ]
+      }
+    }
+  }
+}

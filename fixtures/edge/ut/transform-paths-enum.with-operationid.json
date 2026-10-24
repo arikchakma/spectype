@@ -1,0 +1,31 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "test",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/v1/user/{user_id}": {
+      "parameters": [
+        {
+          "name": "page",
+          "in": "query",
+          "schema": {
+            "type": "number"
+          },
+          "description": "Page number."
+        }
+      ],
+      "get": {
+        "operationId": "GetUserById",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "description": "User ID."
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Status API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/status": {
+      "get": {
+        "summary": "Get current status",
+        "responses": {
+          "200": {
+            "description": "Status response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "required": {
+                      "status": true,
+                      "statusEnum": true
+                    },
+                    "status": {
+                      "$ref": "#/components/schemas/StatusResponse"
+                    },
+                    "statusEnum": {
+                      "$ref": "#/components/schemas/StatusEnumResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "StatusResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "Status": {
+        "type": "string",
+        "enum": [
+          "pending",
+          "active",
+          "done"
+        ]
+      },
+      "StatusEnumResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/StatusEnum"
+          }
+        }
+      },
+      "StatusEnum": {
+        "type": "string",
+        "enum": [
+          "pending",
+          "active",
+          "done"
+        ],
+        "x-enum-varnames": [
+          "Pending",
+          "Active",
+          "Done"
+        ],
+        "x-enum-descriptions": [
+          "The task is pending",
+          "The task is active",
+          "The task is done"
+        ]
+      }
+    }
+  }
+}

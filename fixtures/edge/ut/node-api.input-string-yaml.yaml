@@ -1,0 +1,4 @@
+openapi: "3.1"
+info:
+  title: test
+  version: 1.0

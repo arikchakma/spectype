@@ -1,0 +1,10 @@
+exit 0
+ ⚠  Server variable define `enum` and `default`. `enum` must include default value at #/servers
+ ⚠  Server variable with `enum` must be a non-empty array. at #/servers
+ ⚠  Server variable define `enum` and `default`. `enum` must include default value at #/servers
+ ⚠  Server `url` should not point to example.com or localhost. at #/servers/0/url
+ ⚠  Server `url` should not have a trailing slash. at #/servers/0/url
+ ⚠  Server `url` should not point to example.com or localhost. at #/servers/1/url
+ ⚠  The `unused` variable is not used in the server's `url` field. at #/servers/2/variables/unused
+ ⚠  Server `url` should not have a trailing slash. at #/paths/~1a/servers/0/url
+ ⚠  Every operation should have security defined on it or on the root level. at #/paths/~1a/get

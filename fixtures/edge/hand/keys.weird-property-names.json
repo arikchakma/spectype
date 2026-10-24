@@ -1,0 +1,174 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Test": {
+        "type": "object",
+        "properties": {
+          "0": {
+            "type": "string"
+          },
+          "200": {
+            "type": "string"
+          },
+          "4294967294": {
+            "type": "string"
+          },
+          "1.5": {
+            "type": "string"
+          },
+          "-1": {
+            "type": "string"
+          },
+          "01": {
+            "type": "string"
+          },
+          "1e3": {
+            "type": "string"
+          },
+          "NaN": {
+            "type": "string"
+          },
+          "Infinity": {
+            "type": "string"
+          },
+          "-Infinity": {
+            "type": "string"
+          },
+          "": {
+            "type": "string"
+          },
+          " ": {
+            "type": "string"
+          },
+          "__proto__": {
+            "type": "string"
+          },
+          "constructor": {
+            "type": "string"
+          },
+          "toString": {
+            "type": "string"
+          },
+          "a b": {
+            "type": "string"
+          },
+          "a-b": {
+            "type": "string"
+          },
+          "a.b": {
+            "type": "string"
+          },
+          "$dollar": {
+            "type": "string"
+          },
+          "_under": {
+            "type": "string"
+          },
+          "😀": {
+            "type": "string"
+          },
+          "ключ": {
+            "type": "string"
+          },
+          "日本語": {
+            "type": "string"
+          },
+          "café": {
+            "type": "string"
+          },
+          "class": {
+            "type": "string"
+          },
+          "default": {
+            "type": "string"
+          },
+          "null": {
+            "type": "string"
+          },
+          "true": {
+            "type": "string"
+          },
+          "00": {
+            "type": "string"
+          },
+          "0x10": {
+            "type": "string"
+          },
+          "1_000": {
+            "type": "string"
+          },
+          "+1": {
+            "type": "string"
+          },
+          "\"quoted\"": {
+            "type": "string"
+          },
+          "back\\slash": {
+            "type": "string"
+          },
+          "it's": {
+            "type": "string"
+          },
+          "tab\there": {
+            "type": "string"
+          },
+          "new\nline": {
+            "type": "string"
+          },
+          " ": {
+            "type": "string"
+          },
+          "${tmpl}": {
+            "type": "string"
+          },
+          "`tick`": {
+            "type": "string"
+          },
+          "a/b": {
+            "type": "string"
+          },
+          "a[0]": {
+            "type": "string"
+          },
+          "#hash": {
+            "type": "string"
+          },
+          "%20": {
+            "type": "string"
+          },
+          "123abc": {
+            "type": "string"
+          },
+          "4294967295": {
+            "type": "string"
+          },
+          "9007199254740993": {
+            "type": "string"
+          },
+          "-0": {
+            "type": "string"
+          },
+          ".5": {
+            "type": "string"
+          },
+          "5.": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "200",
+          "",
+          "__proto__",
+          "😀",
+          "-1"
+        ]
+      }
+    }
+  }
+}

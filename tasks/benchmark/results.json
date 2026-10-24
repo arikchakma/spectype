@@ -1,0 +1,1005 @@
+{
+  "date": "2026-10-24T00:54:05.212Z",
+  "node": "v24.22.1",
+  "platform": "darwin arm64",
+  "runs": 5,
+  "timeoutMs": 120000,
+  "tools": {
+    "spectype": {
+      "version": "0.1.0",
+      "config": "`spectype <in> -o out.ts`",
+      "available": true
+    },
+    "openapi-typescript": {
+      "version": "7.13.0",
+      "config": "`openapi-typescript <in> -o out.ts` (typescript@6.0.3)",
+      "available": true
+    },
+    "@hey-api/openapi-ts": {
+      "version": "0.99.0",
+      "config": "`openapi-ts -i <in> -o out -p @hey-api/typescript -s --no-log-file` (types plugin only, no SDK/client)",
+      "available": true
+    },
+    "swagger-typescript-api": {
+      "version": "13.13.0",
+      "config": "`swagger-typescript-api generate -p <in> -o out -n types.ts --no-client --route-types --silent`",
+      "available": true
+    },
+    "orval": {
+      "version": "8.44.0",
+      "config": "`orval -c configs/orval.config.mjs` (client fetch, mode split, externalRefs allow *; no types-only mode, models land in api.schemas.ts but fetch functions are still generated)",
+      "available": true
+    },
+    "kubb": {
+      "version": "5.12.4 (plugin-ts 5.0.14)",
+      "config": "`kubb generate -c configs/kubb.config.mjs -s --reporter cli` with only `pluginTs({ output: { barrel: false } })`",
+      "available": true
+    },
+    "oazapfts": {
+      "version": "7.5.0",
+      "config": "`oazapfts <in> out.ts` (no types-only mode; emits fetch functions + types)",
+      "available": true
+    },
+    "typed-openapi": {
+      "version": "4.1.0",
+      "config": "`typed-openapi <in> -o out.ts -r none` (pure types runtime; includes endpoint map + tiny client)",
+      "available": true
+    },
+    "openapi-typescript-codegen": {
+      "version": "0.31.0",
+      "config": "`openapi -i <in> -o out --exportCore false --exportServices false --useUnionTypes` (models only)",
+      "available": true
+    },
+    "kiota (.NET native)": {
+      "version": null,
+      "config": "`kiota generate -l typescript -d <in> -o out -n Api --ll Error --co` (no types-only mode; full client + models)",
+      "available": false
+    }
+  },
+  "inputs": [
+    {
+      "name": "stripe",
+      "path": "fixtures/ots/examples/stripe-api.yaml",
+      "size": 5453434,
+      "rows": [
+        {
+          "tool": "spectype",
+          "median": 42.988125,
+          "min": 42.838542,
+          "rss": 58195968,
+          "samples": [
+            45.055167,
+            42.988125,
+            42.838542,
+            43.176375,
+            42.918
+          ],
+          "bytes": 3846379
+        },
+        {
+          "tool": "openapi-typescript",
+          "median": 778.211791,
+          "min": 767.068042,
+          "rss": 403341312,
+          "samples": [
+            884.056708,
+            767.068042,
+            770.645417,
+            787.068667,
+            778.211791
+          ],
+          "bytes": 3846379
+        },
+        {
+          "tool": "@hey-api/openapi-ts",
+          "median": 2993.931875,
+          "min": 2967.619792,
+          "rss": 742391808,
+          "samples": [
+            2998.92525,
+            2993.931875,
+            2967.619792,
+            2991.279166,
+            3012.020125
+          ],
+          "bytes": 3014671
+        },
+        {
+          "tool": "swagger-typescript-api",
+          "median": 3874.816625,
+          "min": 3832.582875,
+          "rss": 883081216,
+          "samples": [
+            4070.959833,
+            3892.884459,
+            3874.816625,
+            3840.627542,
+            3832.582875
+          ],
+          "bytes": 2904060
+        },
+        {
+          "tool": "orval",
+          "median": 720.050166,
+          "min": 717.5005,
+          "rss": 392396800,
+          "samples": [
+            804.048625,
+            720.050166,
+            718.356,
+            725.834542,
+            717.5005
+          ],
+          "bytes": 5887770
+        },
+        {
+          "tool": "kubb",
+          "median": 2030.053166,
+          "min": 1978.962666,
+          "rss": 576815104,
+          "samples": [
+            2103.67225,
+            2035.197917,
+            2030.053166,
+            2001.65875,
+            1978.962666
+          ],
+          "bytes": 4822964
+        },
+        {
+          "tool": "oazapfts",
+          "median": 1205.672917,
+          "min": 1198.352583,
+          "rss": 365543424,
+          "samples": [
+            1241.820875,
+            1198.352583,
+            1203.407791,
+            1205.672917,
+            1221.888959
+          ],
+          "bytes": 2178816
+        },
+        {
+          "tool": "typed-openapi",
+          "median": 1190.160792,
+          "min": 1185.529708,
+          "rss": 318636032,
+          "samples": [
+            1243.874,
+            1185.529708,
+            1188.10875,
+            1197.391541,
+            1190.160792
+          ],
+          "bytes": 2334951
+        },
+        {
+          "tool": "openapi-typescript-codegen",
+          "median": 1409.002792,
+          "min": 1388.120333,
+          "rss": 276004864,
+          "samples": [
+            1543.202084,
+            1409.002792,
+            1388.676917,
+            1388.120333,
+            1452.363667
+          ],
+          "bytes": 1475578
+        },
+        {
+          "tool": "kiota (.NET native)",
+          "error": "not installed"
+        }
+      ]
+    },
+    {
+      "name": "github",
+      "path": "fixtures/ots/examples/github-api.yaml",
+      "size": 8499361,
+      "rows": [
+        {
+          "tool": "spectype",
+          "median": 72.279041,
+          "min": 71.475875,
+          "rss": 83722240,
+          "samples": [
+            81.867833,
+            71.475875,
+            73.846709,
+            71.980875,
+            72.279041
+          ],
+          "bytes": 5519269
+        },
+        {
+          "tool": "openapi-typescript",
+          "median": 1240.187542,
+          "min": 1216.493459,
+          "rss": 484524032,
+          "samples": [
+            1269.132166,
+            1222.955708,
+            1240.187542,
+            1216.493459,
+            1242.988708
+          ],
+          "bytes": 5519269
+        },
+        {
+          "tool": "@hey-api/openapi-ts",
+          "median": 1468.646458,
+          "min": 1454.335458,
+          "rss": 616464384,
+          "samples": [
+            1544.257917,
+            1458.097833,
+            1483.756667,
+            1468.646458,
+            1454.335458
+          ],
+          "bytes": 3386956
+        },
+        {
+          "tool": "swagger-typescript-api",
+          "median": 6896.1875,
+          "min": 6842.516333,
+          "rss": 1190690816,
+          "samples": [
+            6896.1875,
+            7183.873667,
+            6842.516333,
+            6925.598125,
+            6865.388583
+          ],
+          "bytes": 3829166
+        },
+        {
+          "tool": "orval",
+          "median": 1077.824583,
+          "min": 1053.165,
+          "rss": 469778432,
+          "samples": [
+            1153.973084,
+            1091.941542,
+            1060.98,
+            1053.165,
+            1077.824583
+          ],
+          "bytes": 5287934
+        },
+        {
+          "tool": "kubb",
+          "median": 2887.120708,
+          "min": 2802.330417,
+          "rss": 765149184,
+          "samples": [
+            2901.039708,
+            2887.120708,
+            2802.330417,
+            2866.525583,
+            2921.042042
+          ],
+          "bytes": 7056067
+        },
+        {
+          "tool": "oazapfts",
+          "error": "exit 1: Error: Discriminators require references, not inline schemas"
+        },
+        {
+          "tool": "typed-openapi",
+          "median": 788.916709,
+          "min": 773.4325,
+          "rss": 327680000,
+          "samples": [
+            788.916709,
+            779.120083,
+            773.4325,
+            789.182541,
+            798.355917
+          ],
+          "bytes": 1714078
+        },
+        {
+          "tool": "openapi-typescript-codegen",
+          "median": 1173.997583,
+          "min": 1063.254625,
+          "rss": 504217600,
+          "samples": [
+            1186.299584,
+            1183.589834,
+            1063.254625,
+            1173.482166,
+            1173.997583
+          ],
+          "bytes": 2124862
+        },
+        {
+          "tool": "kiota (.NET native)",
+          "error": "not installed"
+        }
+      ]
+    },
+    {
+      "name": "github-json",
+      "path": "tasks/benchmark/.work/github-api.json",
+      "size": 11182335,
+      "rows": [
+        {
+          "tool": "spectype",
+          "median": 61.602375,
+          "min": 58.742083,
+          "rss": 87605248,
+          "samples": [
+            71.199958,
+            62.86725,
+            61.602375,
+            59.257958,
+            58.742083
+          ],
+          "bytes": 5519269
+        },
+        {
+          "tool": "openapi-typescript",
+          "median": 1221.546625,
+          "min": 1175.690041,
+          "rss": 516161536,
+          "samples": [
+            1228.3445,
+            1175.690041,
+            1205.983667,
+            1221.546625,
+            1253.57875
+          ],
+          "bytes": 5519269
+        },
+        {
+          "tool": "@hey-api/openapi-ts",
+          "median": 1371.370125,
+          "min": 1362.479833,
+          "rss": 650756096,
+          "samples": [
+            1377.347709,
+            1370.580333,
+            1362.479833,
+            1381.893375,
+            1371.370125
+          ],
+          "bytes": 3386956
+        },
+        {
+          "tool": "swagger-typescript-api",
+          "median": 5736.264917,
+          "min": 5524.664542,
+          "rss": 859471872,
+          "samples": [
+            5870.938541,
+            5839.076583,
+            5736.264917,
+            5524.664542,
+            5528.451208
+          ],
+          "bytes": 3828799
+        },
+        {
+          "tool": "orval",
+          "median": 929.139125,
+          "min": 923.143667,
+          "rss": 368590848,
+          "samples": [
+            974.693958,
+            926.521333,
+            923.143667,
+            929.139125,
+            946.76
+          ],
+          "bytes": 5287934
+        },
+        {
+          "tool": "kubb",
+          "median": 1834.783,
+          "min": 1814.000959,
+          "rss": 420020224,
+          "samples": [
+            1834.783,
+            1814.000959,
+            1915.961625,
+            1824.796666,
+            1941.97175
+          ],
+          "bytes": 7056067
+        },
+        {
+          "tool": "oazapfts",
+          "error": "exit 1: Error: Discriminators require references, not inline schemas"
+        },
+        {
+          "tool": "typed-openapi",
+          "median": 734.308,
+          "min": 731.236792,
+          "rss": 268337152,
+          "samples": [
+            799.988334,
+            731.236792,
+            744.156042,
+            732.417083,
+            734.308
+          ],
+          "bytes": 1714078
+        },
+        {
+          "tool": "openapi-typescript-codegen",
+          "median": 1074.963042,
+          "min": 1032.782791,
+          "rss": 215252992,
+          "samples": [
+            1226.956125,
+            1045.676917,
+            1074.963042,
+            1032.782791,
+            1079.350625
+          ],
+          "bytes": 2124862
+        },
+        {
+          "tool": "kiota (.NET native)",
+          "error": "not installed"
+        }
+      ]
+    },
+    {
+      "name": "digital-ocean (multi-file)",
+      "path": "fixtures/ots/examples/digital-ocean-api/DigitalOcean-public.v2.yaml",
+      "size": null,
+      "rows": [
+        {
+          "tool": "spectype",
+          "median": 71.775833,
+          "min": 67.0745,
+          "rss": 26099712,
+          "samples": [
+            289.091375,
+            70.322875,
+            74.824833,
+            71.775833,
+            67.0745
+          ],
+          "bytes": 1458123
+        },
+        {
+          "tool": "openapi-typescript",
+          "median": 584.887292,
+          "min": 578.813458,
+          "rss": 362561536,
+          "samples": [
+            650.593292,
+            582.574417,
+            584.887292,
+            578.813458,
+            607.76075
+          ],
+          "bytes": 1458123
+        },
+        {
+          "tool": "@hey-api/openapi-ts",
+          "error": "exit 1: Unexpected error: JobError"
+        },
+        {
+          "tool": "swagger-typescript-api",
+          "median": 747.433583,
+          "min": 733.118459,
+          "rss": 419397632,
+          "samples": [
+            880.602792,
+            885.194,
+            747.433583,
+            733.118459,
+            746.994625
+          ],
+          "bytes": 154848
+        },
+        {
+          "tool": "orval",
+          "median": 1325.349541,
+          "min": 1319.599334,
+          "rss": 404520960,
+          "samples": [
+            1376.43675,
+            1321.193,
+            1325.349541,
+            1333.375875,
+            1319.599334
+          ],
+          "bytes": 6445756
+        },
+        {
+          "tool": "kubb",
+          "error": "exit 1: error KUBB_ADAPTER_FAILED: adapter \"oas\" crashed: Cannot use 'in' operator to search for 'const' in #/components/schemas/load_balancer_create/oneOf/0/allOf/0/properties"
+        },
+        {
+          "tool": "oazapfts",
+          "error": "exit 1: Error: Discriminators require references, not inline schemas"
+        },
+        {
+          "tool": "typed-openapi",
+          "error": "exit 1: throw new Error(`Unresolved ref \"${name}\" not found in \"${path}\"`);"
+        },
+        {
+          "tool": "openapi-typescript-codegen",
+          "error": "empty output (133 bytes)"
+        },
+        {
+          "tool": "kiota (.NET native)",
+          "error": "not installed"
+        }
+      ]
+    },
+    {
+      "name": "vercel",
+      "path": "tasks/benchmark/.work/vercel-api.json",
+      "size": 11858681,
+      "rows": [
+        {
+          "tool": "spectype",
+          "median": 56.363584,
+          "min": 53.874375,
+          "rss": 77905920,
+          "samples": [
+            59.056958,
+            56.015708,
+            53.874375,
+            56.543042,
+            56.363584
+          ],
+          "bytes": 5498764
+        },
+        {
+          "tool": "openapi-typescript",
+          "median": 1213.584417,
+          "min": 1191.416667,
+          "rss": 505659392,
+          "samples": [
+            1242.957917,
+            1220.608292,
+            1213.584417,
+            1191.416667,
+            1197.043
+          ],
+          "bytes": 5498764
+        },
+        {
+          "tool": "@hey-api/openapi-ts",
+          "median": 1210.250167,
+          "min": 1190.2215,
+          "rss": 586874880,
+          "samples": [
+            1198.62475,
+            1190.2215,
+            1210.250167,
+            1229.871917,
+            1263.540875
+          ],
+          "bytes": 3651472
+        },
+        {
+          "tool": "swagger-typescript-api",
+          "median": 4849.277333,
+          "min": 4818.891167,
+          "rss": 811794432,
+          "samples": [
+            4818.891167,
+            4849.277333,
+            4837.404875,
+            4879.135791,
+            4986.287917
+          ],
+          "bytes": 3423221
+        },
+        {
+          "tool": "orval",
+          "error": "exit 1: bench - 🛑 OpenAPI spec validation failed:"
+        },
+        {
+          "tool": "kubb",
+          "median": 1563.162125,
+          "min": 1544.524,
+          "rss": 454557696,
+          "samples": [
+            1667.981708,
+            1563.162125,
+            1554.130458,
+            1592.121667,
+            1544.524
+          ],
+          "bytes": 5077486
+        },
+        {
+          "tool": "oazapfts",
+          "median": 584.984625,
+          "min": 573.79275,
+          "rss": 392118272,
+          "samples": [
+            585.785292,
+            582.569333,
+            573.79275,
+            587.057875,
+            584.984625
+          ],
+          "bytes": 3178194
+        },
+        {
+          "tool": "typed-openapi",
+          "median": 429.511333,
+          "min": 411.126,
+          "rss": 240926720,
+          "samples": [
+            541.275959,
+            429.511333,
+            423.292292,
+            437.284042,
+            411.126
+          ],
+          "bytes": 2933707
+        },
+        {
+          "tool": "openapi-typescript-codegen",
+          "median": 389.473459,
+          "min": 365.498167,
+          "rss": 237682688,
+          "samples": [
+            412.302708,
+            389.473459,
+            365.498167,
+            395.073292,
+            366.333792
+          ],
+          "bytes": 447863
+        },
+        {
+          "tool": "kiota (.NET native)",
+          "error": "not installed"
+        }
+      ]
+    },
+    {
+      "name": "cloudflare",
+      "path": "tasks/benchmark/.work/cloudflare-api.json",
+      "size": 27633854,
+      "rows": [
+        {
+          "tool": "spectype",
+          "median": 172.889708,
+          "min": 163.159792,
+          "rss": 224460800,
+          "samples": [
+            239.577125,
+            183.56,
+            172.889708,
+            163.159792,
+            165.010459
+          ],
+          "bytes": 15486572
+        },
+        {
+          "tool": "openapi-typescript",
+          "median": 3128.421333,
+          "min": 3091.899292,
+          "rss": 1037008896,
+          "samples": [
+            3127.280083,
+            3171.980959,
+            3135.002084,
+            3091.899292,
+            3128.421333
+          ],
+          "bytes": 15486572
+        },
+        {
+          "tool": "@hey-api/openapi-ts",
+          "median": 4834.733,
+          "min": 4826.0645,
+          "rss": 1555709952,
+          "samples": [
+            4832.7155,
+            4834.733,
+            4826.0645,
+            4841.495125,
+            5187.592916
+          ],
+          "bytes": 10691802
+        },
+        {
+          "tool": "swagger-typescript-api",
+          "median": 23168.964917,
+          "min": 23028.897333,
+          "rss": 1830092800,
+          "samples": [
+            26340.754333,
+            24526.277625,
+            23143.755833,
+            23168.964917,
+            23028.897333
+          ],
+          "bytes": 9581111
+        },
+        {
+          "tool": "orval",
+          "median": 2387.661333,
+          "min": 2314.553666,
+          "rss": 775929856,
+          "samples": [
+            2377.309417,
+            2314.553666,
+            2576.955084,
+            2696.411917,
+            2387.661333
+          ],
+          "bytes": 16609420
+        },
+        {
+          "tool": "kubb",
+          "median": 5699.272542,
+          "min": 4436.548125,
+          "rss": 1229029376,
+          "samples": [
+            4436.548125,
+            6891.379792,
+            5567.144208,
+            6032.665,
+            5699.272542
+          ],
+          "bytes": 17542073
+        },
+        {
+          "tool": "oazapfts",
+          "error": "exit 1: Error: Discriminators require references, not inline schemas"
+        },
+        {
+          "tool": "typed-openapi",
+          "median": 2946.750125,
+          "min": 2875.379292,
+          "rss": 471105536,
+          "samples": [
+            3257.858083,
+            2946.750125,
+            2882.710958,
+            3096.840459,
+            2875.379292
+          ],
+          "bytes": 7650518
+        },
+        {
+          "tool": "openapi-typescript-codegen",
+          "median": 12114.517291,
+          "min": 11252.820833,
+          "rss": 450985984,
+          "samples": [
+            12114.517291,
+            12431.40025,
+            11252.820833,
+            11786.286708,
+            12468.816958
+          ],
+          "bytes": 4678285
+        },
+        {
+          "tool": "kiota (.NET native)",
+          "error": "not installed"
+        }
+      ]
+    }
+  ],
+  "api": [
+    {
+      "name": "stripe",
+      "rows": [
+        {
+          "tool": "spectype",
+          "first": 59.938083,
+          "median": 43.61087500000002,
+          "min": 42.503916000000004,
+          "samples": [
+            45.13449999999999,
+            43.53287499999999,
+            42.503916000000004,
+            43.77254100000002,
+            43.61087500000002
+          ],
+          "bytes": 3846272,
+          "rss": 147095552
+        },
+        {
+          "tool": "openapi-typescript",
+          "first": 620.3010419999999,
+          "median": 567.9702910000001,
+          "min": 556.7179580000002,
+          "samples": [
+            576.0840000000001,
+            568.9610840000003,
+            559.985917,
+            567.9702910000001,
+            556.7179580000002
+          ],
+          "bytes": 3846272,
+          "rss": 648577024
+        }
+      ]
+    },
+    {
+      "name": "github",
+      "rows": [
+        {
+          "tool": "spectype",
+          "first": 81.20895900000001,
+          "median": 75.20220900000004,
+          "min": 72.14783300000005,
+          "samples": [
+            76.6825,
+            78.046292,
+            75.20220900000004,
+            72.84383400000002,
+            72.14783300000005
+          ],
+          "bytes": 5519162,
+          "rss": 214138880
+        },
+        {
+          "tool": "openapi-typescript",
+          "first": 1047.741375,
+          "median": 970.7284170000003,
+          "min": 945.7554999999998,
+          "samples": [
+            1001.2917500000001,
+            963.2666250000002,
+            945.7554999999998,
+            990.2943329999998,
+            970.7284170000003
+          ],
+          "bytes": 5519162,
+          "rss": 778862592
+        }
+      ]
+    },
+    {
+      "name": "github-json",
+      "rows": [
+        {
+          "tool": "spectype",
+          "first": 69.334333,
+          "median": 59.877999999999986,
+          "min": 59.525125,
+          "samples": [
+            63.83820799999998,
+            62.099500000000006,
+            59.66912500000001,
+            59.525125,
+            59.877999999999986
+          ],
+          "bytes": 5519162,
+          "rss": 219578368
+        },
+        {
+          "tool": "openapi-typescript",
+          "first": 1033.706917,
+          "median": 957.7558329999999,
+          "min": 952.9318750000002,
+          "samples": [
+            957.7558329999999,
+            954.9403750000001,
+            964.963542,
+            952.9318750000002,
+            991.7955419999998
+          ],
+          "bytes": 5519162,
+          "rss": 798179328
+        }
+      ]
+    },
+    {
+      "name": "digital-ocean (multi-file)",
+      "rows": [
+        {
+          "tool": "spectype",
+          "first": 318.376875,
+          "median": 56.51804200000004,
+          "min": 52.59825000000001,
+          "samples": [
+            57.092791999999974,
+            56.16270900000001,
+            56.51804200000004,
+            57.568667000000005,
+            52.59825000000001
+          ],
+          "bytes": 1458016,
+          "rss": 101646336
+        },
+        {
+          "tool": "openapi-typescript",
+          "first": 401.996459,
+          "median": 320.3214579999999,
+          "min": 313.7455,
+          "samples": [
+            357.13204199999996,
+            341.6651670000001,
+            317.85395900000003,
+            313.7455,
+            320.3214579999999
+          ],
+          "bytes": 1458016,
+          "rss": 597819392
+        }
+      ]
+    },
+    {
+      "name": "vercel",
+      "rows": [
+        {
+          "tool": "spectype",
+          "first": 63.462125,
+          "median": 54.704999999999984,
+          "min": 53.53279100000003,
+          "samples": [
+            56.237125000000006,
+            54.704999999999984,
+            57.62975,
+            54.258375,
+            53.53279100000003
+          ],
+          "bytes": 5498657,
+          "rss": 216317952
+        },
+        {
+          "tool": "openapi-typescript",
+          "first": 1045.7450000000001,
+          "median": 970.1682920000003,
+          "min": 931.4102920000005,
+          "samples": [
+            981.8305830000002,
+            961.6365000000001,
+            992.75025,
+            931.4102920000005,
+            970.1682920000003
+          ],
+          "bytes": 5498657,
+          "rss": 713342976
+        }
+      ]
+    },
+    {
+      "name": "cloudflare",
+      "rows": [
+        {
+          "tool": "spectype",
+          "first": 195.22175,
+          "median": 180.09949999999998,
+          "min": 174.09058300000004,
+          "samples": [
+            181.038625,
+            180.09949999999998,
+            185.24350000000004,
+            174.09058300000004,
+            179.585916
+          ],
+          "bytes": 15486465,
+          "rss": 408616960
+        },
+        {
+          "tool": "openapi-typescript",
+          "first": 2873.086416,
+          "median": 2789.1937080000007,
+          "min": 2774.6614579999987,
+          "samples": [
+            2841.375542,
+            2783.711874999999,
+            2789.1937080000007,
+            2803.5470829999995,
+            2774.6614579999987
+          ],
+          "bytes": 15486465,
+          "rss": 1192837120
+        }
+      ]
+    }
+  ]
+}

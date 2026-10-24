@@ -1,0 +1,33 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "test",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/get-item": {
+      "get": {
+        "parameters": [
+          {
+            "name": "param1",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "param1"
+          },
+          {
+            "name": "param1",
+            "in": "cookie",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "param1"
+          }
+        ]
+      }
+    }
+  }
+}

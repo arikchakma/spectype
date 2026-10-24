@@ -1,0 +1,47 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Old": {
+        "type": "object",
+        "deprecated": true,
+        "description": "old thing",
+        "properties": {
+          "a": {
+            "type": "string"
+          }
+        }
+      },
+      "Test": {
+        "type": "object",
+        "properties": {
+          "gone": {
+            "type": "string",
+            "deprecated": true
+          },
+          "alsoGone": {
+            "$ref": "#/components/schemas/Old",
+            "deprecated": true
+          },
+          "kept": {
+            "type": "string",
+            "deprecated": false
+          },
+          "desc": {
+            "type": "string",
+            "deprecated": true,
+            "description": "with desc"
+          }
+        },
+        "required": [
+          "gone"
+        ]
+      }
+    }
+  }
+}

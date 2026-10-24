@@ -1,0 +1,40 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Base": {
+        "type": "object",
+        "discriminator": {
+          "propertyName": "kind"
+        },
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      },
+      "A": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Base"
+          }
+        ]
+      },
+      "U": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/A"
+          }
+        ],
+        "discriminator": {
+          "propertyName": "kind"
+        }
+      }
+    }
+  }
+}

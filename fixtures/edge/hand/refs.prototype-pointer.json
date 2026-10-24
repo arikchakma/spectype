@@ -1,0 +1,56 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Empty": {
+        "type": "object",
+        "properties": {}
+      },
+      "List": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "enum": [
+          [
+            "a"
+          ]
+        ]
+      },
+      "A": {
+        "type": "object",
+        "properties": {
+          "s": {
+            "type": "string",
+            "example": {
+              "$ref": "#/components/schemas/Empty/properties/toString"
+            }
+          },
+          "c": {
+            "type": "string",
+            "example": {
+              "$ref": "#/components/schemas/Empty/properties/constructor"
+            }
+          },
+          "d": {
+            "type": "string",
+            "description": {
+              "$ref": "#/components/schemas/Empty/properties/hasOwnProperty"
+            }
+          },
+          "n": {
+            "type": "string",
+            "example": {
+              "$ref": "#/components/schemas/List/enum/0/length"
+            }
+          }
+        }
+      }
+    }
+  }
+}

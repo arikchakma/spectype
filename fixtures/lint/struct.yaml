@@ -1,0 +1,42 @@
+openapi: 3.0.3
+info:
+  title: 5
+  license: { url: https://x.io }
+servers: { url: https://api.x.io }
+tags:
+  - description: no name
+paths:
+  /pets:
+    summary: [list]
+    get:
+      summary: s
+      deprecated: "yes"
+      tags: [pets, 7]
+      parameters:
+        - name: limit
+          in: body
+          style: weird
+        - in: query
+          schema: { type: string }
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: obj
+                nullable: true
+                minLength: -1
+                exclusiveMinimum: 1
+                unknownKeyword: 1
+                x-ok: 1
+                xml: [a]
+      x-custom: { anything: true }
+  bad-key: {}
+components:
+  schemas:
+    N: { nullable: false }
+    L: { type: array, items: [{ type: string }] }
+  securitySchemes:
+    key: { type: apiKey, name: k, in: body, scheme: basic }
+    oauth: { type: oauth2, flows: { implicit: { scopes: {} }, password: { tokenUrl: t } } }
+    none: { description: missing type }

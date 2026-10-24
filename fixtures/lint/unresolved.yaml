@@ -1,0 +1,19 @@
+openapi: 3.0.0
+info: { title: t, version: "1", license: { name: MIT, url: https://x } }
+servers: [{ url: https://api.x.io }]
+paths:
+  /a:
+    get:
+      summary: s
+      operationId: a
+      responses:
+        "200": { $ref: "#/components/responses/Missing" }
+        "404": { description: no, content: { application/json: { schema: { $ref: "#/components/schemas/Pet/properties/nope" } } } }
+components:
+  schemas:
+    Pet:
+      oneOf: [{ $ref: "#/components/schemas/Cat" }]
+      discriminator:
+        propertyName: kind
+        mapping: { cat: "#/components/schemas/Cat", dog: "#/components/schemas/Dog" }
+    Cat: { type: object, properties: { kind: { type: string } } }

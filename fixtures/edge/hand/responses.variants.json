@@ -1,0 +1,170 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/r": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "with headers */",
+            "headers": {
+              "X-Rate-Limit": {
+                "description": "limit",
+                "required": true,
+                "schema": {
+                  "type": "integer"
+                }
+              },
+              "X-Optional": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Ref": {
+                "$ref": "#/components/headers/Shared"
+              },
+              "X-Deprecated": {
+                "deprecated": true,
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Content": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "201": {
+            "$ref": "#/components/responses/Created"
+          },
+          "204": {
+            "description": "no content"
+          },
+          "404": {
+            "description": "empty content map",
+            "content": {}
+          },
+          "418": {
+            "description": "no schema",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "2XX": {
+            "description": "range",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/Error"
+          },
+          "default": {
+            "description": "default",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Err"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/only-default": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "only default"
+          }
+        }
+      }
+    },
+    "/no-responses": {
+      "get": {
+        "responses": {}
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Err": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "responses": {
+      "Created": {
+        "description": "created",
+        "headers": {
+          "Location": {
+            "schema": {
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        }
+      },
+      "Error": {
+        "description": "error",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Err"
+            }
+          }
+        }
+      },
+      "Unused": {
+        "description": "unused"
+      }
+    },
+    "headers": {
+      "Shared": {
+        "description": "shared header",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "a",
+            "b"
+          ]
+        }
+      },
+      "Unused": {
+        "schema": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

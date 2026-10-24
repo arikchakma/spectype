@@ -1,0 +1,9 @@
+# Cases where spectype intentionally differs from openapi-typescript 7.13.0. See COMPAT.md.
+
+# Upstream crashes on keys named after Object.prototype methods; spectype generates types.
+edge.keys.prototype-name-crash-hasOwnProperty
+edge.keys.prototype-name-crash-schema-name
+edge.keys.prototype-name-crash-toLocaleString
+edge.keys.prototype-name-crash-valueOf
+# Upstream crashes with a TypeError on a non-object response; spectype tolerates it.
+edge.invalid.wrong-types

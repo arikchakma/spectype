@@ -1,0 +1,62 @@
+{
+  "openapi": "3.1",
+  "info": {
+    "title": "Test",
+    "version": "1.0"
+  },
+  "components": {
+    "schemas": {
+      "Address": {
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "address2": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "zip": {
+            "type": "string"
+          }
+        }
+      },
+      "User": {
+        "required": [
+          "firstName",
+          "lastName",
+          "city",
+          "state"
+        ],
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "firstName": {
+                "type": "string"
+              },
+              "lastName": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "properties": {
+              "middleName": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/Address"
+          }
+        ]
+      }
+    }
+  }
+}

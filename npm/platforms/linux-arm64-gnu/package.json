@@ -1,0 +1,23 @@
+{
+  "name": "@spectype/binding-linux-arm64-gnu",
+  "version": "0.1.0",
+  "description": "The linux-arm64-gnu native addon for spectype",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arikchakma/spectype.git"
+  },
+  "os": [
+    "linux"
+  ],
+  "cpu": [
+    "arm64"
+  ],
+  "libc": [
+    "glibc"
+  ],
+  "main": "spectype.linux-arm64-gnu.node",
+  "files": [
+    "spectype.linux-arm64-gnu.node"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "@spectype/binding-darwin-x64",
+  "version": "0.1.0",
+  "description": "The darwin-x64 native addon for spectype",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arikchakma/spectype.git"
+  },
+  "os": [
+    "darwin"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "main": "spectype.darwin-x64.node",
+  "files": [
+    "spectype.darwin-x64.node"
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Prims": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "Refs": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/Prims"
+          },
+          {
+            "$ref": "#/components/schemas/Obj"
+          }
+        ]
+      },
+      "Obj": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "string"
+          }
+        }
+      },
+      "ObjWithOneOf": {
+        "type": "object",
+        "properties": {
+          "base": {
+            "type": "string"
+          }
+        },
+        "oneOf": [
+          {
+            "properties": {
+              "x": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "properties": {
+              "y": {
+                "type": "string"
+              }
+            }
+          }
+        ]
+      },
+      "AnyOfObj": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "a": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "properties": {
+              "b": {
+                "type": "string"
+              }
+            }
+          }
+        ]
+      },
+      "Single": {
+        "oneOf": [
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "EmptyOneOf": {
+        "oneOf": []
+      },
+      "Dup": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "OneOfArrays": {
+        "oneOf": [
+          {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          }
+        ]
+      },
+      "TypeWithOneOf": {
+        "type": "string",
+        "oneOf": [
+          {
+            "format": "email"
+          },
+          {
+            "format": "uri"
+          }
+        ]
+      },
+      "OneOfAndAnyOf": {
+        "oneOf": [
+          {
+            "type": "string"
+          }
+        ],
+        "anyOf": [
+          {
+            "type": "number"
+          }
+        ]
+      },
+      "Not": {
+        "not": {
+          "type": "string"
+        }
+      },
+      "IfThen": {
+        "if": {
+          "type": "string"
+        },
+        "then": {
+          "minLength": 1
+        },
+        "else": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}

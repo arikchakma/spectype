@@ -1,0 +1,11 @@
+exit 0
+ ⚠  Info object should contain `license` field. at #/info
+ ⚠  `type` can be one of the following only: "object", "array", "string", "number", "integer", "boolean", "null". at #/components/schemas/A/type/1
+ ⚠  Property `nullable` is not expected here. at #/components/schemas/A/nullable
+ ⚠  Expected type `number` but got `boolean`. at #/components/schemas/A/exclusiveMinimum
+ ⚠  Expected type `SchemaList` (array) but got `object` at #/components/schemas/A/prefixItems
+ ⚠  Expected type `Schema` (object) but got `boolean` at #/components/schemas/B
+ ⚠  The field `name` is not allowed here. at #/components/securitySchemes/m/name
+ ⚠  Property `tokenUrl` is not expected here. at #/components/securitySchemes/o/tokenUrl
+ ⚠  Property `authorizationUrl` is not expected here. at #/components/securitySchemes/o/authorizationUrl
+ ⚠  Expected type `OAuth2Flows` (object) but got `string` at #/components/securitySchemes/o/flows

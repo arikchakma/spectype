@@ -1,0 +1,1 @@
+{"openapi":"3.1.0","info":{"title":"esc","version":"1"},"paths":{},"components":{"schemas":{"T\u00e9st":{"type":"string","description":"\u2028 sep \ud83d\ude00 emoji \u0000 nul \/ slash"},"Lone":{"type":"string","description":"lone surrogate \ud800 here","enum":["\ud800","\udfff"]}}}}

@@ -1,0 +1,69 @@
+openapi: 3.1.0
+info:
+  title: yaml edge
+  version: 1.0.0
+paths: {}
+components:
+  schemas:
+    Test:
+      type: object
+      description: |
+        Literal block
+          with indentation
+        and trailing newline
+      properties:
+        folded:
+          type: string
+          description: >
+            Folded block
+            joins lines
+
+            new paragraph
+        date:
+          type: string
+          default: 2020-01-01
+          example: 2020-01-01T10:00:00Z
+        yes:
+          type: boolean
+          default: yes
+        octal:
+          type: integer
+          default: 0o17
+          example: 010
+        hex:
+          type: integer
+          default: 0x1F
+        inf:
+          type: number
+          default: .inf
+          example: -.inf
+        nan:
+          type: number
+          default: .nan
+        tilde:
+          type: string
+          default: ~
+        200:
+          type: string
+        1.5:
+          type: string
+        null:
+          type: string
+        true:
+          type: string
+        "quoted key":
+          type: string
+        'single': {type: string, description: 'it''s'}
+        multi: { type: string, example: "a\nb\tc" }
+      required: [200, null, true]
+    Enum:
+      type: string
+      enum: [yes, no, on, off, null, 1, 1.0, 2020-01-01, ~, "", 'x']
+    Anchored: &anchor
+      type: object
+      properties:
+        a: { type: string }
+    Aliased: *anchor
+    Merged:
+      <<: *anchor
+      description: merged

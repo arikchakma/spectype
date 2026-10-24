@@ -1,0 +1,48 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Status": {
+        "type": "string",
+        "enum": [
+          "active",
+          "in-active",
+          "1"
+        ]
+      },
+      "status-type": {
+        "type": "string",
+        "enum": [
+          "a"
+        ]
+      },
+      "Wrapper": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          },
+          "inline": {
+            "type": "string",
+            "enum": [
+              "p",
+              "q"
+            ]
+          }
+        }
+      },
+      "Nums": {
+        "type": "integer",
+        "enum": [
+          1,
+          2
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+openapi: 3.1.0
+info:
+  title: crlf
+  version: 1.0.0
+paths: {}
+components:
+  schemas:
+    Test:
+      type: object
+      description: |
+        line one
+        line two
+      properties:
+        a:
+          type: string
+          description: >
+            folded
+            text

@@ -1,0 +1,1 @@
+{"openapi":"3.1.0","info":{"title":"fix","version":"1"},"components":{"schemas":{"Sep":{"type":"string","enum":["a.b","a:b","a@b","","+","日本","a\"b"]},"Maybe":{"type":"string","enum":["on","off",null]},"status":{"type":"string","enum":["x"]},"Status":{"type":"string","enum":["y"]}}}}

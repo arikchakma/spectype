@@ -1,0 +1,2 @@
+exit 0
+ ⚠  Servers must be a non-empty array. at #/servers

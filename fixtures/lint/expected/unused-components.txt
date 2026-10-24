@@ -1,0 +1,8 @@
+exit 0
+ ⚠  Component: "Spare" is never used. at #/components/parameters/Spare
+ ⚠  Component: "Unused" is never used. at #/components/schemas/Unused
+ ⚠  Component: "Spare" is never used. at #/components/responses/Spare
+ ⚠  Component: "Spare" is never used. at #/components/examples/Spare
+ ⚠  Component: "Spare" is never used. at #/components/requestBodies/Spare
+ ⚠  Component: "Spare" is never used. at #/components/headers/Spare
+ ⚠  Every operation should have security defined on it or on the root level. at #/paths/~1a/get

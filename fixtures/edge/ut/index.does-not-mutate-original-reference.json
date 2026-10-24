@@ -1,0 +1,38 @@
+{
+  "openapi": "3.1",
+  "info": {
+    "title": "test",
+    "version": "1.0"
+  },
+  "components": {
+    "schemas": {
+      "OKResponse": {
+        "type": "object",
+        "required": [
+          "status",
+          "message"
+        ],
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok",
+            "$ref": "#/components/schemas/OKResponse"
+          }
+        }
+      }
+    }
+  }
+}

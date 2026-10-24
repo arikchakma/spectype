@@ -1,0 +1,139 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/a": {
+      "get": {
+        "operationId": "get#hash",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      },
+      "post": {
+        "operationId": "post/slash",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      },
+      "put": {
+        "operationId": "has spaces here",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      },
+      "patch": {
+        "operationId": "123numeric",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "dash-case-id",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      },
+      "options": {
+        "operationId": "ünïcödé",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      },
+      "head": {
+        "operationId": "",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      },
+      "trace": {
+        "operationId": "constructor",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/b": {
+      "get": {
+        "operationId": "__proto__",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      },
+      "post": {
+        "operationId": "with\"quote",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      },
+      "put": {
+        "operationId": "dots.in.id",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/c": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "no id"
+          }
+        }
+      },
+      "post": {
+        "summary": "Summary */ text",
+        "description": "Desc\r\nCRLF",
+        "deprecated": true,
+        "operationId": "deprecatedOp",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/d": {
+      "summary": "path summary",
+      "description": "path desc",
+      "get": {
+        "summary": "op summary only",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      },
+      "servers": [
+        {
+          "url": "https://x"
+        }
+      ],
+      "x-ext": true
+    }
+  }
+}

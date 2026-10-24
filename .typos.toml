@@ -1,0 +1,17 @@
+[files]
+extend-exclude = [
+  "**/*.snap",
+  "**/snapshots/",
+  "**/node_modules/",
+  "fixtures/",
+  "tests/golden/",
+  "tests/cases.json",
+  "tasks/difftest/failures/",
+  "tasks/fuzz/corpus/",
+  "tasks/fuzz/artifacts/",
+  "tasks/upstream_tests/.ots/",
+  "tasks/benchmark/results.*",
+  "*.lock",
+  "package-lock.json",
+  "npm/spectype/types.d.cts",
+]

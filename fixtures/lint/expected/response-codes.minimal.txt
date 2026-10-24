@@ -1,0 +1,8 @@
+exit 1
+ ⚠  Operation must have at least one `2XX` response. at #/paths/~1a/get/responses
+ ✘  Operation must have at least one `4XX` response. at #/paths/~1a/get/responses
+ ⚠  Operation object should contain `operationId` field. at #/webhooks/hook/post/operationId
+ ⚠  Operation object should contain `summary` field. at #/webhooks/hook/post/summary
+ ⚠  Every operation should have security defined on it or on the root level. at #/paths/~1a/get
+ ⚠  Every operation should have security defined on it or on the root level. at #/paths/~1a/post
+ ⚠  Every operation should have security defined on it or on the root level. at #/webhooks/hook/post

@@ -1,0 +1,12 @@
+{
+  "name": "spectype-reference",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "gen": "node gen.mjs"
+  },
+  "dependencies": {
+    "openapi-typescript": "7.13.0",
+    "typescript": "6.0.3"
+  }
+}

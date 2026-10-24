@@ -1,0 +1,136 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/x": {
+      "get": {
+        "responses": {
+          "100": {
+            "description": "code 100",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "const": "100"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "code 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "const": "200"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "code 201",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "const": "201"
+                }
+              }
+            }
+          },
+          "302": {
+            "description": "code 302",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "const": "302"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "code 404",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "const": "404"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "code default",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "const": "default"
+                }
+              }
+            }
+          },
+          "2XX": {
+            "description": "code 2XX",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "const": "2XX"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "code 5XX",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "const": "5XX"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "code 4XX",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "const": "4XX"
+                }
+              }
+            }
+          },
+          "1XX": {
+            "description": "code 1XX",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "const": "1XX"
+                }
+              }
+            }
+          },
+          "3XX": {
+            "description": "code 3XX",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "const": "3XX"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

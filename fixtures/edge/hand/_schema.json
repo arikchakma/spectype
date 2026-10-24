@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "title": "Whole file schema",
+  "properties": {
+    "w": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+openapi: 3.0.0
+info: { title: t, version: "1", license: { name: MIT, url: https://x } }
+servers: [{ url: https://api.x.io }]
+paths:
+  /a:
+    get:
+      summary: s
+      operationId: a
+      responses:
+        "200":
+          description: ok
+          content:
+            application/json:
+              schema: { $ref: "./multi-file/pet.yaml#/Pet" }
+              example: { id: x }
+        "404": { $ref: "./multi-file/pet.yaml#/NotFound" }
+components:
+  schemas:
+    version: { type: string }
+    Other: { $ref: "./multi-file/pet.yaml#/version" }

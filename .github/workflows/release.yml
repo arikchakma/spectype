@@ -1,0 +1,131 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - { target: aarch64-apple-darwin, os: macos-latest, pgo: true }
+          - { target: x86_64-apple-darwin, os: macos-latest }
+          - { target: x86_64-unknown-linux-gnu, os: ubuntu-latest, zig: true, pgo: true }
+          - { target: aarch64-unknown-linux-gnu, os: ubuntu-latest, zig: true }
+          - { target: x86_64-unknown-linux-musl, os: ubuntu-latest, zig: true, pgo: true }
+          - { target: aarch64-unknown-linux-musl, os: ubuntu-latest, zig: true }
+          - { target: x86_64-pc-windows-msvc, os: windows-latest, exe: .exe, pgo: true }
+          - { target: aarch64-pc-windows-msvc, os: windows-latest, exe: .exe }
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - run: |
+          rustup toolchain install
+          rustup target add ${{ matrix.target }}
+      - uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2.9.3
+        with:
+          key: ${{ matrix.target }}
+      - if: matrix.zig
+        uses: mlugg/setup-zig@d1434d08867e3ee9daa34448df10607b98908d29 # v2.2.1
+      - if: matrix.zig
+        uses: taiki-e/install-action@a4d3f3f761dcd95cce1b72cb61cb6d1963438177 # v2.87.30
+        with:
+          tool: cargo-zigbuild
+      - name: Build
+        shell: bash
+        # Pin glibc 2.17 so the gnu binaries run on old distros, not just the runner's glibc.
+        run: |
+          build() {
+            if [ -n "${{ matrix.zig }}" ]; then
+              suffix=""
+              case "${{ matrix.target }}" in *-gnu) suffix=".2.17" ;; esac
+              cargo zigbuild --release -p spectype --target "${{ matrix.target }}$suffix" "$@"
+            else
+              cargo build --release -p spectype --target ${{ matrix.target }} "$@"
+            fi
+          }
+          if [ -n "${{ matrix.pgo }}" ]; then
+            rustup component add llvm-tools
+            RUSTFLAGS="-Cprofile-generate=$GITHUB_WORKSPACE/target/pgo-raw" build --target-dir target/pgo
+            for f in fixtures/ots/examples/*.yaml fixtures/ots/examples/*.json fixtures/ots/examples/digital-ocean-api/DigitalOcean-public.v2.yaml; do
+              "target/pgo/${{ matrix.target }}/release/spectype${{ matrix.exe }}" "$f" > /dev/null
+            done
+            sysroot="$(rustc --print sysroot | tr '\\' /)"
+            host="$(rustc -vV | sed -n 's/^host: //p')"
+            "$sysroot/lib/rustlib/$host/bin/llvm-profdata" merge -o target/pgo.profdata target/pgo-raw
+            echo "PGO_RUSTFLAGS=-Cprofile-use=$GITHUB_WORKSPACE/target/pgo.profdata" >> "$GITHUB_ENV"
+            export RUSTFLAGS="-Cprofile-use=$GITHUB_WORKSPACE/target/pgo.profdata"
+          fi
+          build
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: npm/package-lock.json
+      - name: Build the native addon
+        shell: bash
+        env:
+          # A musl addon is loaded by Node, so it links musl's libc dynamically.
+          RUSTFLAGS: ${{ contains(matrix.target, 'musl') && '-C target-feature=-crt-static' || '' }} ${{ env.PGO_RUSTFLAGS }}
+        run: |
+          npm ci --prefix npm
+          cross=""
+          case "${{ matrix.target }}" in *-linux-gnu) cross="--use-napi-cross" ;; *-linux-musl) cross="-x" ;; esac
+          npm run build --prefix npm -- --target "${{ matrix.target }}" $cross
+      - name: Collect artifacts
+        shell: bash
+        run: |
+          mkdir dist
+          cp "target/${{ matrix.target }}/release/spectype${{ matrix.exe }}" "dist/spectype-${{ matrix.target }}${{ matrix.exe }}"
+          cp npm/spectype/spectype.*.node dist/
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: build-${{ matrix.target }}
+          path: dist/*
+          if-no-files-found: error
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          pattern: build-*
+          path: dist
+          merge-multiple: true
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+      - name: Build the WebAssembly fallback
+        run: |
+          rustup toolchain install
+          rustup target add wasm32-wasip1
+          npm ci --prefix npm
+          npm run build:wasm --prefix npm
+          cp npm/platforms/wasm32-wasip1/spectype.wasm32-wasip1.wasm dist/
+      - name: Stage npm packages
+        run: |
+          node npm/scripts/stage.mjs "${GITHUB_REF_NAME#v}" dist
+          node npm/scripts/check.mjs
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          for dir in npm/platforms/*/; do
+            npm publish "$dir" --provenance --access public
+          done
+          npm publish npm/spectype --provenance --access public
+      - uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65 # v2.6.2
+        with:
+          files: dist/spectype-*
+          generate_release_notes: true

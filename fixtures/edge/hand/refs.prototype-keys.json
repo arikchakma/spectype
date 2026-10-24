@@ -1,0 +1,45 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Target": {
+        "type": "string"
+      },
+      "Props": {
+        "type": "object",
+        "properties": {
+          "constructor": {
+            "$ref": "#/components/schemas/Target"
+          },
+          "toString": {
+            "$ref": "#/components/schemas/Target"
+          },
+          "normal": {
+            "$ref": "#/components/schemas/Target"
+          }
+        }
+      },
+      "Defs": {
+        "type": "object",
+        "$defs": {
+          "toString": {
+            "$ref": "#/components/schemas/Target"
+          }
+        },
+        "properties": {
+          "d": {
+            "$ref": "#/components/schemas/Defs/$defs/toString"
+          }
+        }
+      },
+      "constructor": {
+        "$ref": "#/components/schemas/Target"
+      }
+    }
+  }
+}

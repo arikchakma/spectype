@@ -1,0 +1,25 @@
+[package]
+name = "spectype_document"
+description = "JSON/YAML parsing and the JavaScript-semantics document model behind spectype"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[dependencies]
+hashbrown.workspace = true
+rustc-hash.workspace = true
+ryu-js.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+yaml-rust2.workspace = true
+
+[dev-dependencies]
+serde_json.workspace = true
+
+[lints]
+workspace = true

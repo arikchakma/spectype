@@ -1,0 +1,33 @@
+{
+  "openapi": "3.1",
+  "info": {
+    "title": "test",
+    "version": "1.0"
+  },
+  "components": {
+    "schemas": {
+      "Cat": {
+        "allOf": [
+          {
+            "type": "object",
+            "required": [
+              "name",
+              "petType"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "petType": {
+                "type": "string"
+              }
+            },
+            "discriminator": {
+              "propertyName": "petType"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

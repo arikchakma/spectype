@@ -1,0 +1,31 @@
+openapi: 3.0.0
+info: { title: t, version: "1", license: { name: MIT, url: https://x } }
+servers: [{ url: https://api.x.io }]
+paths:
+  /a:
+    get:
+      summary: s
+      operationId: a
+      parameters: [{ $ref: "#/components/parameters/Used" }]
+      responses:
+        "200": { $ref: "#/components/responses/Ok" }
+        "404": { description: no }
+components:
+  schemas:
+    Used: { type: string }
+    Unused: { type: string }
+    Composed: { allOf: [{ $ref: "#/components/schemas/Used" }] }
+    Alias: { $ref: "#/components/schemas/Unused2" }
+    Unused2: { type: integer }
+  parameters:
+    Used: { name: q, in: query, schema: { $ref: "#/components/schemas/Used" } }
+    Spare: { name: r, in: query, schema: { type: string } }
+  responses:
+    Ok: { description: ok }
+    Spare: { description: spare }
+  examples:
+    Spare: { value: 1 }
+  requestBodies:
+    Spare: { content: { application/json: { schema: { type: string } } } }
+  headers:
+    Spare: { schema: { type: string } }

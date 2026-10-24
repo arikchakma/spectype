@@ -1,0 +1,23 @@
+{
+  "name": "spectype-benchmark",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "bench": "node run.mjs"
+  },
+  "devDependencies": {
+    "@hey-api/openapi-ts": "0.99.0",
+    "@kubb/adapter-oas": "5.12.4",
+    "@kubb/cli": "5.12.4",
+    "@kubb/core": "5.12.4",
+    "@kubb/plugin-ts": "5.0.14",
+    "kubb": "5.12.4",
+    "oazapfts": "7.5.0",
+    "openapi-typescript": "7.13.0",
+    "openapi-typescript-codegen": "0.31.0",
+    "orval": "8.44.0",
+    "swagger-typescript-api": "13.13.0",
+    "typed-openapi": "4.1.0",
+    "typescript": "6.0.3"
+  }
+}

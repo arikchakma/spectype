@@ -1,0 +1,13 @@
+exit 0
+ ⚠  Operation `operationId` should not have URL invalid characters. at #/paths/~1a/get/operationId
+ ⚠  Every operation must have a unique `operationId`. at #/paths/~1a/put/list pets
+ ⚠  Operation `operationId` should not have URL invalid characters. at #/paths/~1a/put/operationId
+ ⚠  Operation object `operationId` must be non-empty string. at #/paths/~1a/post/operationId
+ ⚠  Operation object `summary` must be non-empty string. at #/paths/~1a/post/summary
+ ⚠  Operation object should contain `operationId` field. at #/paths/~1a/delete/operationId
+ ⚠  Operation object should contain `summary` field. at #/paths/~1a/delete/summary
+ ⚠  Every operation should have security defined on it or on the root level. at #/paths/~1a/get
+ ⚠  Every operation should have security defined on it or on the root level. at #/paths/~1a/put
+ ⚠  Every operation should have security defined on it or on the root level. at #/paths/~1a/post
+ ⚠  Every operation should have security defined on it or on the root level. at #/paths/~1a/delete
+ ⚠  Every operation should have security defined on it or on the root level. at #/paths/~1a/patch

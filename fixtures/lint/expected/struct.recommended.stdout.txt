@@ -1,0 +1,27 @@
+exit 1
+ ✘  Servers must be a non-empty array. at #/servers
+ ✘  The field `version` must be present on this level. at #/info
+ ✘  Expected type `string` but got `integer`. at #/info/title
+ ✘  The field `name` must be present on this level. at #/info/license
+ ✘  Expected type `ServerList` (array) but got `object` at #/servers
+ ✘  The field `name` must be present on this level. at #/tags/0
+ ✘  Property `bad-key` is not expected here. at #/paths/bad-key
+ ✘  Expected type `string` but got `array`. at #/paths/~1pets/summary
+ ✘  Expected type `boolean` but got `string`. at #/paths/~1pets/get/deprecated
+ ✘  Expected type `string` but got `integer`. at #/paths/~1pets/get/tags/1
+ ✘  Must contain at least one of the following fields: schema, content. at #/paths/~1pets/get/parameters/0
+ ✘  `in` can be one of the following only: "query", "header", "path", "cookie". at #/paths/~1pets/get/parameters/0/in
+ ✘  `style` can be one of the following only: "form", "simple", "label", "matrix", "spaceDelimited", "pipeDelimited", "deepObject". at #/paths/~1pets/get/parameters/0/style
+ ✘  The field `name` must be present on this level. at #/paths/~1pets/get/parameters/1
+ ✘  The field `description` must be present on this level. at #/paths/~1pets/get/responses/200
+ ✘  `type` can be one of the following only: "object", "array", "string", "number", "integer", "boolean". at #/paths/~1pets/get/responses/200/content/application~1json/schema/type
+ ✘  The value of the minLength field must be greater than or equal to 0 at #/paths/~1pets/get/responses/200/content/application~1json/schema/minLength
+ ✘  Expected type `boolean` but got `integer`. at #/paths/~1pets/get/responses/200/content/application~1json/schema/exclusiveMinimum
+ ✘  Property `unknownKeyword` is not expected here. at #/paths/~1pets/get/responses/200/content/application~1json/schema/unknownKeyword
+ ✘  Expected type `Xml` (object) but got `array` at #/paths/~1pets/get/responses/200/content/application~1json/schema/xml
+ ✘  The `type` field must be defined when the `nullable` field is used. at #/components/schemas/N/nullable
+ ✘  The field `scheme` is not allowed here. at #/components/securitySchemes/key/scheme
+ ✘  `in` can be one of the following only: "query", "header", "cookie". at #/components/securitySchemes/key/in
+ ✘  The field `authorizationUrl` must be present on this level. at #/components/securitySchemes/oauth/flows/implicit
+ ✘  The field `scopes` must be present on this level. at #/components/securitySchemes/oauth/flows/password
+ ✘  The field `type` must be present on this level. at #/components/securitySchemes/none

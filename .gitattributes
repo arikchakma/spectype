@@ -1,0 +1,9 @@
+tests/golden/** linguist-generated
+fixtures/** linguist-vendored
+apps/spectype/tests/snapshots/** linguist-generated
+tasks/allocs/allocs.snap linguist-generated
+tasks/coverage/*.snap linguist-generated
+tasks/benchmark/results.* linguist-generated
+npm/spectype/binding.cjs linguist-generated
+npm/spectype/binding.d.cts linguist-generated
+npm/platforms/wasm32-wasip1/spectype.wasip1.cjs linguist-generated

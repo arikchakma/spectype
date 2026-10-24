@@ -1,0 +1,113 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - run: rustup toolchain install
+      - uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2.9.3
+      - run: cargo fmt --all --check
+      - run: cargo lint
+      - run: cargo test --workspace
+      - name: Pass-rate snapshot is up to date
+        run: git diff --exit-code tasks/coverage
+      - run: cargo doc --workspace --no-deps --document-private-items
+        env:
+          RUSTDOCFLAGS: -D warnings
+      - name: Allocation snapshot is up to date
+        run: |
+          cargo allocs
+          git diff --exit-code tasks/allocs/allocs.snap
+
+  msrv:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - name: Install the MSRV from Cargo.toml
+        run: |
+          msrv=$(grep -m1 '^rust-version' Cargo.toml | cut -d'"' -f2)
+          echo "MSRV=$msrv" >> "$GITHUB_ENV"
+          rustup toolchain install "$msrv" --profile minimal
+      - uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2.9.3
+      - run: cargo +"$MSRV" check --workspace --all-targets --all-features --locked
+
+  typos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: crate-ci/typos@7f9d0819ca1c008ade73f4b41fa9d258d48f605b # v1.51.1
+
+  deny:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: EmbarkStudios/cargo-deny-action@3c6349835b2b7b196a839186cb8b78e02f7b5f25 # v2.1.1
+
+  shear:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - run: rustup toolchain install
+      - uses: taiki-e/install-action@a4d3f3f761dcd95cce1b72cb61cb6d1963438177 # v2.87.30
+        with:
+          tool: cargo-shear
+      - run: cargo shear
+
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - run: |
+          rustup toolchain install
+          rustup target add wasm32-wasip1
+      - uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2.9.3
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            tests/typecheck/package-lock.json
+            npm/package-lock.json
+            tasks/upstream_tests/package-lock.json
+      - run: cargo build --release
+      - run: |
+          npm ci --prefix npm
+          npm run build --prefix npm
+          npm run build:wasm --prefix npm
+      - name: Type-check generated output
+        working-directory: tests/typecheck
+        run: |
+          npm ci
+          node run.mjs
+      - name: npm package
+        run: |
+          node npm/scripts/check.mjs
+          git diff --exit-code npm/spectype/binding.cjs npm/spectype/binding.d.cts npm/platforms/wasm32-wasip1
+          node --test npm/spectype/test.mjs
+          node npm/spectype/bin/spectype.js --version
+      - name: npm package, WebAssembly fallback
+        env:
+          NAPI_RS_NATIVE_LIBRARY_PATH: ${{ github.workspace }}/npm/platforms/wasm32-wasip1/spectype.wasip1.cjs
+        run: |
+          node --test npm/spectype/test.mjs
+          node npm/spectype/bin/spectype.js --version
+      - name: openapi-typescript's own tests
+        run: |
+          npm ci --prefix tasks/upstream_tests
+          node tasks/upstream_tests/run.mjs

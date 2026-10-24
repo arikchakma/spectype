@@ -1,0 +1,4 @@
+exit 1
+ ✘  There is no `missing` security scheme defined. at #/paths/~1a/get/security/0/missing
+ ✘  There is no `missing` security scheme defined. at #/paths/~1a/put/security/0/missing
+ ✘  Every operation should have security defined on it or on the root level. at #/paths/~1a/post

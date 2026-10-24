@@ -1,0 +1,41 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "items": {
+      "$ref": "#/components/schemas/Missing"
+    },
+    "schemas": {
+      "A": {
+        "type": "object",
+        "unknownKeyword": {
+          "$ref": "#/nope"
+        },
+        "prefixItems": [
+          {
+            "$ref": "#/nope"
+          }
+        ],
+        "$defs": {
+          "d": {
+            "$ref": "#/nope"
+          }
+        },
+        "patternProperties": {
+          "^x": {
+            "$ref": "#/nope"
+          }
+        },
+        "properties": {
+          "a": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

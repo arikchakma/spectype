@@ -1,0 +1,22 @@
+[package]
+name = "spectype_codegen"
+description = "OpenAPI to TypeScript transforms and printer, output-compatible with openapi-typescript"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[dependencies]
+icu_collator.workspace = true
+regex.workspace = true
+rustc-hash.workspace = true
+spectype_document.workspace = true
+spectype_redocly.workspace = true
+thiserror.workspace = true
+
+[lints]
+workspace = true

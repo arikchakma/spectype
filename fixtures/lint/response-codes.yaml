@@ -1,0 +1,21 @@
+openapi: 3.1.0
+info: { title: t, version: "1", license: { name: MIT, identifier: MIT } }
+servers: [{ url: https://api.x.io }]
+paths:
+  /a:
+    get:
+      summary: only errors
+      operationId: a
+      responses:
+        "500": { description: e }
+    post:
+      summary: default counts as 2XX
+      operationId: b
+      responses:
+        default: { description: d }
+        4xx: { description: e }
+webhooks:
+  hook:
+    post:
+      responses:
+        "500": { description: e }

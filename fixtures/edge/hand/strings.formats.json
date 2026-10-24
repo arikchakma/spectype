@@ -1,0 +1,135 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/upload": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "files": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                }
+              }
+            },
+            "application/octet-stream": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ok",
+            "content": {
+              "application/pdf": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Test": {
+        "type": "object",
+        "properties": {
+          "binary": {
+            "type": "string",
+            "format": "binary"
+          },
+          "byte": {
+            "type": "string",
+            "format": "byte"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "date-time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "time": {
+            "type": "string",
+            "format": "time"
+          },
+          "duration": {
+            "type": "string",
+            "format": "duration"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "uri": {
+            "type": "string",
+            "format": "uri"
+          },
+          "uuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "ipv4": {
+            "type": "string",
+            "format": "ipv4"
+          },
+          "int32": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "int64": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "float": {
+            "type": "number",
+            "format": "float"
+          },
+          "double": {
+            "type": "number",
+            "format": "double"
+          },
+          "password": {
+            "type": "string",
+            "format": "password"
+          },
+          "regex": {
+            "type": "string",
+            "format": "regex"
+          },
+          "unknown-format": {
+            "type": "string",
+            "format": "unknown-format"
+          }
+        }
+      },
+      "File": {
+        "type": "string",
+        "format": "binary"
+      }
+    }
+  }
+}

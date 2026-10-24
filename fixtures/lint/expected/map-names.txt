@@ -1,0 +1,11 @@
+exit 0
+ ⚠  The map key in parameters "a/b" does not match the regular expression "^[a-zA-Z0-9\.\-_]+$" at #/components/parameters/a~1b
+ ⚠  The map key in schemas "bad name" does not match the regular expression "^[a-zA-Z0-9\.\-_]+$" at #/components/schemas/bad name
+ ⚠  The map key in schemas "ünï" does not match the regular expression "^[a-zA-Z0-9\.\-_]+$" at #/components/schemas/ünï
+ ⚠  The map key in responses "$x" does not match the regular expression "^[a-zA-Z0-9\.\-_]+$" at #/components/responses/$x
+ ⚠  The map key in securitySchemes "with space" does not match the regular expression "^[a-zA-Z0-9\.\-_]+$" at #/components/securitySchemes/with space
+ ⚠  Component: "a/b" is never used. at #/components/parameters/a~1b
+ ⚠  Component: "Good.Name-1_x" is never used. at #/components/schemas/Good.Name-1_x
+ ⚠  Component: "bad name" is never used. at #/components/schemas/bad name
+ ⚠  Component: "ünï" is never used. at #/components/schemas/ünï
+ ⚠  Component: "$x" is never used. at #/components/responses/$x

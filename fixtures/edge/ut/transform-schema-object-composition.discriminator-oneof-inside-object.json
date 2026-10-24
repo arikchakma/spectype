@@ -1,0 +1,62 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "test",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Pet": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/Cat"
+          },
+          {
+            "$ref": "#/components/schemas/Dog"
+          }
+        ],
+        "discriminator": {
+          "propertyName": "petType"
+        }
+      },
+      "Cat": {
+        "type": "object",
+        "properties": {
+          "petType": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "petType"
+        ],
+        "discriminator": {
+          "propertyName": "petType"
+        }
+      },
+      "Dog": {
+        "type": "object",
+        "properties": {
+          "petType": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "petType"
+        ],
+        "discriminator": {
+          "propertyName": "petType"
+        }
+      }
+    }
+  }
+}

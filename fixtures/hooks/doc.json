@@ -1,0 +1,52 @@
+{
+  "openapi": "3.1.0",
+  "info": { "title": "hooks", "version": "1" },
+  "paths": {
+    "/events": {
+      "get": {
+        "parameters": [{ "name": "since", "in": "query", "schema": { "type": "string", "format": "date-time" } }],
+        "responses": {
+          "200": {
+            "description": "ok",
+            "content": { "application/json": { "schema": { "type": "array", "items": { "type": "string", "format": "date" } } } }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Event": {
+        "type": "object",
+        "required": ["id", "at"],
+        "properties": {
+          "id": { "type": "string", "description": "Identifier" },
+          "at": { "type": "string", "format": "date-time", "description": "When" },
+          "maybe": { "type": "string", "format": "date" },
+          "ref": { "$ref": "#/components/schemas/Stamp" },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "integer" },
+              "inner": {
+                "type": "object",
+                "properties": {
+                  "payload": { "type": "string", "format": "json", "description": "Raw\npayload" },
+                  "tags": { "type": "array", "items": { "type": "string", "format": "date" } }
+                }
+              }
+            }
+          }
+        },
+        "$defs": {
+          "id": { "type": "string", "title": "Def id" }
+        }
+      },
+      "Stamp": { "type": "string", "format": "date-time" },
+      "Wrapped": { "type": "object", "properties": { "x": { "type": "number" } } }
+    },
+    "responses": {
+      "Empty": { "description": "empty" }
+    }
+  }
+}

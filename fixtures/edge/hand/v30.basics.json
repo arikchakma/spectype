@@ -1,0 +1,78 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Pet": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tag": {
+            "type": "string",
+            "nullable": true
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "dog",
+              "cat"
+            ]
+          },
+          "owner": {
+            "$ref": "#/components/schemas/Owner"
+          },
+          "toys": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Toy"
+            }
+          },
+          "extra": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      },
+      "Owner": {
+        "type": "object",
+        "nullable": true,
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "Toy": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "n": {
+                "type": "integer"
+              }
+            }
+          }
+        ],
+        "nullable": true
+      },
+      "Exclusive": {
+        "type": "number",
+        "minimum": 0,
+        "exclusiveMinimum": true
+      }
+    }
+  }
+}

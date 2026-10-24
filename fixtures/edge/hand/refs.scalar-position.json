@@ -1,0 +1,71 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/a": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "v": {
+                      "type": "string",
+                      "example": {
+                        "$ref": "#/components/examples/Sample/value"
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "$ref": "#/components/schemas/Flag"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "examples": {
+      "Sample": {
+        "value": {
+          "id": 1,
+          "name": "x"
+        }
+      }
+    },
+    "schemas": {
+      "Flag": {
+        "type": "boolean",
+        "default": false,
+        "items": false
+      },
+      "Described": {
+        "type": "string",
+        "description": {
+          "$ref": "#/components/schemas/Flag/items"
+        }
+      },
+      "ObjectDescription": {
+        "type": "string",
+        "description": {
+          "$ref": "#/components/schemas/Flag"
+        }
+      },
+      "WithExample": {
+        "type": "integer",
+        "example": {
+          "$ref": "#/components/examples/Sample/value"
+        }
+      }
+    }
+  }
+}

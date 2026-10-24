@@ -1,0 +1,71 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "9": {
+        "type": "string"
+      },
+      "10": {
+        "type": "string"
+      },
+      "zeta": {
+        "type": "string"
+      },
+      "Alpha": {
+        "type": "string"
+      },
+      "alpha": {
+        "type": "string"
+      },
+      "beta": {
+        "type": "object",
+        "properties": {
+          "9": {
+            "type": "string"
+          },
+          "10": {
+            "type": "string"
+          },
+          "Zz": {
+            "type": "string"
+          },
+          "aa": {
+            "type": "string"
+          },
+          "B": {
+            "type": "string"
+          },
+          "é": {
+            "type": "string"
+          },
+          "e": {
+            "type": "string"
+          },
+          "_x": {
+            "type": "string"
+          },
+          "Ä": {
+            "type": "string"
+          },
+          "z": {
+            "type": "string"
+          }
+        }
+      },
+      "_": {
+        "type": "string"
+      },
+      "Émile": {
+        "type": "string"
+      },
+      "emile": {
+        "type": "string"
+      }
+    }
+  }
+}

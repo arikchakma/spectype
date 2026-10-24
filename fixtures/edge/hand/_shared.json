@@ -1,0 +1,31 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Shared": {
+        "type": "object",
+        "description": "from another file",
+        "properties": {
+          "x": {
+            "type": "string"
+          },
+          "nested": {
+            "$ref": "#/components/schemas/Nested"
+          }
+        }
+      },
+      "Nested": {
+        "type": "integer",
+        "enum": [
+          1,
+          2
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Test": {
+        "type": "object",
+        "properties": {
+          "obj": {
+            "type": "object",
+            "example": {
+              "a": 1,
+              "b": [
+                1,
+                2,
+                {
+                  "c": null
+                }
+              ],
+              "d": "s",
+              "e": {
+                "nested": {
+                  "deep": true
+                }
+              }
+            }
+          },
+          "arr": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "a",
+              "b"
+            ],
+            "default": []
+          },
+          "num": {
+            "type": "number",
+            "default": 0.1,
+            "example": 1.5
+          },
+          "big": {
+            "type": "integer",
+            "default": 1e+21,
+            "example": 123456789012
+          },
+          "neg": {
+            "type": "number",
+            "default": -1.25
+          },
+          "str": {
+            "type": "string",
+            "default": "",
+            "example": "multi\nline */ example"
+          },
+          "bool": {
+            "type": "boolean",
+            "default": false,
+            "example": true
+          },
+          "nul": {
+            "type": "string",
+            "nullable": true,
+            "default": null
+          },
+          "emptyObj": {
+            "type": "object",
+            "default": {},
+            "example": {}
+          },
+          "examples": {
+            "type": "string",
+            "examples": [
+              "one",
+              "two",
+              "three */"
+            ]
+          },
+          "examplesObj": {
+            "type": "object",
+            "examples": [
+              {
+                "a": 1
+              },
+              {
+                "b": [
+                  2
+                ]
+              }
+            ]
+          },
+          "both": {
+            "type": "string",
+            "example": "single",
+            "examples": [
+              "arr1",
+              "arr2"
+            ]
+          },
+          "quotes": {
+            "type": "string",
+            "default": "has \"double\" and 'single'",
+            "example": "back\\slash"
+          },
+          "unicodeDefault": {
+            "type": "string",
+            "default": "😀 "
+          },
+          "ex2": {
+            "type": "string",
+            "x-example": "vendor example"
+          }
+        }
+      }
+    }
+  }
+}

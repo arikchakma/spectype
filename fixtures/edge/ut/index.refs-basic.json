@@ -1,0 +1,48 @@
+{
+  "openapi": "3.1",
+  "info": {
+    "title": "Test",
+    "version": "1.0"
+  },
+  "components": {
+    "schemas": {
+      "StringType": {
+        "type": "string"
+      },
+      "ObjRef": {
+        "type": "object",
+        "properties": {
+          "base": {
+            "$ref": "#/components/schemas/StringType"
+          }
+        }
+      },
+      "HasString": {
+        "type": "object",
+        "properties": {
+          "string": {
+            "type": "string"
+          }
+        }
+      },
+      "HasNumber": {
+        "type": "object",
+        "properties": {
+          "number": {
+            "type": "number"
+          }
+        }
+      },
+      "AllOf": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/HasString"
+          },
+          {
+            "$ref": "#/components/schemas/HasNumber"
+          }
+        ]
+      }
+    }
+  }
+}

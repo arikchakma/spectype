@@ -1,0 +1,5 @@
+exit 1
+ ✘  Can't resolve $ref at #/paths/~1a/get/responses/200
+ ✘  Can't resolve $ref at #/paths/~1a/get/responses/404/content/application~1json/schema
+ ✘  Can't resolve $ref at #/components/schemas/Pet/discriminator/mapping/dog
+ ✘  Every operation should have security defined on it or on the root level. at #/paths/~1a/get

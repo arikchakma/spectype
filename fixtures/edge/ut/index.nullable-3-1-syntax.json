@@ -1,0 +1,38 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Test",
+    "version": "0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "obj1": {
+        "title": "Nullable object",
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      },
+      "obj2": {
+        "title": "Nullable empty object",
+        "type": [
+          "object",
+          "null"
+        ]
+      },
+      "str": {
+        "title": "Nullable string",
+        "type": [
+          "string",
+          "null"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@spectype/binding-linux-x64-musl",
+  "version": "0.1.0",
+  "description": "The linux-x64-musl native addon for spectype",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arikchakma/spectype.git"
+  },
+  "os": [
+    "linux"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "libc": [
+    "musl"
+  ],
+  "main": "spectype.linux-x64-musl.node",
+  "files": [
+    "spectype.linux-x64-musl.node"
+  ]
+}

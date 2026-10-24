@@ -1,0 +1,1 @@
+{"openapi":"3.1.0","info":{"title":"fix","version":"1"},"components":{"schemas":{"Range":{"type":"array","minItems":2,"maxItems":4,"items":{"type":"string"}},"Exact":{"type":"array","minItems":2,"maxItems":2,"items":{"type":"number"}}}}}

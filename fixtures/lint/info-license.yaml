@@ -1,0 +1,4 @@
+openapi: 3.0.0
+info: { title: t, version: "1" }
+servers: [{ url: https://api.x.io }]
+paths: {}

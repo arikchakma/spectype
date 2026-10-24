@@ -1,0 +1,39 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "test",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "schema-object": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/parent"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "discriminator": {
+          "propertyName": "operation"
+        }
+      },
+      "parent": {
+        "type": "object",
+        "properties": {
+          "operation": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "operation"
+        ],
+        "discriminator": {
+          "propertyName": "operation"
+        }
+      }
+    }
+  }
+}

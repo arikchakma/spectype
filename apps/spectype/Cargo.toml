@@ -1,0 +1,32 @@
+[package]
+name = "spectype"
+description = "Generate TypeScript types from OpenAPI 3.x, a drop-in for openapi-typescript"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[[bin]]
+name = "spectype"
+path = "src/main.rs"
+
+[dependencies]
+spectype_core.workspace = true
+url.workspace = true
+
+[target.'cfg(not(target_family = "wasm"))'.dependencies]
+mimalloc.workspace = true
+ureq.workspace = true
+
+[dev-dependencies]
+insta.workspace = true
+serde = { workspace = true, features = ["derive"] }
+serde_json.workspace = true
+similar.workspace = true
+
+[lints]
+workspace = true

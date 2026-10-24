@@ -1,0 +1,150 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "True": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "Empty": {
+        "type": "object",
+        "additionalProperties": {}
+      },
+      "False": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "Schema": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "integer"
+        }
+      },
+      "Ref": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/Schema"
+        }
+      },
+      "WithProps": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": {
+          "type": "number"
+        }
+      },
+      "WithPropsTrue": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "WithPropsFalse": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "NoType": {
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "Pattern": {
+        "type": "object",
+        "patternProperties": {
+          "^x-": {
+            "type": "string"
+          },
+          "^[0-9]+$": {
+            "type": "integer"
+          }
+        }
+      },
+      "PatternAndAdd": {
+        "type": "object",
+        "patternProperties": {
+          "^x-": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": {
+          "type": "boolean"
+        }
+      },
+      "PatternAndProps": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "string"
+          }
+        },
+        "patternProperties": {
+          ".*": {
+            "type": "number"
+          }
+        }
+      },
+      "PropertyNames": {
+        "type": "object",
+        "propertyNames": {
+          "enum": [
+            "a",
+            "b"
+          ]
+        },
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "Nullable": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "additionalProperties": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "NestedMap": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Unevaluated": {
+        "type": "object",
+        "unevaluatedProperties": false,
+        "properties": {
+          "a": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

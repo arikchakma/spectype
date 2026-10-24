@@ -1,0 +1,2 @@
+exit 0
+ ⚠  License object `url` must be non-empty string. at #/info/license/url

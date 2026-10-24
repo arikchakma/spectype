@@ -1,0 +1,89 @@
+{
+  "name": "spectype",
+  "version": "0.1.0",
+  "description": "Generate TypeScript types from OpenAPI 3.x, a fast drop-in for openapi-typescript",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arikchakma/spectype.git"
+  },
+  "keywords": [
+    "openapi",
+    "openapi 3",
+    "openapi 3.1",
+    "swagger",
+    "typescript",
+    "ts",
+    "dts",
+    "openapi-typescript",
+    "codegen",
+    "generation",
+    "parser"
+  ],
+  "type": "module",
+  "bin": {
+    "spectype": "bin/spectype.js"
+  },
+  "main": "./index.cjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./index.d.ts",
+        "default": "./index.js"
+      },
+      "require": {
+        "types": "./index.d.cts",
+        "default": "./index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "bin",
+    "binding.cjs",
+    "index.cjs",
+    "index.d.cts",
+    "index.d.ts",
+    "index.js",
+    "native.cjs",
+    "types.d.cts"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0 || ^6.0.0"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "optionalDependencies": {
+    "@spectype/binding-darwin-arm64": "0.1.0",
+    "@spectype/binding-darwin-x64": "0.1.0",
+    "@spectype/binding-linux-arm64-gnu": "0.1.0",
+    "@spectype/binding-linux-arm64-musl": "0.1.0",
+    "@spectype/binding-linux-x64-gnu": "0.1.0",
+    "@spectype/binding-linux-x64-musl": "0.1.0",
+    "@spectype/binding-wasm32-wasip1": "0.1.0",
+    "@spectype/binding-win32-arm64-msvc": "0.1.0",
+    "@spectype/binding-win32-x64-msvc": "0.1.0"
+  },
+  "napi": {
+    "binaryName": "spectype",
+    "packageName": "@spectype/binding",
+    "targets": [
+      "aarch64-apple-darwin",
+      "x86_64-apple-darwin",
+      "x86_64-unknown-linux-gnu",
+      "aarch64-unknown-linux-gnu",
+      "x86_64-unknown-linux-musl",
+      "aarch64-unknown-linux-musl",
+      "x86_64-pc-windows-msvc",
+      "aarch64-pc-windows-msvc",
+      "wasm32-wasip1"
+    ]
+  }
+}

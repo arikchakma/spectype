@@ -1,0 +1,128 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "VarNames": {
+        "type": "integer",
+        "enum": [
+          1,
+          2,
+          3
+        ],
+        "x-enum-varnames": [
+          "One",
+          "Two",
+          "Three"
+        ],
+        "x-enum-descriptions": [
+          "The one",
+          "The two */",
+          "The\nthree"
+        ]
+      },
+      "EnumNames": {
+        "type": "string",
+        "enum": [
+          "a",
+          "b"
+        ],
+        "x-enumNames": [
+          "Alpha",
+          "Beta"
+        ]
+      },
+      "PartialNames": {
+        "type": "integer",
+        "enum": [
+          1,
+          2,
+          3
+        ],
+        "x-enum-varnames": [
+          "One"
+        ]
+      },
+      "BadNames": {
+        "type": "string",
+        "enum": [
+          "a",
+          "b",
+          "c"
+        ],
+        "x-enum-varnames": [
+          "1st",
+          "has space",
+          "has-dash"
+        ]
+      },
+      "DupNames": {
+        "type": "string",
+        "enum": [
+          "a",
+          "b"
+        ],
+        "x-enum-varnames": [
+          "Same",
+          "Same"
+        ]
+      },
+      "DescOnly": {
+        "type": "string",
+        "enum": [
+          "a",
+          "b"
+        ],
+        "x-enum-descriptions": [
+          "desc a",
+          ""
+        ]
+      },
+      "Both": {
+        "type": "string",
+        "enum": [
+          "a",
+          "b"
+        ],
+        "x-enum-varnames": [
+          "A1",
+          "B1"
+        ],
+        "x-enumNames": [
+          "A2",
+          "B2"
+        ]
+      },
+      "Plain": {
+        "type": "string",
+        "enum": [
+          "a",
+          "b"
+        ]
+      },
+      "Test": {
+        "type": "object",
+        "properties": {
+          "v": {
+            "$ref": "#/components/schemas/VarNames"
+          },
+          "inline": {
+            "type": "integer",
+            "enum": [
+              7,
+              8
+            ],
+            "x-enum-varnames": [
+              "Seven",
+              "Eight"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

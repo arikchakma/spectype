@@ -1,0 +1,173 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "A": {
+        "type": "object",
+        "required": [
+          "a"
+        ],
+        "properties": {
+          "a": {
+            "type": "string"
+          },
+          "shared": {
+            "type": "string"
+          }
+        }
+      },
+      "B": {
+        "type": "object",
+        "properties": {
+          "b": {
+            "type": "integer"
+          }
+        }
+      },
+      "Merged": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/A"
+          },
+          {
+            "$ref": "#/components/schemas/B"
+          }
+        ]
+      },
+      "MergedReq": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/A"
+          },
+          {
+            "$ref": "#/components/schemas/B"
+          }
+        ],
+        "required": [
+          "b",
+          "shared"
+        ]
+      },
+      "MergedInline": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/A"
+          },
+          {
+            "type": "object",
+            "required": [
+              "c"
+            ],
+            "properties": {
+              "c": {
+                "type": "boolean"
+              }
+            }
+          }
+        ]
+      },
+      "Siblings": {
+        "type": "object",
+        "properties": {
+          "own": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "own",
+          "a"
+        ],
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/A"
+          }
+        ]
+      },
+      "RequiredOnly": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/B"
+          },
+          {
+            "required": [
+              "b"
+            ]
+          }
+        ]
+      },
+      "RequiredMissing": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/B"
+          }
+        ],
+        "required": [
+          "nope"
+        ]
+      },
+      "Single": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/A"
+          }
+        ]
+      },
+      "Empty": {
+        "allOf": []
+      },
+      "WithOneOf": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/A"
+          }
+        ],
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/B"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "z": {
+                "type": "string"
+              }
+            }
+          }
+        ]
+      },
+      "Prims": {
+        "allOf": [
+          {
+            "type": "string"
+          },
+          {
+            "minLength": 2
+          }
+        ]
+      },
+      "Nested": {
+        "allOf": [
+          {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/A"
+              }
+            ]
+          },
+          {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/B"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

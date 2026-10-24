@@ -1,0 +1,142 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/x/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "deprecated": true,
+        "operationId": "oldGet",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      },
+      "post": {
+        "operationId": "newPost",
+        "parameters": [
+          {
+            "name": "old",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": true
+          },
+          {
+            "name": "new",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-Old",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": true,
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "old": {
+                    "type": "string",
+                    "deprecated": true
+                  },
+                  "new": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "old"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ok",
+            "headers": {
+              "X-Old": {
+                "deprecated": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Old"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/all-deprecated": {
+      "get": {
+        "deprecated": true,
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Old": {
+        "deprecated": true,
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "string",
+            "deprecated": true
+          }
+        }
+      },
+      "New": {
+        "type": "object",
+        "properties": {
+          "old": {
+            "$ref": "#/components/schemas/Old"
+          }
+        }
+      }
+    },
+    "parameters": {
+      "OldP": {
+        "name": "oldp",
+        "in": "query",
+        "schema": {
+          "type": "string"
+        },
+        "deprecated": true
+      }
+    }
+  }
+}

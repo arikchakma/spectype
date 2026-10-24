@@ -1,0 +1,129 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "edge",
+    "version": "1.0.0"
+  },
+  "paths": {},
+  "components": {
+    "schemas": {
+      "SN": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "NS": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "SNum": {
+        "type": [
+          "string",
+          "number"
+        ]
+      },
+      "Multi": {
+        "type": [
+          "string",
+          "number",
+          "boolean",
+          "null",
+          "integer"
+        ]
+      },
+      "OnlyNull": {
+        "type": "null"
+      },
+      "ArrNull": {
+        "type": [
+          "array",
+          "null"
+        ],
+        "items": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "ObjNull": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "a": {
+            "type": "string"
+          }
+        }
+      },
+      "ObjArr": {
+        "type": [
+          "object",
+          "array"
+        ],
+        "properties": {
+          "a": {
+            "type": "string"
+          }
+        },
+        "items": {
+          "type": "integer"
+        }
+      },
+      "WithOneOf": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "oneOf": [
+          {
+            "minLength": 1
+          },
+          {
+            "const": ""
+          }
+        ]
+      },
+      "OneOfNull": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/SN"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "AnyOfNull": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "Single": {
+        "type": [
+          "string"
+        ]
+      },
+      "Empty": {
+        "type": []
+      },
+      "NullableInt": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "format": "int64",
+        "default": null
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+openapi: 3.0.0
+info: { title: t, version: "1", license: { name: MIT, url: https://x } }
+servers: [{ url: https://api.x.io }]
+paths:
+  /a:
+    get:
+      summary: s
+      operationId: a
+      security: [{ missing: [] }, { key: [] }]
+      responses: { "200": { description: ok }, "404": { description: no } }
+    post:
+      summary: s
+      operationId: b
+      responses: { "200": { description: ok }, "404": { description: no } }
+    put:
+      summary: s
+      operationId: c
+      security: [{ missing: [read] }]
+      responses: { "200": { description: ok }, "404": { description: no } }
+components:
+  securitySchemes:
+    key: { type: apiKey, name: k, in: header }
