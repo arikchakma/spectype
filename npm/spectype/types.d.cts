@@ -710,7 +710,8 @@ export type Fix =
   | "allof-empty-objects"
   | "discriminator-oneof-base"
   | "allof-required"
-  | "nested-discriminators";
+  | "nested-discriminators"
+  | "discriminator-declared-values";
 
 /** Context passed to all submodules */
 export interface GlobalContext {

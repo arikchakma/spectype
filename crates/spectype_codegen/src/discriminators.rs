@@ -199,6 +199,21 @@ fn own_discriminator(root: &Value, path: &[String]) -> bool {
         .is_some_and(Value::truthy)
 }
 
+/// The string `enum` or `const` that the schema at `r` already declares for the discriminator
+/// property.
+fn declared_values(root: &Value, r: &str, discriminator: &Value) -> Option<Vec<String>> {
+    let Resolved::Found(schema) = resolve_ref(root, r) else { return None };
+    let prop = schema.get("properties")?.get(&property_name(discriminator))?;
+    let values = match (prop.get("const"), prop.get("enum")) {
+        (Some(Value::String(c)), _) => vec![c.clone()],
+        (_, Some(Value::Array(e))) if !e.is_empty() => {
+            e.iter().map(|v| v.as_str().map(str::to_owned)).collect::<Option<Vec<_>>>()?
+        }
+        _ => return None,
+    };
+    Some(values)
+}
+
 #[derive(Default)]
 struct Mapping {
     inferred: Option<String>,
@@ -252,7 +267,11 @@ pub fn scan(root: &mut Value, fixes: Fixes) -> (Discriminators, Vec<String>) {
             }
             let values = match (&m.defined, &m.inferred) {
                 (Some(defined), _) => defined.clone(),
-                (None, Some(inferred)) => vec![inferred.clone()],
+                (None, Some(inferred)) => fixes
+                    .contains(Fix::DiscriminatorDeclaredValues)
+                    .then(|| declared_values(root, mapped_ref, &discriminator))
+                    .flatten()
+                    .unwrap_or_else(|| vec![inferred.clone()]),
                 (None, None) => continue,
             };
             if patch(root, mapped_ref, &values, &discriminator, &r, &mut warnings) {

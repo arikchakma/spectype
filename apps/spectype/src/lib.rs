@@ -49,7 +49,7 @@ Options
                              array-length, enum-values-type, root-types-names, enum-names,
                              operation-id-refs, default-non-nullable-scope, const-items,
                              allof-empty-objects, discriminator-oneof-base, allof-required,
-                             nested-discriminators
+                             nested-discriminators, discriminator-declared-values
   --inject <file>            Insert the TypeScript in <file> before the generated types
 ";
 
