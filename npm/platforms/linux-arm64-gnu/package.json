@@ -1,6 +1,6 @@
 {
   "name": "@spectype/binding-linux-arm64-gnu",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "The linux-arm64-gnu native addon for spectype",
   "license": "MIT",
   "repository": {

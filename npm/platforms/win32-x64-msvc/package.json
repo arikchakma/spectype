@@ -1,6 +1,6 @@
 {
   "name": "@spectype/binding-win32-x64-msvc",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "The win32-x64-msvc native addon for spectype",
   "license": "MIT",
   "repository": {

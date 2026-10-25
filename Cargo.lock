@@ -898,7 +898,7 @@ checksum = "5b3dc8af474f516a851ff4bd12db780f948b9250ad37211e4eec0bccea54e01b"
 
 [[package]]
 name = "spectype"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "insta",
  "mimalloc",
@@ -912,7 +912,7 @@ dependencies = [
 
 [[package]]
 name = "spectype_codegen"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "icu_collator",
  "regex",
@@ -924,7 +924,7 @@ dependencies = [
 
 [[package]]
 name = "spectype_core"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "spectype_codegen",
  "spectype_document",
@@ -933,7 +933,7 @@ dependencies = [
 
 [[package]]
 name = "spectype_document"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "hashbrown",
  "rustc-hash",
@@ -946,7 +946,7 @@ dependencies = [
 
 [[package]]
 name = "spectype_napi"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "mimalloc",
  "napi",
@@ -960,7 +960,7 @@ dependencies = [
 
 [[package]]
 name = "spectype_redocly"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "regex",
  "rustc-hash",

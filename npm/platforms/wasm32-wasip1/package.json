@@ -1,6 +1,6 @@
 {
   "name": "@spectype/binding-wasm32-wasip1",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "The WebAssembly fallback for spectype, used where no native addon fits",
   "license": "MIT",
   "repository": {

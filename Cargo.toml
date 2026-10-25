@@ -3,7 +3,7 @@ resolver = "2"
 members = ["apps/*", "bindings/*", "crates/*", "tasks/allocs"]
 
 [workspace.package]
-version = "0.1.0"
+version = "0.2.0"
 edition = "2024"
 rust-version = "1.88"
 license = "MIT"
@@ -13,11 +13,11 @@ keywords = ["openapi", "typescript", "codegen", "openapi-typescript", "swagger"]
 categories = ["command-line-utilities", "development-tools"]
 
 [workspace.dependencies]
-spectype = { path = "apps/spectype", version = "0.1.0" }
-spectype_codegen = { path = "crates/spectype_codegen", version = "0.1.0" }
-spectype_core = { path = "crates/spectype_core", version = "0.1.0" }
-spectype_document = { path = "crates/spectype_document", version = "0.1.0" }
-spectype_redocly = { path = "crates/spectype_redocly", version = "0.1.0" }
+spectype = { path = "apps/spectype", version = "0.2.0" }
+spectype_codegen = { path = "crates/spectype_codegen", version = "0.2.0" }
+spectype_core = { path = "crates/spectype_core", version = "0.2.0" }
+spectype_document = { path = "crates/spectype_document", version = "0.2.0" }
+spectype_redocly = { path = "crates/spectype_redocly", version = "0.2.0" }
 hashbrown = { version = "0.15", default-features = false }
 icu_collator = "2"
 insta = "1"

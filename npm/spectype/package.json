@@ -1,6 +1,6 @@
 {
   "name": "spectype",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Generate TypeScript types from OpenAPI 3.x, a fast drop-in for openapi-typescript",
   "license": "MIT",
   "repository": {
@@ -61,15 +61,15 @@
     }
   },
   "optionalDependencies": {
-    "@spectype/binding-darwin-arm64": "0.1.0",
-    "@spectype/binding-darwin-x64": "0.1.0",
-    "@spectype/binding-linux-arm64-gnu": "0.1.0",
-    "@spectype/binding-linux-arm64-musl": "0.1.0",
-    "@spectype/binding-linux-x64-gnu": "0.1.0",
-    "@spectype/binding-linux-x64-musl": "0.1.0",
-    "@spectype/binding-wasm32-wasip1": "0.1.0",
-    "@spectype/binding-win32-arm64-msvc": "0.1.0",
-    "@spectype/binding-win32-x64-msvc": "0.1.0"
+    "@spectype/binding-darwin-arm64": "0.2.0",
+    "@spectype/binding-darwin-x64": "0.2.0",
+    "@spectype/binding-linux-arm64-gnu": "0.2.0",
+    "@spectype/binding-linux-arm64-musl": "0.2.0",
+    "@spectype/binding-linux-x64-gnu": "0.2.0",
+    "@spectype/binding-linux-x64-musl": "0.2.0",
+    "@spectype/binding-wasm32-wasip1": "0.2.0",
+    "@spectype/binding-win32-arm64-msvc": "0.2.0",
+    "@spectype/binding-win32-x64-msvc": "0.2.0"
   },
   "napi": {
     "binaryName": "spectype",
